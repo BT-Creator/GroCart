@@ -15,7 +15,7 @@
     <figcaption>GroCart</figcaption>
 </figure>
     <nav>
-        <a href="{{route("index")}}">About us</a>
+        <a href="{{route("index_route")}}">About us</a>
         <a href="#">Consumer</a>
         <a href="#">Driver</a>
         <a href="#">Store Owner</a>
