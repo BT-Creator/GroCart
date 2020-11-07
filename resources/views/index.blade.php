@@ -2,7 +2,7 @@
 
 @section("main")
     <div>
-        <img src="{{asset("/assets/media/logo.svg")}}" height="300px" width="300px" alt="Logo Grocart">
+        <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
         <h1>Grocart</h1>
     </div>
     <main>
