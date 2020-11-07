@@ -2,8 +2,8 @@
 
 @section("main")
     <div>
+        <img src="{{asset("/assets/media/logo.svg")}}" height="300px" width="300px" alt="Logo Grocart">
         <h1>Grocart</h1>
-        {{asset("/assets/media/logo.svg")}}
     </div>
     <main>
         <section>
