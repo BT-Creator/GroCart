@@ -30,14 +30,48 @@ p, footer {
 h1, h2, header, main a{
     font-family: 'Ubuntu', sans-serif;
 }
+body{
+    margin-left: 2vmax;
+    margin-right: 2vmax;
+}
 /*                     HEADER                    */
 header{
-    position: fixed;
     background-color: var(--bg-offset-color);
     border-radius: 0 0 2rem 2rem ;
-    margin: 0 1rem 0 1rem;
+    border-bottom: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding-bottom: 1vmax;
+    padding-top: 1vmax;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
+    width: available;
+}
+
+header img{
+    margin-left: 1rem;
+    width: 7vw;
+    height: 7vw;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vmax;
+    width: 50%;
+    padding-right: 2vw;
+}
+
+header nav a{
+    display: inline;
+    height: min-content;
+    padding: 1vmax;
+    background-color: rgb(255,255,255);
+    border: black 2px solid;
+    border-radius: 10px;
 }
 /*                   ANIMATIONS                  */
 
