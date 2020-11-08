@@ -27,7 +27,7 @@ p, footer {
     font-family: 'Quicksand', sans-serif;
 }
 
-h1, h2, header, main a{
+h1, h2, header, main a, figure figcaption{
     font-family: 'Ubuntu', sans-serif;
 }
 body{
@@ -77,8 +77,8 @@ header nav div{
 header nav span{
     margin-right: 1vmax;
 }
-/*                      MAIN                     */
-div{
+/*                  LOGO DISPLAY                 */
+figure{
     margin-top: 1vmax;
     margin-bottom: 1vmax;
     display: flex;
@@ -88,12 +88,12 @@ div{
     width: auto;
 }
 
-div img{
+figure img{
     width: 15vmax;
     height: 15vmax;
 }
 
-div h1{
+figure figcaption{
     padding-top: 1vw;
     padding-bottom: 1vw;
     font-weight: bold;
@@ -101,5 +101,6 @@ div h1{
     font-size: 3vmax;
     color: var(--primary-color);
 }
+/*                      MAIN                     */
 /*                   ANIMATIONS                  */
 
