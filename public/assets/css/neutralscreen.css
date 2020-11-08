@@ -1,23 +1,183 @@
-/*-----------------------------------------------*/
 /*                     TO DO                     */
-/*-----------------------------------------------*/
+/*                   VARIABLES                   */
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --bg-offset-color: rgb(237, 237, 237);
+    --primary-color: rgb(67, 160, 67);
+    --secondary-color: rgb(43, 124, 43);
+    --accent-color: rgb(76, 181, 76);
+    --hyperlink: rgb(62, 220, 237);
+    --hyperlink-used: rgb(29, 102, 110);
+}
 
-/*-----------------------------------------------*/
 /*              GLOBAL HTML ELEMENTS             */
-/*-----------------------------------------------*/
+a {
+    text-decoration: none;
+    color: var(--hyperlink);
+}
+a:hover {
+    color: var(--accent-color);
+}
 
-/*-----------------------------------------------*/
-/*         HTML SEMANTIC TAGS OR CLASSES         */
-/*-----------------------------------------------*/
+a:visited{
+    color: var(--hyperlink-used);
+}
 
-/*-----------------------------------------------*/
-/* ELEMENTS WITHIN HTML SEMANTIC TAGS OR CLASSES */
-/*-----------------------------------------------*/
+p, footer {
+    font-family: 'Quicksand', sans-serif;
+}
 
-/*-----------------------------------------------*/
-/*               ID-TAGGED ELEMENTS              */
-/*-----------------------------------------------*/
+h1, h2, header, main a, figure figcaption{
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    margin-left: 3vmax;
+    margin-right: 3vmax;
+    background-color: var(--bg-offset-color);
+}
 
-/*-----------------------------------------------*/
+html{
+    background-color: white;
+}
+/*           APPLIED ON MULTIPLE PARTS           */
+div{
+    display: inline;
+    height: min-content;
+    padding: 1vmax;
+    margin-left: 1vmax;
+    background-color: rgb(255,255,255);
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+span{
+    margin-right: 1vmax;
+    height: 1vmax;
+    width: 1vmax;
+}
+
+/*                     HEADER                    */
+header{
+    background-color: var(--bg-offset-color);
+    border-radius: 0 0 2rem 2rem ;
+    border-bottom: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    padding-bottom: 1vmax;
+    padding-top: 1vmax;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+header img{
+    margin-left: 1rem;
+    width: 7rem;
+    height: 7rem;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vmax;
+    padding-right: 2vw;
+    width: content-box;
+}
+/*                  LOGO DISPLAY                 */
+figure{
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    width: auto;
+}
+
+figure img{
+    width: 15vmax;
+    height: 15vmax;
+}
+
+figure figcaption{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3vmax;
+    color: var(--primary-color);
+}
+/*                      MAIN                     */
+main{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2vw;
+    grid-row-gap: 1.5vmin;
+}
+
+main img{
+    height: 12vw;
+    min-width: 10rem;
+    width: 12vw;
+    min-height: 10rem;
+    border-radius: 10px;
+    border: solid var(--accent-color) 2px;
+    margin-left: 2vmax;
+}
+
+main article h1{
+    color: var(--secondary-color);
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+main article p{
+    margin-bottom: 0.5vmax;
+}
+
+main article div{
+    display: inline-block;
+    margin-top: 1vmax;
+    margin-left: 0;
+}
+/*                    FOOTER                     */
+footer{
+    background-color: var(--bg-offset-color);
+    border-radius: 2rem 2rem 0 0;
+    border-top: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    padding: 1vmin;
+    margin-top: 2vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+footer img{
+    height: 3vw;
+    min-height: 3rem;
+    width: 3vw;
+    min-width: 3rem;
+}
+
+footer figcaption{
+    font-size: 2vmin;
+    min-font-size: 3rem;
+}
+
+footer aside{
+    font-size: 1.75vmin;
+    min-font-size: 4rem;
+}
+
+footer aside{
+    text-align: end;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
 /*                   ANIMATIONS                  */
-/*-----------------------------------------------*/
+
