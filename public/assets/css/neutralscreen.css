@@ -158,15 +158,19 @@ footer{
 
 footer img{
     height: 3vw;
+    min-height: 3rem;
     width: 3vw;
+    min-width: 3rem;
 }
 
 footer figcaption{
     font-size: 2vmin;
+    min-font-size: 3rem;
 }
 
 footer aside{
-    font-size: 1vmax;
+    font-size: 1.75vmin;
+    min-font-size: 4rem;
 }
 
 footer aside{
