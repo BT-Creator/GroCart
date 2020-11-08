@@ -78,6 +78,28 @@ header nav span{
     margin-right: 1vmax;
 }
 /*                      MAIN                     */
+div{
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    width: auto;
+}
 
+div img{
+    width: 15vmax;
+    height: 15vmax;
+}
+
+div h1{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3vmax;
+    color: var(--primary-color);
+}
 /*                   ANIMATIONS                  */
 
