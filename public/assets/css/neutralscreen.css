@@ -48,24 +48,24 @@ header{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    width: available;
+    flex-flow: row wrap;
 }
 
 header img{
     margin-left: 1rem;
-    width: 7vw;
-    height: 7vw;
+    width: 7rem;
+    height: 7rem;
 }
 
 header nav{
     display: flex;
     justify-content: space-between;
     margin-top: 2vmax;
-    width: 50%;
     padding-right: 2vw;
+    width: content-box;
 }
 
-header nav a{
+header nav div{
     display: inline;
     height: min-content;
     padding: 1vmax;
@@ -73,5 +73,11 @@ header nav a{
     border: black 2px solid;
     border-radius: 10px;
 }
+
+header nav span{
+    margin-right: 1vmax;
+}
+/*                      MAIN                     */
+
 /*                   ANIMATIONS                  */
 
