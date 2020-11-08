@@ -31,8 +31,8 @@ h1, h2, header, main a, figure figcaption{
     font-family: 'Ubuntu', sans-serif;
 }
 body{
-    margin-left: 2vmax;
-    margin-right: 2vmax;
+    margin-left: 3vmax;
+    margin-right: 3vmax;
     background-color: var(--bg-offset-color);
 }
 
@@ -52,6 +52,8 @@ div{
 
 span{
     margin-right: 1vmax;
+    height: 1vmax;
+    width: 1vmax;
 }
 
 /*                     HEADER                    */
@@ -111,14 +113,15 @@ main{
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 2vw;
+    grid-column-gap: 2vw;
+    grid-row-gap: 1.5vmin;
 }
 
 main img{
-    height: 20vw;
-    min-height: 15vw;
-    width: 20vw;
-    min-width: 15vw;
+    height: 12vw;
+    min-width: 10rem;
+    width: 12vw;
+    min-height: 10rem;
     border-radius: 10px;
     border: solid var(--accent-color) 2px;
     margin-left: 2vmax;
@@ -136,8 +139,41 @@ main article p{
 
 main article div{
     display: inline-block;
-    margin-top: 2vw;
+    margin-top: 1vmax;
     margin-left: 0;
+}
+/*                    FOOTER                     */
+footer{
+    background-color: var(--bg-offset-color);
+    border-radius: 2rem 2rem 0 0;
+    border-top: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    padding: 1vmin;
+    margin-top: 2vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+footer img{
+    height: 3vw;
+    width: 3vw;
+}
+
+footer figcaption{
+    font-size: 2vmin;
+}
+
+footer aside{
+    font-size: 1vmax;
+}
+
+footer aside{
+    text-align: end;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 }
 /*                   ANIMATIONS                  */
 

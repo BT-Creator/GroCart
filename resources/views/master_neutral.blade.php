@@ -30,7 +30,7 @@
 
 <footer>
     <figure>
-        <img src="{{asset("/assets/media/logo.png")}}" alt="Logo GroCart">
+        <img src="{{asset("/assets/media/logo.svg")}}" alt="Logo GroCart">
         <figcaption>GroCart Inc. All rights reserved</figcaption>
     </figure>
     <aside>
