@@ -20,9 +20,9 @@
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
         <div><span class="fas fa-question"></span><a href="{{route("index_route")}}">About us</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Consumer</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Driver</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Store Owner</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("501_route")}}">Consumer</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("501_route")}}">Driver</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("501_route")}}">Store Owner</a></div>
     </nav>
 </header>
 
@@ -35,7 +35,7 @@
     </figure>
     <aside>
         <p>Made by Bo Robbrecht</p>
-        <p>All photo's are take from <a href="https://www.pexels.com/">Pexels</a></p>
+        <p>All photos are take from <a href="https://www.pexels.com/">Pexels</a></p>
         <p>For more information on the license, <a href="https://www.pexels.com/license/">click here</a>.</p>
     </aside>
 </footer>

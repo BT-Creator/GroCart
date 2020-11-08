@@ -13,7 +13,7 @@
                 where,
                 and how you work.</p>
             <p>And when things go sideways, our team is here to help you with the aftershocks.</p>
-            <div><span class="fas fa-key"></span><a href="#">Driver</a></div>
+            <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Driver</a></div>
         </article>
         <img src="{{asset("images/consumer.jpg")}}" alt="Person holding shopping bag">
         <article>
@@ -24,7 +24,7 @@
                 counting.
                 Our UI and Lists system makes creating and keeping track of orders simple and helps you focus on the
                 important things in life.</p>
-            <div><span class="fas fa-key"></span><a href="#">Consumer</a></div>
+            <div><span class="fas fa-key"></span><a href="{{route("501_route")}}">Consumer</a></div>
         </article>
         <img src="{{asset("images/store_owner.jpg")}}" alt="Photo of cashier stand">
         <article>
@@ -34,7 +34,7 @@
                 business. You can see incoming orders for your business and prepare them to help your drivers and
                 ensure
                 timely delivery for your clients.</p>
-            <div><span class="fas fa-key"></span><a href="#">Store Owner</a></div>
+            <div><span class="fas fa-key"></span><a href="{{route("501_route")}}">Store Owner</a></div>
         </article>
     </main>
 @endsection

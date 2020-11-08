@@ -69,6 +69,7 @@ header{
     flex-flow: row wrap;
     justify-content: space-between;
     flex-flow: row wrap;
+    margin-bottom: 1vw;
 }
 
 header img{
@@ -179,5 +180,17 @@ footer aside{
     flex-flow: column wrap;
     justify-content: space-evenly;
 }
+
+/*                  PLACEHOLDER                  */
+.placeholder h1{
+    font-size: 3vw;
+    text-align: center;
+}
+
+.placeholder span{
+    padding-right: 4vw;
+    color: rgb(76, 181, 76);
+}
+
 /*                   ANIMATIONS                  */
 
