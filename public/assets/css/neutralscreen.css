@@ -33,7 +33,27 @@ h1, h2, header, main a, figure figcaption{
 body{
     margin-left: 2vmax;
     margin-right: 2vmax;
+    background-color: var(--bg-offset-color);
 }
+
+html{
+    background-color: white;
+}
+/*           APPLIED ON MULTIPLE PARTS           */
+div{
+    display: inline;
+    height: min-content;
+    padding: 1vmax;
+    margin-left: 1vmax;
+    background-color: rgb(255,255,255);
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+span{
+    margin-right: 1vmax;
+}
+
 /*                     HEADER                    */
 header{
     background-color: var(--bg-offset-color);
@@ -41,8 +61,6 @@ header{
     border-bottom: var(--accent-color) 2px solid;
     border-right: var(--accent-color) 2px solid;
     border-left: var(--accent-color) 2px solid;
-    margin-left: 2vw;
-    margin-right: 2vw;
     padding-bottom: 1vmax;
     padding-top: 1vmax;
     display: flex;
@@ -63,19 +81,6 @@ header nav{
     margin-top: 2vmax;
     padding-right: 2vw;
     width: content-box;
-}
-
-header nav div{
-    display: inline;
-    height: min-content;
-    padding: 1vmax;
-    background-color: rgb(255,255,255);
-    border: black 2px solid;
-    border-radius: 10px;
-}
-
-header nav span{
-    margin-right: 1vmax;
 }
 /*                  LOGO DISPLAY                 */
 figure{
@@ -102,5 +107,37 @@ figure figcaption{
     color: var(--primary-color);
 }
 /*                      MAIN                     */
+main{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2vw;
+}
+
+main img{
+    height: 20vw;
+    min-height: 15vw;
+    width: 20vw;
+    min-width: 15vw;
+    border-radius: 10px;
+    border: solid var(--accent-color) 2px;
+    margin-left: 2vmax;
+}
+
+main article h1{
+    color: var(--secondary-color);
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+main article p{
+    margin-bottom: 0.5vmax;
+}
+
+main article div{
+    display: inline-block;
+    margin-top: 2vw;
+    margin-left: 0;
+}
 /*                   ANIMATIONS                  */
 
