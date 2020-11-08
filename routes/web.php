@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('index');}) -> name("index_route");
 
-Route::get('/501', function () {return view('placeholder');}) -> name("placeholder_route");
+Route::get('/501', function () {return view('placeholder');}) -> name("501_route");
