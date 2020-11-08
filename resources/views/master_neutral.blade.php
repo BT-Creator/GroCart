@@ -35,7 +35,7 @@
     </figure>
     <aside>
         <p>Made by Bo Robbrecht</p>
-        <p>All photo's are take from <a href="https://www.pexels.com/">Pexels</a></p>
+        <p>All photos are take from <a href="https://www.pexels.com/">Pexels</a></p>
         <p>For more information on the license, <a href="https://www.pexels.com/license/">click here</a>.</p>
     </aside>
 </footer>
