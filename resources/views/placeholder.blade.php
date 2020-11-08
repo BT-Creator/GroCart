@@ -1,4 +1,4 @@
-@extends("master_neutral")
+@extends("general.master_neutral")
 
 @section("main")
     <main class="placeholder">

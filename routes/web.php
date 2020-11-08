@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConsumerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('index');}) -> name("index_route");
+Route::get('/', function () {return view('general.index');}) -> name("index_route");
 
 Route::get('/501', function () {return view('placeholder');}) -> name("501_route");
+
+Route::get('/user/lists', [ConsumerController::class, 'index']) -> name('consumer_lists');
