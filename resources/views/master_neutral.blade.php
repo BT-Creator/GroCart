@@ -20,9 +20,9 @@
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
         <div><span class="fas fa-question"></span><a href="{{route("index_route")}}">About us</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Consumer</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Driver</a></div>
-        <div><span class="fas fa-key"></span><a href="#">Store Owner</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("placeholder_route")}}">Consumer</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("placeholder_route")}}">Driver</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route("placeholder_route")}}">Store Owner</a></div>
     </nav>
 </header>
 
