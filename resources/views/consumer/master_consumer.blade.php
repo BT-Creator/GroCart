@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/reset.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumerscreen.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumer/consumerStyle.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/universalStyle.css')}}">
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
