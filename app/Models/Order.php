@@ -12,4 +12,7 @@ class Order extends Model
     public function groceryList(){
         return $this -> hasOne('app\Models\GroceryList');
     }
+    public function store(){
+        return $this ->belongsTo('app/Models/Store');
+    }
 }
