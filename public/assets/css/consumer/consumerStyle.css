@@ -1,14 +1,27 @@
 /*                     TO DO                     */
-/*                   VARIABLES                   */
-:root {
-    --bg-color: rgb(255, 255, 255);
-    --bg-offset-color: rgb(237, 237, 237);
-    --primary-color: rgb(67, 160, 67);
-    --secondary-color: rgb(43, 124, 43);
-    --accent-color: rgb(76, 181, 76);
-    --hyperlink: rgb(62, 220, 237);
-    --hyperlink-used: rgb(29, 102, 110);
-}
 /*              GLOBAL HTML ELEMENTS             */
 /*           APPLIED ON MULTIPLE PARTS           */
+/*               LIST LANDING PAGE               */
+main .grocery-list-overview{
+    background-color: var(--bg-color);
+    border: var(--secondary-color) solid 2px ;
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+main .grocery-list-overview section {
+    border: var(--accent-color) solid 2px ;
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+main .grocery-list-overview div {
+    padding: 0;
+    margin-left: 0;
+    border: none;
+}
+
+main .grocery-list-overview span {
+    text-decoration: underline;
+}
 /*                   ANIMATIONS                  */
