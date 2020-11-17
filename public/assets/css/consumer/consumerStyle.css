@@ -65,10 +65,14 @@ main .grocery-list-container {
 
 .grocery-list-options span{
     color: black;
-    margin-left: 1vmax;
 }
 span[class^="fas"]{
     text-decoration: none;
+}
+
+span[class="fas fa-arrow-right"]{
+    margin-right: 0;
+    margin-left: 1vmax;
 }
 
 #grocery-lists{
