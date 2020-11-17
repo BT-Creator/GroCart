@@ -6,7 +6,7 @@
         @for($i = 0; $i < 5; $i++)
             <article class="grocery-list-overview">
                 <h1>List Name</h1>
-                <div>
+                <div class="grocery-list-container">
                     @for($j = 0; $j < 2; $j++)
                         <section>
                             <h2>Milk</h2>
@@ -26,8 +26,7 @@
                 </div>
                 <span class="fas fa-edit"></span><a href="{{route('501_route')}}">Edit</a>
                 <span class="fas fa-trash"></span><a href="{{route('501_route')}}">Delete</a>
-                <span class="fas fa-trash"></span><a href="{{route('501_route')}}">Order</a><span
-                    class="fas fa-arrow-right"></span>
+                <a href="{{route('501_route')}}">Order</a><span class="fas fa-arrow-right"></span>
             </article>
         @endfor
     </main>

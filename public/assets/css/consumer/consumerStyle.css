@@ -15,13 +15,20 @@ main .grocery-list-overview section {
     padding: 1vw;
 }
 
-main .grocery-list-overview div {
+main .grocery-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". ." ". ." ". .";
     padding: 0;
     margin-left: 0;
-    border: none;
 }
 
-main .grocery-list-overview span {
+main .grocery-list-overview span{
     text-decoration: underline;
+}
+
+span[class^="fas"]{
+    border: none;
 }
 /*                   ANIMATIONS                  */
