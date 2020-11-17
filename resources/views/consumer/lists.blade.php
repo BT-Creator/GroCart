@@ -2,9 +2,9 @@
 
 @section('main')
     <!-- This is just a mock for making the CSS -->
-    <main>
+    <main id="grocery-lists">
         @for($i = 0; $i < 5; $i++)
-            <article class="grocery-list-overview">
+            <article class="grocery-lists">
                 <h1>List Name</h1>
                 <div class="grocery-list-container">
                     @for($j = 0; $j < 2; $j++)
@@ -24,9 +24,11 @@
                         </section>
                     @endfor
                 </div>
-                <span class="fas fa-edit"></span><a href="{{route('501_route')}}">Edit</a>
-                <span class="fas fa-trash"></span><a href="{{route('501_route')}}">Delete</a>
-                <a href="{{route('501_route')}}">Order</a><span class="fas fa-arrow-right"></span>
+                <div class="grocery-list-options">
+                    <a href="{{route('501_route')}}"><span class="fas fa-edit"></span>Edit</a>
+                    <a href="{{route('501_route')}}"><span class="fas fa-trash"></span>Delete</a>
+                    <a href="{{route('501_route')}}">Order<span class="fas fa-arrow-right"></span></a>
+                </div>
             </article>
         @endfor
     </main>

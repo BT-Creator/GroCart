@@ -25,7 +25,7 @@
         <div><span class="fas fa-user"></span><a href="{{route('501_route')}}">Profile</a></div>
         <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Driver</a></div>
         <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Store Owner</a></div>
-        <div><span class="fas fa-sign-out-alt"></span><a href="{{route('501_route')}}">Logout</a></div>
+        <div><span class="fas fa-sign-out-alt"></span><a href="{{route("index_route")}}">Logout</a></div>
     </nav>
 </header>
 
