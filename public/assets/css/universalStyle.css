@@ -80,6 +80,7 @@ header img{
 header nav{
     display: flex;
     justify-content: space-between;
+    flex-flow: row wrap;
     margin-top: 2vmax;
     padding-right: 2vw;
     width: content-box;

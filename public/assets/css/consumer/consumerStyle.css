@@ -7,6 +7,11 @@ main .grocery-list-overview{
     border: var(--secondary-color) solid 2px ;
     border-radius: 10px;
     padding: 1vw;
+    width: 80%;
+}
+
+main .grocery-list-overview h1{
+
 }
 
 main .grocery-list-overview section {
