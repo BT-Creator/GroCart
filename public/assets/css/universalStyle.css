@@ -56,6 +56,12 @@ span{
     width: 1vmax;
 }
 
+input{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid var(--accent-color);
+}
 /*                     HEADER                    */
 header{
     background-color: var(--bg-offset-color);
