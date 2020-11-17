@@ -14,13 +14,13 @@
                         </section>
                         <section>
                             <h2>Tresors</h2>
-                            <p><span>Weight:</span> 1 KG</p>
-                            <p><span>Brand:</span> Kellogs</p>
+                            <p><span class="list-property">Weight:</span> 1 KG</p>
+                            <p><span class="list-property">Brand:</span> Kellogs</p>
                         </section>
                         <section>
                             <h2>American</h2>
-                            <p><span>Weight:</span> 0,200 gram</p>
-                            <p><span>Special Notes:</span> With unions</p>
+                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
+                            <p><span class="list-property">Special Notes:</span> With unions</p>
                         </section>
                     @endfor
                 </div>

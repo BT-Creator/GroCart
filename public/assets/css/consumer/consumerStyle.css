@@ -20,15 +20,19 @@ main .grocery-list-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: ". ." ". ." ". .";
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;
     padding: 0;
     margin-left: 0;
+    margin-bottom: 2em;
+    border: none;
 }
 
-main .grocery-list-overview span{
+.list-property{
     text-decoration: underline;
 }
 
 span[class^="fas"]{
-    border: none;
+    text-decoration: none;
 }
 /*                   ANIMATIONS                  */
