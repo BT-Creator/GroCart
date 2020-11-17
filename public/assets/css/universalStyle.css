@@ -22,7 +22,7 @@ a:visited{
     color: var(--hyperlink-used);
 }
 
-p, footer {
+p, footer, label {
     font-family: 'Quicksand', sans-serif;
 }
 
