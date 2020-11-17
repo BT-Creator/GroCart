@@ -22,13 +22,14 @@ a:visited{
     color: var(--hyperlink-used);
 }
 
-p, footer {
+p, footer, label, button, input, textarea {
     font-family: 'Quicksand', sans-serif;
 }
 
-h1, h2, header, main a, figure figcaption{
+h1, h2, header, main a, figure figcaption, h3{
     font-family: 'Ubuntu', sans-serif;
 }
+
 body{
     margin-left: 3vmax;
     margin-right: 3vmax;
@@ -38,23 +39,33 @@ body{
 html{
     background-color: white;
 }
-/*           APPLIED ON MULTIPLE PARTS           */
-div{
-    display: inline;
+
+.button{
     height: min-content;
     padding: 1vmax;
-    margin-left: 1vmax;
     background-color: rgb(255,255,255);
     border: black 2px solid;
     border-radius: 10px;
 }
 
+nav .button {
+     display: inline;
+     margin-left: 1vmax;
+ }
+
+/*           APPLIED ON MULTIPLE PARTS           */
 span{
     margin-right: 1vmax;
     height: 1vmax;
     width: 1vmax;
 }
 
+input, textarea{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid var(--accent-color);
+}
 /*                     HEADER                    */
 header{
     background-color: var(--bg-offset-color);
@@ -84,6 +95,11 @@ header nav{
     margin-top: 2vmax;
     padding-right: 2vw;
     width: content-box;
+}
+
+main{
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 /*                    FOOTER                     */

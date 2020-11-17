@@ -14,18 +14,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/fontawesome.css"
           integrity="sha384-ijEtygNrZDKunAWYDdV3wAZWvTHSrGhdUfImfngIba35nhQ03lSNgfTJAKaGFjk2" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lists</title>
+    <title>@yield("title")</title>
 </head>
 <body>
 <header>
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
-        <div><span class="fas fa-list"></span><a href="{{route('501_route')}}">Lists</a></div>
-        <div><span class="fas fa-history"></span><a href="{{route('501_route')}}">History</a></div>
-        <div><span class="fas fa-user"></span><a href="{{route('501_route')}}">Profile</a></div>
-        <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Driver</a></div>
-        <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Store Owner</a></div>
-        <div><span class="fas fa-sign-out-alt"></span><a href="{{route("index_route")}}">Logout</a></div>
+        <a class="button" href="{{route('consumer_lists')}}"><span class="fas fa-list"></span>Lists</a>
+        <a class="button" href="{{route('501_route')}}"><span class="fas fa-history"></span>History</a>
+        <a class="button" href="{{route('501_route')}}"><span class="fas fa-user"></span>Profile</a>
+        <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Driver</a>
+        <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Store Owner</a>
+        <a class="button" href="{{route("index_route")}}"><span class="fas fa-sign-out-alt"></span>Logout</a>
     </nav>
 </header>
 

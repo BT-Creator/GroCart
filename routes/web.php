@@ -19,3 +19,5 @@ Route::get('/', function () {return view('general.index');}) -> name("index_rout
 Route::get('/501', function () {return view('placeholder');}) -> name("501_route");
 
 Route::get('/user/lists', [ConsumerController::class, 'index']) -> name('consumer_lists');
+
+Route::get('/user/list/1', [ConsumerController::class, 'openList']) -> name('open_list');
