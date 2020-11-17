@@ -52,9 +52,8 @@ nav .button {
      display: inline;
      margin-left: 1vmax;
  }
+
 /*           APPLIED ON MULTIPLE PARTS           */
-
-
 span{
     margin-right: 1vmax;
     height: 1vmax;
@@ -96,6 +95,11 @@ header nav{
     margin-top: 2vmax;
     padding-right: 2vw;
     width: content-box;
+}
+
+main{
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 /*                    FOOTER                     */

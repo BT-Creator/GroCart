@@ -98,10 +98,19 @@ span[class="fas fa-arrow-right"]{
     margin-bottom: 2em;
 }
 
+#list-main h1{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+}
+
 #list-main .new-items-container, #list-main .list-items-container{
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    border: 2px black solid;
 }
 
 #list-bottom-bar{
@@ -113,11 +122,17 @@ span[class="fas fa-arrow-right"]{
 #list-bottom-bar section{
     display: flex;
     flex-flow: column wrap;
-    margin-bottom: 2em;
+    margin: 2em;
 }
 
 #list-bottom-bar section h3, #list-bottom-bar section label{
     margin-bottom: 0.5em;
+}
+
+#list-bottom-bar section:last-of-type{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
 }
 
 .list-item{
