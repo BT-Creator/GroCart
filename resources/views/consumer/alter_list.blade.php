@@ -8,7 +8,7 @@
     <main>
         <!-- All mock data, just deal with it for now -->
         <form>
-            <div>
+            <div class="list-top-bar">
                 <a href="#"><span class="fas fa-plus-circle"></span>New Item</a>
                 <label for="list_name">
                     <span class="fas fa-signature"></span>List Name:
@@ -20,44 +20,46 @@
                     <input type="text" placeholder="As cheap as possible" name="picking_method" id="picking_method">
                 </label>
             </div>
-            <article>
-                <h1>Items</h1>
-                <div class="new-items-container">
-                    <section class="list-item">
-                        <h2>Milk</h2>
-                        <p>Just plain old milk.</p>
-                    </section>
-                    <section class="list-item">
-                        <h2>Tresors</h2>
-                        <p><span class="list-property">Weight:</span> 1 KG</p>
-                        <p><span class="list-property">Brand:</span> Kellogs</p>
-                    </section>
-                    <section class="list-item">
-                        <h2>American</h2>
-                        <p><span class="list-property">Weight:</span> 0,200 gram</p>
-                        <p><span class="list-property">Special Notes:</span> With unions</p>
-                    </section>
-                </div>
-            </article>
-            <article>
-                <h1>Items in List</h1>
-                <div class="List-items-container">
-                    <section class="list-item">
-                        <h2>Milk</h2>
-                        <p>Just plain old milk.</p>
-                    </section>
-                    <section class="list-item">
-                        <h2>Tresors</h2>
-                        <p><span class="list-property">Weight:</span> 1 KG</p>
-                        <p><span class="list-property">Brand:</span> Kellogs</p>
-                    </section>
-                    <section class="list-item">
-                        <h2>American</h2>
-                        <p><span class="list-property">Weight:</span> 0,200 gram</p>
-                        <p><span class="list-property">Special Notes:</span> With unions</p>
-                    </section>
-                </div>
-            </article>
+            <div class="list-main">
+                <article>
+                    <h1>Items</h1>
+                    <div class="new-items-container">
+                        <section class="list-item">
+                            <h2>Milk</h2>
+                            <p>Just plain old milk.</p>
+                        </section>
+                        <section class="list-item">
+                            <h2>Tresors</h2>
+                            <p><span class="list-property">Weight:</span> 1 KG</p>
+                            <p><span class="list-property">Brand:</span> Kellogs</p>
+                        </section>
+                        <section class="list-item">
+                            <h2>American</h2>
+                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
+                            <p><span class="list-property">Special Notes:</span> With unions</p>
+                        </section>
+                    </div>
+                </article>
+                <article>
+                    <h1>Items in List</h1>
+                    <div class="List-items-container">
+                        <section class="list-item">
+                            <h2>Milk</h2>
+                            <p>Just plain old milk.</p>
+                        </section>
+                        <section class="list-item">
+                            <h2>Tresors</h2>
+                            <p><span class="list-property">Weight:</span> 1 KG</p>
+                            <p><span class="list-property">Brand:</span> Kellogs</p>
+                        </section>
+                        <section class="list-item">
+                            <h2>American</h2>
+                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
+                            <p><span class="list-property">Special Notes:</span> With unions</p>
+                        </section>
+                    </div>
+                </article>
+            </div>
             <article>
                 <h3><span class="fas fa-store"></span>Store Address:</h3>
                 <label for="store_address">
