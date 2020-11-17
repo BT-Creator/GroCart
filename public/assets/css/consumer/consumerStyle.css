@@ -98,6 +98,12 @@ span[class="fas fa-arrow-right"]{
     margin-bottom: 2em;
 }
 
+#list-main .new-items-container, #list-main .list-items-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
 #list-bottom-bar{
     display: flex;
     flex-flow: row wrap;
@@ -107,5 +113,14 @@ span[class="fas fa-arrow-right"]{
 #list-bottom-bar section{
     display: flex;
     flex-flow: column wrap;
+    margin-bottom: 2em;
+}
+
+#list-bottom-bar section h3, #list-bottom-bar section label{
+    margin-bottom: 0.5em;
+}
+
+.list-item{
+    margin: 1em;
 }
 /*                   ANIMATIONS                  */

@@ -29,9 +29,9 @@
                     @endfor
                 </div>
                 <div class="grocery-list-options">
-                    <a href="{{route('open_list')}}"><span class="fas fa-edit"></span>Edit</a>
-                    <a href="{{route('501_route')}}"><span class="fas fa-trash"></span>Delete</a>
-                    <a href="{{route('501_route')}}">Order<span class="fas fa-arrow-right"></span></a>
+                    <a class="button" href="{{route('open_list')}}"><span class="fas fa-edit"></span>Edit</a>
+                    <a class="button" href="{{route('501_route')}}"><span class="fas fa-trash"></span>Delete</a>
+                    <a class="button" href="{{route('501_route')}}">Order<span class="fas fa-arrow-right"></span></a>
                 </div>
             </article>
         @endfor

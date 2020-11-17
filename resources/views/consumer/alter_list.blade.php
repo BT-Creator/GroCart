@@ -42,7 +42,7 @@
                 </article>
                 <article>
                     <h1>Items in List</h1>
-                    <div class="List-items-container">
+                    <div class="list-items-container">
                         <section class="list-item">
                             <h2>Milk</h2>
                             <p>Just plain old milk.</p>
@@ -89,7 +89,7 @@
                     <h3><span class="fas fa-home"></span>Delivery address:</h3>
                     <label for="delivery_address">
                         Street:
-                        <input type="text" placeholder="street" name="delivery_address" required="required"
+                        <input type="text" placeholder="Street" name="delivery_address" required="required"
                                id="delivery_address">
                     </label>
                     <label for="delivery_number">
@@ -112,27 +112,27 @@
                 <section>
                     <h3><span class="fas fa-sticky-note"></span>Delivery Notes</h3>
                     <label for="delivery_notes">
-                        <input type="text" name="delivery_notes" id="delivery_notes">
+                        <textarea type="text" name="delivery_notes" id="delivery_notes"></textarea>
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-notes-medical"></span>Medical Notes</h3>
                     <label for="medical_notes">
-                        <input type="text" name="medical_notes" id="medical_notes">
+                        <textarea type="text" name="medical_notes" id="medical_notes"></textarea>
                     </label>
                 </section>
                 <section>
                     <label for="list_save">
-                        <button type="submit" name="list_save" id="list_save"><span class="fas fa-save"></span>Save List
+                        <button type="submit" name="list_save" id="list_save" class="button"><span class="fas fa-save"></span>Save List
                         </button>
                     </label>
                     <label for="list_order">
-                        <button type="button" name="list_order" id="list_order"><span
+                        <button type="button" name="list_order" id="list_order" class="button"><span
                                 class="fas fa-money-bill-wave-alt"></span>Order List
                         </button>
                     </label>
                     <label for="list_delete">
-                        <button type="reset" name="list_delete" id="list_delete"><span class="fas fa-trash"></span>Delete
+                        <button type="reset" name="list_delete" id="list_delete" class="button"><span class="fas fa-trash"></span>Delete
                             List
                         </button>
                     </label>
