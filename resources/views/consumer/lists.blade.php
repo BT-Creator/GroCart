@@ -12,16 +12,16 @@
                 <h1>List Name</h1>
                 <div class="grocery-list-container">
                     @for($j = 0; $j < 2; $j++)
-                        <section>
+                        <section class="list-item">
                             <h2>Milk</h2>
                             <p>Just plain old milk.</p>
                         </section>
-                        <section>
+                        <section class="list-item">
                             <h2>Tresors</h2>
-                            <p><span class="list-property">Weight:</span> 1 KG</p>
-                            <p><span class="list-property">Brand:</span> Kellogs</p>
+                            <p><span>Weight:</span> 1 KG</p>
+                            <p><span>Brand:</span> Kellogs</p>
                         </section>
-                        <section>
+                        <section class="list-item">
                             <h2>American</h2>
                             <p><span class="list-property">Weight:</span> 0,200 KG</p>
                             <p><span class="list-property">Special Notes:</span> With unions</p>

@@ -23,16 +23,16 @@
             <article>
                 <h1>Items</h1>
                 <div class="new-items-container">
-                    <section>
+                    <section class="list-item">
                         <h2>Milk</h2>
                         <p>Just plain old milk.</p>
                     </section>
-                    <section>
+                    <section class="list-item">
                         <h2>Tresors</h2>
                         <p><span class="list-property">Weight:</span> 1 KG</p>
                         <p><span class="list-property">Brand:</span> Kellogs</p>
                     </section>
-                    <section>
+                    <section class="list-item">
                         <h2>American</h2>
                         <p><span class="list-property">Weight:</span> 0,200 gram</p>
                         <p><span class="list-property">Special Notes:</span> With unions</p>
@@ -42,16 +42,16 @@
             <article>
                 <h1>Items in List</h1>
                 <div class="List-items-container">
-                    <section>
+                    <section class="list-item">
                         <h2>Milk</h2>
                         <p>Just plain old milk.</p>
                     </section>
-                    <section>
+                    <section class="list-item">
                         <h2>Tresors</h2>
                         <p><span class="list-property">Weight:</span> 1 KG</p>
                         <p><span class="list-property">Brand:</span> Kellogs</p>
                     </section>
-                    <section>
+                    <section class="list-item">
                         <h2>American</h2>
                         <p><span class="list-property">Weight:</span> 0,200 gram</p>
                         <p><span class="list-property">Special Notes:</span> With unions</p>
