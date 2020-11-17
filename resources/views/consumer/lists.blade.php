@@ -23,7 +23,7 @@
                         </section>
                         <section>
                             <h2>American</h2>
-                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
+                            <p><span class="list-property">Weight:</span> 0,200 KG</p>
                             <p><span class="list-property">Special Notes:</span> With unions</p>
                         </section>
                     @endfor
