@@ -84,16 +84,28 @@ span[class="fas fa-arrow-right"]{
 }
 
 /*                ALTER LIST PAGE                */
-.list-top-bar{
+#list-top-bar{
     display: flex;
     justify-content: space-around;
     margin-bottom: 1em;
 }
 
-.list-main{
+#list-main{
     display: grid;
     grid-template-columns: 1fr 5fr;
     flex-flow: row nowrap;
     grid-column-gap: 2em;
+    margin-bottom: 2em;
+}
+
+#list-bottom-bar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#list-bottom-bar section{
+    display: flex;
+    flex-flow: column wrap;
 }
 /*                   ANIMATIONS                  */

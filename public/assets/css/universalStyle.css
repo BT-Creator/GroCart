@@ -29,6 +29,7 @@ p, footer, label, button {
 h1, h2, header, main a, figure figcaption, h3{
     font-family: 'Ubuntu', sans-serif;
 }
+
 body{
     margin-left: 3vmax;
     margin-right: 3vmax;
