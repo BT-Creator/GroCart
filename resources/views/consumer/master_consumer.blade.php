@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/reset.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumerscreen.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumer/consumerStyle.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/universalStyle.css')}}">
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -19,7 +20,12 @@
 <header>
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
-        <div><a href="#">#</a></div>
+        <div><span class="fas fa-list"></span><a href="{{route('501_route')}}">Lists</a></div>
+        <div><span class="fas fa-history"></span><a href="{{route('501_route')}}">History</a></div>
+        <div><span class="fas fa-user"></span><a href="{{route('501_route')}}">Profile</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Driver</a></div>
+        <div><span class="fas fa-key"></span><a href="{{route('501_route')}}">Store Owner</a></div>
+        <div><span class="fas fa-sign-out-alt"></span><a href="{{route("index_route")}}">Logout</a></div>
     </nav>
 </header>
 
