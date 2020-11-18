@@ -14,14 +14,14 @@
                     <figcaption>User Name</figcaption>
                 </figure>
                 <section>
-                    <h2>Amount of lists made:<span>40 Lists</span></h2>
-                    <h2>Items received:<span>1534 items</span></h2>
+                    <h2>Amount of lists made: <span>40 Lists</span></h2>
+                    <h2>Items received: <span>1534 items</span></h2>
                     <h2>Joined since
                         <time datetime="2019-12-01 07:00">2019-12-01</time>
                     </h2>
                     <form>
                         <input type="file">
-                        <input type="submit">
+                        <input type="submit" value="Upload" class="button">
                     </form>
                 </section>
             </div>
