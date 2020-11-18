@@ -22,7 +22,7 @@
     <nav>
         <a class="button" href="{{route('consumer_lists')}}"><span class="fas fa-list"></span>Lists</a>
         <a class="button" href="{{route('501_route')}}"><span class="fas fa-history"></span>History</a>
-        <a class="button" href="{{route('501_route')}}"><span class="fas fa-user"></span>Profile</a>
+        <a class="button" href="{{route('consumer_profile')}}"><span class="fas fa-user"></span>Profile</a>
         <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Driver</a>
         <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Store Owner</a>
         <a class="button" href="{{route("index_route")}}"><span class="fas fa-sign-out-alt"></span>Logout</a>
