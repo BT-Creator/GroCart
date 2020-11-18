@@ -5,22 +5,26 @@
 @endsection
 
 @section('main')
-    <main>
+    <main class="profile">
         <article>
             <h1>Welcome back, <span>User</span></h1>
-            <figure>
-                <img src="#" alt="Profile Pic">
-                <figcaption>User Name</figcaption>
-            </figure>
-            <section>
-                <h2>Amount of lists made:<span>40 Lists</span></h2>
-                <h2>Items received:<span>1534 items</span></h2>
-                <h2>Joined since<time datetime="2019-12-01 07:00">2019-12-01</time></h2>
-                <form>
-                    <input type="file">
-                    <input type="submit">
-                </form>
-            </section>
+            <div class="profile-card">
+                <figure>
+                    <img src="#" alt="Profile Pic">
+                    <figcaption>User Name</figcaption>
+                </figure>
+                <section>
+                    <h2>Amount of lists made:<span>40 Lists</span></h2>
+                    <h2>Items received:<span>1534 items</span></h2>
+                    <h2>Joined since
+                        <time datetime="2019-12-01 07:00">2019-12-01</time>
+                    </h2>
+                    <form>
+                        <input type="file">
+                        <input type="submit">
+                    </form>
+                </section>
+            </div>
             <section>
                 <h2>Amount of items per list</h2>
             </section>
@@ -41,4 +45,4 @@
             @endfor
         </aside>
     </main>
-    @endsection
+@endsection

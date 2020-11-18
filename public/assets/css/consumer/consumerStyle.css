@@ -138,4 +138,29 @@ span[class="fas fa-arrow-right"]{
 .list-item{
     margin: 1em;
 }
+
+/*                    PROFILE                    */
+.profile{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.profile h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.profile-card{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.profile-card image{
+    height: 3vmax;
+    width: 3vmax;
+}
+
 /*                   ANIMATIONS                  */
