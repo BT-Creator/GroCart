@@ -13,4 +13,8 @@ class ConsumerController extends Controller
     function openList(){
         return view('consumer.alter_list');
     }
+
+    function openProfile(){
+        return view('consumer.profile');
+    }
 }
