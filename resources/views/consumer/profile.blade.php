@@ -37,7 +37,7 @@
         </article>
         <aside>
             @for($i = 0; $i < 5; $i++)
-                <section>
+                <section class="profile-order">
                     <span class="fas fa-shopping-basket"></span>
                     <h3>Order on 26/09/20</h3>
                     <p>Total Items: <span>26</span></p>

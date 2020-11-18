@@ -182,4 +182,24 @@ span[class="fas fa-arrow-right"]{
     margin-left: 0.5em;
 }
 
+.profile-order{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em;
+    margin-bottom: 1em;
+    align-content: center;
+    border: var(--accent-color) solid 2px;
+    width: max-content;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+}
+
+.profile-order span, .profile-card h3{
+    margin-right: 1em;
+}
+
+.profile-order span{
+    font-size: 3em;
+}
+
 /*                   ANIMATIONS                  */
