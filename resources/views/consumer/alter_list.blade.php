@@ -6,10 +6,9 @@
 
 @section('main')
     <main>
-        <!-- All mock data, just deal with it for now -->
         <form>
             <aside id="list-top-bar" aria-label="list-top-bar">
-                <a href="#"><span class="fas fa-plus-circle"></span>New Item</a>
+                <a><span class="fas fa-plus-circle"></span>New Item</a>
                 <label for="list_name">
                     <span class="fas fa-signature"></span>List Name:
                     <input type="text" name="list_name" id="list_name">
@@ -21,6 +20,7 @@
                 </label>
             </aside>
             <div id="list-main">
+                <!-- All mock data, just deal with it for now -->
                 <article>
                     <h1>Items</h1>
                     <div class="new-items-container">
@@ -152,28 +152,32 @@
             </aside>
         </form>
     </main>
-    <form hidden="hidden">
+    <form hidden="hidden" id="new-item-form">
         <div>
             <h3>Add a new item</h3>
             <span class="fas fa-times-circle"></span>
         </div>
 
         <label for="item-name">Name:</label>
-            <input type="text" name="item-name" id="item-name" required="required">
+        <input type="text" name="item-name" id="item-name" required="required">
 
         <label for="item-brand">Brand:</label>
-            <input type="text" name="item-brand" id="item-brand">
+        <input type="text" name="item-brand" id="item-brand">
 
         <label for="item-weight">Weight:</label>
-            <input type="text" name="item-weight" id="item-weight">
+        <input type="text" name="item-weight" id="item-weight">
 
         <label for="item-unit"></label>
-            <select name="item-unit" id="item-unit">
-                <option value="kilogram">Kilogram</option>
-                <option value="litre">Litre</option>
-            </select>
+        <select name="item-unit" id="item-unit">
+            <option value="kilogram">Kilogram</option>
+            <option value="litre">Litre</option>
+        </select>
 
         <label for="item-notes">Special notes:</label>
         <textarea name="item-notes" id="item-notes" placeholder="Write here your special needs..."></textarea>
     </form>
+@endsection
+
+@section("js")
+    <script src="{{asset('assets/js/newList.js')}}"></script>
 @endsection

@@ -42,4 +42,5 @@
         <p>For more information on the license, <a href="https://www.pexels.com/license/">click here</a>.</p>
     </aside>
 </footer>
+@yield('js')
 </body>
