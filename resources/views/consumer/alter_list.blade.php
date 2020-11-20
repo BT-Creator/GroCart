@@ -24,20 +24,6 @@
                 <article>
                     <h1>Items</h1>
                     <div class="new-items-container">
-                        <section class="list-item">
-                            <h2>Milk</h2>
-                            <p>Just plain old milk.</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>Tresors</h2>
-                            <p><span class="list-property">Weight:</span> 1 KG</p>
-                            <p><span class="list-property">Brand:</span> Kellogs</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>American</h2>
-                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
-                            <p><span class="list-property">Special Notes:</span> With unions</p>
-                        </section>
                     </div>
                 </article>
                 <article>
@@ -63,6 +49,7 @@
             <aside id="list-bottom-bar" aria-label="list-bottom-bar">
                 <section>
                     <h3><span class="fas fa-store"></span>Store Address:</h3>
+                    <mark></mark>
                     <label for="store_address">
                         Street:
                         <input type="text" placeholder="street" name="store_address" required="required"
@@ -153,6 +140,7 @@
         </form>
     </main>
     <form id="new-item-form">
+        <mark></mark>
         <div>
             <h3>Add a new item</h3>
             <a class="fas fa-times-circle"></a>
@@ -162,15 +150,15 @@
         <input type="text" name="item-name" id="item-name" required="required" placeholder="Name">
 
         <label for="item-brand">Brand:</label>
-        <input type="text" name="item-brand" id="item-brand" placeholder="Name">
+        <input type="text" name="item-brand" id="item-brand" placeholder="Brand">
 
         <label for="item-weight">Weight:</label>
-        <input type="text" name="item-weight" id="item-weight" placeholder="Name">
+        <input type="text" name="item-weight" id="item-weight" placeholder="Weight">
 
         <label for="item-unit"></label>
         <select name="item-unit" id="item-unit">
-            <option value="kilogram">Kilogram</option>
-            <option value="litre">Litre</option>
+            <option value="Kilogram">Kg</option>
+            <option value="Litre">L</option>
         </select>
 
         <label for="item-notes">Special notes:</label>
