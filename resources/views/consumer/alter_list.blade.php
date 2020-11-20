@@ -162,10 +162,10 @@
         <input type="text" name="item-name" id="item-name" required="required" placeholder="Name">
 
         <label for="item-brand">Brand:</label>
-        <input type="text" name="item-brand" id="item-brand" placeholder="Name">
+        <input type="text" name="item-brand" id="item-brand" placeholder="Brand">
 
         <label for="item-weight">Weight:</label>
-        <input type="text" name="item-weight" id="item-weight" placeholder="Name">
+        <input type="text" name="item-weight" id="item-weight" placeholder="Weight">
 
         <label for="item-unit"></label>
         <select name="item-unit" id="item-unit">

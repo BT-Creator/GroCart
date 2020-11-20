@@ -25,6 +25,12 @@ function showDiv(e) {
 function addItem(g) {
     g.preventDefault()
     closeDiv()
+    let input = form.getElementsByTagName("input")
+    let select = document.querySelector("#new-item-form select").selectedOptions.item(0).text
+    let notes = document.querySelector("#new-item-form textarea").value
+    console.log(select)
+    console.log(input)
+    console.log(notes)
 }
 
 function closeDiv() {
