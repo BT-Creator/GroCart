@@ -60,7 +60,7 @@ span{
     width: 1vmax;
 }
 
-input, textarea{
+input, textarea, select{
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
