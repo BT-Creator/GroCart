@@ -157,8 +157,8 @@
 
         <label for="item-unit"></label>
         <select name="item-unit" id="item-unit">
-            <option value="kilogram">Kg</option>
-            <option value="litre">L</option>
+            <option value="Kilogram">Kg</option>
+            <option value="Litre">L</option>
         </select>
 
         <label for="item-notes">Special notes:</label>

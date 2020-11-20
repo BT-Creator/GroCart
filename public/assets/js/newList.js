@@ -39,7 +39,6 @@ function addItem(g) {
 
 
     function generateItemSelection(name, brand, weight, unit, notes){
-        console.log(name, brand, weight, unit, notes)
         let res = `<section class="list-item">`
         if(name.value === ""){
             throw new Error("No name was given")
@@ -63,6 +62,10 @@ function addItem(g) {
             }
             else {
                 let property = elem.name.replace('item-', '')
+                if (property === 'weight'){
+                    let value = parseFloat(elem.value)
+                    return `<p><span class="list-property">${property}:</span> ${value} ${unit.value}</p>`
+                }
                 return `<p><span class="list-property">${property}:</span> ${elem.value}</p>`
             }
         }
