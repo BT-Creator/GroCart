@@ -20,7 +20,6 @@
                 </label>
             </aside>
             <div id="list-main">
-                <!-- All mock data, just deal with it for now -->
                 <article>
                     <h1>Items</h1>
                     <div class="new-items-container">
@@ -29,20 +28,6 @@
                 <article>
                     <h1>Items in List</h1>
                     <div class="list-items-container">
-                        <section class="list-item">
-                            <h2>Milk</h2>
-                            <p>Just plain old milk.</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>Tresors</h2>
-                            <p><span class="list-property">Weight:</span> 1 KG</p>
-                            <p><span class="list-property">Brand:</span> Kellogs</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>American</h2>
-                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
-                            <p><span class="list-property">Special Notes:</span> With unions</p>
-                        </section>
                     </div>
                 </article>
             </div>
@@ -169,5 +154,8 @@
 @endsection
 
 @section("js")
-    <script src="{{asset('assets/js/newList.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/draggable.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/factory.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/newItem.js')}}"></script>
 @endsection

@@ -137,6 +137,7 @@ span[class="fas fa-arrow-right"]{
 
 .list-item{
     margin: 1em;
+    cursor: move;
 }
 
 #new-item-form{
@@ -189,8 +190,8 @@ span[class="fas fa-arrow-right"]{
     border-color: black;
 }
 
-.new-items-container{
-    min-height: 3rem;
+.new-items-container, .list-items-container{
+    min-height: 5rem;
 }
 /*                    PROFILE                    */
 .profile{
