@@ -137,6 +137,7 @@ span[class="fas fa-arrow-right"]{
 
 .list-item{
     margin: 1em;
+    cursor: move;
 }
 
 #new-item-form{
