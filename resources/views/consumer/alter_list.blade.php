@@ -175,6 +175,8 @@
 
         <label for="item-notes">Special notes:</label>
         <textarea name="item-notes" id="item-notes" placeholder="Write here your special needs..."></textarea>
+        <label for="item-add"></label>
+        <input type="submit" value="Add item" id="item-add" name="item-name">
     </form>
 @endsection
 
