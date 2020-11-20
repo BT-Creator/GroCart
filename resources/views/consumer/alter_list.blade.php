@@ -169,5 +169,6 @@
 @endsection
 
 @section("js")
-    <script src="{{asset('assets/js/newList.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/itemDrag.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/newItem.js')}}"></script>
 @endsection

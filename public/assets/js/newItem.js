@@ -1,4 +1,5 @@
 "use strict"
+import {drag} from "./modules/itemDrag.js";
 
 //Init
 document.addEventListener("DOMContentLoaded", scriptLoader);
@@ -32,6 +33,7 @@ function addItem(g) {
             input.item(2),
             document.querySelector("#new-item-form select").selectedOptions.item(0),
             document.querySelector("#new-item-form textarea"))
+        document.querySelectorAll('.list-item').forEach(elem => elem.addEventListener(drag()))
         closeDiv()
     } catch (ex){
         document.querySelector("#new-item-form mark").innerHTML = "A name is needed!"
@@ -39,7 +41,7 @@ function addItem(g) {
 
 
     function generateItemSelection(name, brand, weight, unit, notes){
-        let res = `<section class="list-item">`
+        let res = `<section class="list-item" draggable="true">`
         if(name.value === ""){
             throw new Error("No name was given")
         }
