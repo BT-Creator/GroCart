@@ -139,6 +139,16 @@ span[class="fas fa-arrow-right"]{
     margin: 1em;
 }
 
+#new-item-form{
+    position: absolute;
+    z-index: 1;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 /*                    PROFILE                    */
 .profile{
     display: flex;
