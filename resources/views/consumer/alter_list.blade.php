@@ -70,11 +70,13 @@
                     </label>
                     <label for="store_number">
                         Number:
-                        <input type="number" name="store_number" required="required" id="store_number" placeholder="House number">
+                        <input type="number" name="store_number" required="required" id="store_number"
+                               placeholder="House number">
                     </label>
                     <label for="store_postal_code">
                         Postal code:
-                        <input type="number" name="store_postal_code" required="required" id="store_postal_code" placeholder="Postal Code">
+                        <input type="number" name="store_postal_code" required="required" id="store_postal_code"
+                               placeholder="Postal Code">
                     </label>
                     <label for="store_city">
                         City:
@@ -82,7 +84,8 @@
                     </label>
                     <label for="store_country">
                         Country:
-                        <input type="text" name="store_country" required="required" id="store_country" placeholder="Country">
+                        <input type="text" name="store_country" required="required" id="store_country"
+                               placeholder="Country">
                     </label>
                 </section>
                 <section>
@@ -94,36 +97,44 @@
                     </label>
                     <label for="delivery_number">
                         Number:
-                        <input type="number" name="delivery_number" required="required" id="delivery_number" placeholder="Number">
+                        <input type="number" name="delivery_number" required="required" id="delivery_number"
+                               placeholder="Number">
                     </label>
                     <label for="delivery_postal_code">
                         Postal code:
-                        <input type="number" name="delivery_postal_code" required="required" id="delivery_postal_code" placeholder="Postal Code">
+                        <input type="number" name="delivery_postal_code" required="required" id="delivery_postal_code"
+                               placeholder="Postal Code">
                     </label>
                     <label for="delivery_city">
                         City:
-                        <input type="text" name="delivery_city" required="required" id="delivery_city" placeholder="City">
+                        <input type="text" name="delivery_city" required="required" id="delivery_city"
+                               placeholder="City">
                     </label>
                     <label for="delivery_country">
                         Country:
-                        <input type="text" name="delivery_country" required="required" id="delivery_country" placeholder="Country">
+                        <input type="text" name="delivery_country" required="required" id="delivery_country"
+                               placeholder="Country">
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-sticky-note"></span>Delivery Notes</h3>
                     <label for="delivery_notes">
-                        <textarea type="text" name="delivery_notes" id="delivery_notes" placeholder="Delivery notes"></textarea>
+                        <textarea name="delivery_notes" id="delivery_notes"
+                                  placeholder="Delivery notes"></textarea>
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-notes-medical"></span>Medical Notes</h3>
                     <label for="medical_notes">
-                        <textarea type="text" name="medical_notes" id="medical_notes" placeholder="Medical notes"></textarea>
+                        <textarea name="medical_notes" id="medical_notes"
+                                  placeholder="Medical notes"></textarea>
                     </label>
                 </section>
                 <section>
+                    <h3>List options</h3>
                     <label for="list_save">
-                        <button type="submit" name="list_save" id="list_save" class="button"><span class="fas fa-save"></span>Save List
+                        <button type="submit" name="list_save" id="list_save" class="button"><span
+                                class="fas fa-save"></span>Save List
                         </button>
                     </label>
                     <label for="list_order">
@@ -132,7 +143,8 @@
                         </button>
                     </label>
                     <label for="list_delete">
-                        <button type="reset" name="list_delete" id="list_delete" class="button"><span class="fas fa-trash"></span>Delete
+                        <button type="reset" name="list_delete" id="list_delete" class="button"><span
+                                class="fas fa-trash"></span>Delete
                             List
                         </button>
                     </label>
@@ -140,4 +152,28 @@
             </aside>
         </form>
     </main>
+    <form hidden="hidden">
+        <div>
+            <h3>Add a new item</h3>
+            <span class="fas fa-times-circle"></span>
+        </div>
+
+        <label for="item-name">Name:</label>
+            <input type="text" name="item-name" id="item-name" required="required">
+
+        <label for="item-brand">Brand:</label>
+            <input type="text" name="item-brand" id="item-brand">
+
+        <label for="item-weight">Weight:</label>
+            <input type="text" name="item-weight" id="item-weight">
+
+        <label for="item-unit"></label>
+            <select name="item-unit" id="item-unit">
+                <option value="kilogram">Kilogram</option>
+                <option value="litre">Litre</option>
+            </select>
+
+        <label for="item-notes">Special notes:</label>
+        <textarea name="item-notes" id="item-notes" placeholder="Write here your special needs..."></textarea>
+    </form>
 @endsection
