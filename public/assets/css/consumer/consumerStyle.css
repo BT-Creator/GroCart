@@ -142,8 +142,8 @@ span[class="fas fa-arrow-right"]{
 #new-item-form{
     position: fixed;
     z-index: 1;
-    width: 50%;
-    height: 50%;
+    width: calc(50% - 1rem);
+    height: calc(50% - 1rem);
     background-color: var(--bg-color);
     border-radius: 10px;
     border: 2px solid var(--accent-color);
@@ -151,8 +151,29 @@ span[class="fas fa-arrow-right"]{
     flex-flow: column nowrap;
     top: 25%;
     left: 25%;
+    padding: 1rem;
 }
 
+#new-item-form div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+#new-item-form div a{
+    font-size: 2rem;
+    color: black;
+}
+
+#new-item-form div a:hover{
+    color: var(--secondary-color);
+}
+
+#new-item-form div h3{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 /*                    PROFILE                    */
 .profile{
     display: flex;

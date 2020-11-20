@@ -155,7 +155,7 @@
     <form hidden="hidden" id="new-item-form">
         <div>
             <h3>Add a new item</h3>
-            <span class="fas fa-times-circle"></span>
+            <a class="fas fa-times-circle"></a>
         </div>
 
         <label for="item-name">Name:</label>
