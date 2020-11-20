@@ -70,19 +70,19 @@
                     </label>
                     <label for="store_number">
                         Number:
-                        <input type="number" name="store_number" required="required" id="store_number">
+                        <input type="number" name="store_number" required="required" id="store_number" placeholder="House number">
                     </label>
                     <label for="store_postal_code">
                         Postal code:
-                        <input type="number" name="store_postal_code" required="required" id="store_postal_code">
+                        <input type="number" name="store_postal_code" required="required" id="store_postal_code" placeholder="Postal Code">
                     </label>
                     <label for="store_city">
                         City:
-                        <input type="text" name="store_city" required="required" id="store_city">
+                        <input type="text" name="store_city" required="required" id="store_city" placeholder="City">
                     </label>
                     <label for="store_country">
                         Country:
-                        <input type="text" name="store_country" required="required" id="store_country">
+                        <input type="text" name="store_country" required="required" id="store_country" placeholder="Country">
                     </label>
                 </section>
                 <section>
@@ -94,31 +94,31 @@
                     </label>
                     <label for="delivery_number">
                         Number:
-                        <input type="number" name="delivery_number" required="required" id="delivery_number">
+                        <input type="number" name="delivery_number" required="required" id="delivery_number" placeholder="Number">
                     </label>
                     <label for="delivery_postal_code">
                         Postal code:
-                        <input type="number" name="delivery_postal_code" required="required" id="delivery_postal_code">
+                        <input type="number" name="delivery_postal_code" required="required" id="delivery_postal_code" placeholder="Postal Code">
                     </label>
                     <label for="delivery_city">
                         City:
-                        <input type="text" name="delivery_city" required="required" id="delivery_city">
+                        <input type="text" name="delivery_city" required="required" id="delivery_city" placeholder="City">
                     </label>
                     <label for="delivery_country">
                         Country:
-                        <input type="text" name="delivery_country" required="required" id="delivery_country">
+                        <input type="text" name="delivery_country" required="required" id="delivery_country" placeholder="Country">
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-sticky-note"></span>Delivery Notes</h3>
                     <label for="delivery_notes">
-                        <textarea type="text" name="delivery_notes" id="delivery_notes"></textarea>
+                        <textarea type="text" name="delivery_notes" id="delivery_notes" placeholder="Delivery notes"></textarea>
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-notes-medical"></span>Medical Notes</h3>
                     <label for="medical_notes">
-                        <textarea type="text" name="medical_notes" id="medical_notes"></textarea>
+                        <textarea type="text" name="medical_notes" id="medical_notes" placeholder="Medical notes"></textarea>
                     </label>
                 </section>
                 <section>
