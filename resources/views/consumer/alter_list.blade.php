@@ -144,6 +144,7 @@
         </form>
     </main>
     <form id="new-item-form">
+        <mark></mark>
         <div>
             <h3>Add a new item</h3>
             <a class="fas fa-times-circle"></a>

@@ -25,17 +25,16 @@ function showDiv(e) {
 
 function addItem(g) {
     g.preventDefault()
-    closeDiv()
     let input = form.getElementsByTagName("input")
-    let unitInfo = document.querySelector("#new-item-form select").selectedOptions.item(0).text
     try {
         newItems.innerHTML += generateItemSelection(input.item(0),
             input.item(1),
             input.item(2),
-            unitInfo,
-            document.querySelector("#new-item-form textarea").value)
+            document.querySelector("#new-item-form select").selectedOptions.item(0),
+            document.querySelector("#new-item-form textarea"))
+        closeDiv()
     } catch (ex){
-        document.querySelector(".new-items-container mark").innerHTML = "A name is needed!"
+        document.querySelector("#new-item-form mark").innerHTML = "A name is needed!"
     }
 
 
@@ -52,6 +51,8 @@ function addItem(g) {
             }
             else{
                 res += existenceCheck(brand)
+                res += existenceCheck(weight)
+                res += existenceCheck(notes)
             }
         }
         return res
@@ -62,6 +63,7 @@ function addItem(g) {
             }
             else {
                 console.log(elem)
+                return `<p><span class="list-property">${elem.name.replace('item-', '')}:</span> ${elem.value}</p>`
             }
         }
     }
