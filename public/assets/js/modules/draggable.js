@@ -14,8 +14,16 @@ export function drop(f){
     console.log(f)
     console.log("Stop dragging object")
     f.preventDefault()
-    f.dataTransfer.dropEffect = 'move'
-    f.target.appendChild(dragElement)
+    this.dataTransfer = 'move'
+    if (f.target.parentElement.classList.contains('list-item')){
+        console.log("Issue noticed!")
+        console.log(f.target.parentElement.parentElement)
+        f.target.parentElement.parentElement.appendChild(dragElement)
+    }
+    else{
+        f.target.appendChild(dragElement)
+    }
+
 }
 
 export function resetDraggableObjects(objects){
