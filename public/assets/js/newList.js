@@ -46,7 +46,7 @@ function addItem(g) {
         }
         else{
             res += `<h2>${name.value}</h2>`
-            if(brand.value === "" && weight.value === "" && notes === ""){
+            if(brand.value === "" && weight.value === "" && notes.value === ""){
                 res += `<p>Just plain old ${name.value}</p></section>`
             }
             else{
@@ -62,8 +62,8 @@ function addItem(g) {
                 return ""
             }
             else {
-                console.log(elem)
-                return `<p><span class="list-property">${elem.name.replace('item-', '')}:</span> ${elem.value}</p>`
+                let property = elem.name.replace('item-', '')
+                return `<p><span class="list-property">${property}:</span> ${elem.value}</p>`
             }
         }
     }

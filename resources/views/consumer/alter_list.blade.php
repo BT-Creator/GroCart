@@ -24,10 +24,6 @@
                 <article>
                     <h1>Items</h1>
                     <div class="new-items-container">
-                        <section class="list-item">
-                            <h2>Milk</h2>
-                            <p>Just plain old milk.</p>
-                        </section>
                     </div>
                 </article>
                 <article>
@@ -161,8 +157,8 @@
 
         <label for="item-unit"></label>
         <select name="item-unit" id="item-unit">
-            <option value="kilogram">Kilogram</option>
-            <option value="litre">Litre</option>
+            <option value="kilogram">Kg</option>
+            <option value="litre">L</option>
         </select>
 
         <label for="item-notes">Special notes:</label>
