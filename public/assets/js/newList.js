@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 //Init
 document.addEventListener("DOMContentLoaded", scriptLoader);
@@ -8,6 +8,7 @@ const openButton = document.querySelector("#list-top-bar a")
 const form = document.querySelector("#new-item-form")
 const closeButton = document.querySelector("#new-item-form div a")
 const confirmButton = document.querySelector("#new-item-form input[type='submit']")
+const newItems = document.querySelector(".new-items-container")
 
 //ScriptLoader
 function scriptLoader() {
@@ -26,11 +27,17 @@ function addItem(g) {
     g.preventDefault()
     closeDiv()
     let input = form.getElementsByTagName("input")
-    let select = document.querySelector("#new-item-form select").selectedOptions.item(0).text
-    let notes = document.querySelector("#new-item-form textarea").value
-    console.log(select)
-    console.log(input)
-    console.log(notes)
+    let unitInfo = document.querySelector("#new-item-form select").selectedOptions.item(0).text
+    newItems.innerHTML += generateItemSelection(input.item(0).value,
+                                                input.item(1).value,
+                                                input.item(2).value,
+                                                unitInfo,
+                                                document.querySelector("#new-item-form textarea").value)
+
+    function generateItemSelection(name, brand, weight, unit,  notes){
+        console.log(name, brand, weight, unit, notes)
+        return null
+    }
 }
 
 function closeDiv() {
