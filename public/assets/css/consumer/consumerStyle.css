@@ -176,13 +176,17 @@ span[class="fas fa-arrow-right"]{
 }
 
 #new-item-form label{
-    display: inline;
+    display: block;
     margin-bottom: 0.5rem;
 }
 
 #new-item-form input, select{
-    display: inline-block;
+    display: block;
     margin-bottom: 0.5rem;
+}
+
+#new-item-form input[type="submit"]{
+    border-color: black;
 }
 /*                    PROFILE                    */
 .profile{

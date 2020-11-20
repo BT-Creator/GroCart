@@ -70,12 +70,12 @@
                     </label>
                     <label for="store_number">
                         Number:
-                        <input type="number" name="store_number" required="required" id="store_number"
+                        <input type="text" name="store_number" required="required" id="store_number"
                                placeholder="House number">
                     </label>
                     <label for="store_postal_code">
                         Postal code:
-                        <input type="number" name="store_postal_code" required="required" id="store_postal_code"
+                        <input type="text" name="store_postal_code" required="required" id="store_postal_code"
                                placeholder="Postal Code">
                     </label>
                     <label for="store_city">
@@ -97,12 +97,12 @@
                     </label>
                     <label for="delivery_number">
                         Number:
-                        <input type="number" name="delivery_number" required="required" id="delivery_number"
+                        <input type="text" name="delivery_number" required="required" id="delivery_number"
                                placeholder="Number">
                     </label>
                     <label for="delivery_postal_code">
                         Postal code:
-                        <input type="number" name="delivery_postal_code" required="required" id="delivery_postal_code"
+                        <input type="text" name="delivery_postal_code" required="required" id="delivery_postal_code"
                                placeholder="Postal Code">
                     </label>
                     <label for="delivery_city">
@@ -152,7 +152,7 @@
             </aside>
         </form>
     </main>
-    <form hidden="hidden" id="new-item-form">
+    <form id="new-item-form">
         <div>
             <h3>Add a new item</h3>
             <a class="fas fa-times-circle"></a>

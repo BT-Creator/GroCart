@@ -3,18 +3,30 @@
 //Init
 document.addEventListener("DOMContentLoaded", scriptLoader);
 
+//Element
+const openButton = document.querySelector("#list-top-bar a")
+const form = document.querySelector("#new-item-form")
+const closeButton = document.querySelector("#new-item-form div a")
+const confirmButton = document.querySelector("#new-item-form input[type='submit']")
+
 //ScriptLoader
 function scriptLoader() {
-    document.querySelector("#list-top-bar a").addEventListener("click", showDiv)
+    form.style.display = 'none'
+    openButton.addEventListener("click", showDiv)
+    confirmButton.addEventListener("click", addItem)
 }
 
 function showDiv(e) {
     e.preventDefault();
-    document.querySelector("#new-item-form").removeAttribute("hidden");
-    document.querySelector("#new-item-form div span").addEventListener("click", closeDiv);
+    form.style.display = 'block'
+    closeButton.addEventListener("click", closeDiv);
+}
 
-    function closeDiv(f) {
-        f.preventDefault();
-        document.querySelector("#new-item-form").setAttribute("hidden", "hidden");
-    }
+function addItem(g) {
+    g.preventDefault()
+    closeDiv()
+}
+
+function closeDiv() {
+    form.style.display = 'none';
 }
