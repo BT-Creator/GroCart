@@ -1,11 +1,15 @@
 "use strict"
-import {resetDraggableObjects as makeItemsDraggable} from "./modules/draggable.js";
+import {
+    resetDraggableObjects as makeItemsDraggable,
+    makeDropPoint as dropPoint, drop
+} from "./modules/draggable.js";
 import {generateItemSection as generateItem} from "./modules/factory.js";
 import {newItemButton as open,
         newItemForm as form,
         closeNewItemForm as close,
         confirmNewItemForm as confirm,
-        newItemsContainer as newItems} from "./modules/selectors.js";
+        newItemsContainer as newItems,
+        listItemsContainer as listItems} from "./modules/selectors.js";
 
 //Init
 document.addEventListener("DOMContentLoaded", scriptLoader);
@@ -16,6 +20,10 @@ function scriptLoader() {
     open.addEventListener("click", showDiv)
     confirm.addEventListener("click", addItem)
     makeItemsDraggable()
+    newItems.addEventListener('dragover', dropPoint)
+    newItems.addEventListener('drop', drop)
+    listItems.addEventListener('dragover', dropPoint)
+    listItems.addEventListener('drop', drop)
 }
 
 function showDiv(e) {
