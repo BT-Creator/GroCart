@@ -28,16 +28,6 @@
                             <h2>Milk</h2>
                             <p>Just plain old milk.</p>
                         </section>
-                        <section class="list-item">
-                            <h2>Tresors</h2>
-                            <p><span class="list-property">Weight:</span> 1 KG</p>
-                            <p><span class="list-property">Brand:</span> Kellogs</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>American</h2>
-                            <p><span class="list-property">Weight:</span> 0,200 gram</p>
-                            <p><span class="list-property">Special Notes:</span> With unions</p>
-                        </section>
                     </div>
                 </article>
                 <article>
@@ -63,6 +53,7 @@
             <aside id="list-bottom-bar" aria-label="list-bottom-bar">
                 <section>
                     <h3><span class="fas fa-store"></span>Store Address:</h3>
+                    <mark></mark>
                     <label for="store_address">
                         Street:
                         <input type="text" placeholder="street" name="store_address" required="required"
