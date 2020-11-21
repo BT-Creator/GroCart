@@ -23,3 +23,7 @@ Route::get('/user/lists', [ConsumerController::class, 'index']) -> name('consume
 Route::get('/user/list/1', [ConsumerController::class, 'openList']) -> name('open_list');
 
 Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
