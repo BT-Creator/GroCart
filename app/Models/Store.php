@@ -10,6 +10,6 @@ class Store extends Model
     use HasFactory;
     public $timestamps = false;
     public function order(){
-        return $this -> hasMany('app/Models/Order');
+        return $this -> belongsTo('app/Models/Order');
     }
 }

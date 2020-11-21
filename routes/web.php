@@ -24,6 +24,8 @@ Route::get('/user/list/1', [ConsumerController::class, 'openList']) -> name('ope
 
 Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
 
+Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
