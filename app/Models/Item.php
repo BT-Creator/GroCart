@@ -9,7 +9,7 @@ class Item extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function groceryList(){
-        return $this -> belongsTo('app/Models/GroceryList');
+    public function order(){
+        return $this -> belongsTo('app/Models/Order');
     }
 }

@@ -4,11 +4,13 @@ create database if not exists grocart;
 
 create table items
 (
-    id     int auto_increment primary key not null unique,
-    name   varchar(64)                    not null,
-    brand  varchar(64)                    null,
-    weight double                         null,
-    note   longtext                       null
+    id       int auto_increment primary key not null unique,
+    name     varchar(64)                    not null,
+    brand    varchar(64)                    null,
+    weight   double                         null,
+    note     longtext                       null,
+    order_id int                            not null,
+    foreign key (order_id) references orders (id)
 );
 
 create table stores
@@ -31,56 +33,50 @@ create table deliveries
     country      varchar(64)                    not null
 );
 
-create table grocerylists
-(
-    id      int primary key not null,
-    item_id int             not null,
-    foreign key (item_id) references items (id)
-);
-
 create table orders
 (
     id             int auto_increment primary key                                                        not null unique,
+    picking_method varchar(64)                                                                           null,
     delivery_notes longtext                                                                              null,
     medical_notes  longtext                                                                              null,
     status         enum ('draft', 'ordered', 'assigned_to_driver', 'picking', 'delivering', 'completed') not null,
     delivery_id    int                                                                                   not null,
     store_id       int                                                                                   not null,
-    grocerylist_id int                                                                                   not null,
     foreign key (delivery_id) references deliveries (id),
-    foreign key (store_id) references stores (id),
-    foreign key (grocerylist_id) references grocerylists (id)
+    foreign key (store_id) references stores (id)
 );
 
-insert into items(name, brand, weight, note)
-VALUES ('Milk', 'Apro', 1, 'Almond version'),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate'),
-       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free');
-insert into items(name, brand, note)
-values ('Beer', 'Stella', 'Six pack; bottles'),
-       ('Toilet Paper', 'Generic Company', '3 layers'),
-       ('Beer', 'Maes', 'Six pack; bottles'),
-       ('Beer', 'Cara', 'Six pack; bottles'),
-       ('Beer', 'Jupiler', 'Six pack; bottles'),
-       ('Beer', 'Desperados', 'Six pack; bottles'),
-       ('Shots', 'Flugel', 'Six pack; bottles');
-insert into items(name)
-values ('Milk'),
-       ('Bread'),
-       ('Beer'),
-       ('Tomatoes'),
-       ('apples'),
-       ('pears'),
-       ('citrus'),
-       ('Celery'),
-       ('Zucchini'),
-       ('Oranges');
-insert into items(name, weight)
-values ('Gura Bread', 0.300),
-       ('American Special', 0.250),
-       ('Salami', 0.150),
-       ('Minced Meat', 2),
-       ('Bradwurst', 0.300);
+insert into items(name, brand, weight, note, order_id)
+VALUES ('Milk', 'Apro', 1, 'Almond version', 1),
+       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 2),
+       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free', 3),
+       ('Chicken Breast', 'KFP', 0.600, 'Without hamstrings', 4);
+insert into items(name, brand, note, order_id)
+values ('Beer', 'Stella', 'Six pack; bottles', 1),
+       ('Toilet Paper', 'Generic Company', '3 layers', 1),
+       ('Beer', 'Maes', 'Six pack; bottles', 2),
+       ('Beer', 'Cara', 'Six pack; bottles', 2),
+       ('Beer', 'Jupiler', 'Six pack; bottles', 3),
+       ('Beer', 'Desperados', 'Six pack; bottles', 3),
+       ('Shots', 'Flugel', 'Six pack; bottles', 4),
+       ('Cola', 'Coca-Cola', 'Palet of cans', 4);
+insert into items(name, order_id)
+values ('Milk', 1),
+       ('Bread', 1),
+       ('Beer', 2),
+       ('Tomatoes', 2),
+       ('apples', 3),
+       ('pears', 3),
+       ('citrus', 4),
+       ('Celery', 4),
+       ('Zucchini', 1),
+       ('Oranges', 2);
+insert into items(name, weight, order_id)
+values ('Gura Bread', 0.300, 1),
+       ('American Special', 0.250, 1),
+       ('Salami', 0.150, 2),
+       ('Minced Meat', 2, 3),
+       ('Bradwurst', 0.300, 4);
 
 insert into stores(street, house_number, postal_code, city, country)
 VALUES ('Haag Pines', '1855', '82792-01', 'Port Muhammadhaven', 'Guernsey'),
