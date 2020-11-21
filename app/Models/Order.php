@@ -18,4 +18,7 @@ class Order extends Model
     public function delivery(){
         return $this ->hasOne('app/Models/Delivery');
     }
+    public function user(){
+        return $this -> belongsTo('app/Models/User');
+    }
 }
