@@ -10,6 +10,6 @@ class Item extends Model
     use HasFactory;
     public $timestamps = false;
     public function groceryList(){
-        return $this -> belongsTo('app/Models/Post');
+        return $this -> belongsTo('app/Models/GroceryList');
     }
 }

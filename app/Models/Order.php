@@ -13,6 +13,9 @@ class Order extends Model
         return $this -> hasOne('app\Models\GroceryList');
     }
     public function store(){
-        return $this ->belongsTo('app/Models/Store');
+        return $this ->hasOne('app/Models/Store');
+    }
+    public function delivery(){
+        return $this ->hasOne('app/Models/Delivery');
     }
 }
