@@ -18,11 +18,13 @@ Route::get('/', function () {return view('general.index');}) -> name("index_rout
 
 Route::get('/501', function () {return view('placeholder');}) -> name("501_route");
 
-Route::get('/user/lists', [ConsumerController::class, 'index']) -> name('consumer_lists');
+Route::get('/user/lists', [ConsumerController::class, 'index']) -> name('consumer_lists') -> middleware('auth');
 
-Route::get('/user/list/1', [ConsumerController::class, 'openList']) -> name('open_list');
+Route::get('/user/list/1', [ConsumerController::class, 'openList']) -> name('open_list') -> middleware('auth');
 
-Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile') -> middleware('auth');
+
+Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
