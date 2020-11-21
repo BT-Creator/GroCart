@@ -6,6 +6,7 @@ create table items
 (
     id     int auto_increment primary key not null unique,
     name   varchar(64)                    not null,
+    brand  varchar(64)                    null,
     weight double                         null,
     note   longtext                       null
 );
@@ -49,4 +50,13 @@ create table orders
     foreign key (delivery_id) references deliveries (id),
     foreign key (store_id) references stores (id),
     foreign key (grocerylist_id) references grocerylists (id)
-)
+);
+
+insert into items(name, brand, weight, note)
+VALUES ('Milk', 'Apro', 1, 'Almond version'), ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate'), ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free');
+insert into items(name, brand, note)
+values ('Beer', 'Stella', 'Six pack; bottles'), ('Toilet Paper', 'Generic Company', '3 layers'), ('Beer', 'Maes', 'Six pack; bottles'), ('Beer', 'Cara', 'Six pack; bottles'), ('Beer', 'Jupiler', 'Six pack; bottles'), ('Beer', 'Desperados', 'Six pack; bottles'), ('Shots', 'Flugel', 'Six pack; bottles');
+insert into items(name)
+values ('Milk'), ('Bread'), ('Beer'), ('Tomatoes'), ('apples'), ('pears'), ('citrus'), ('Celery'), ('Zucchini'), ('Oranges');
+insert into items(name, weight)
+values ('Gura Bread', 0.300), ('American Special', 0.250), ('Salami', 0.150), ('Minced Meat', 2), ('Bradwurst', 0.300);
