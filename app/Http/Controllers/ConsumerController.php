@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ConsumerController extends Controller
 {
     function index($id){
-        $lists = Order::all();
+        $lists = Order::all() -> where('status', 'draft');
+        echo $id;
         dd($lists);
         return view('consumer.lists');
     }
