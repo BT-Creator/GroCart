@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ConsumerController extends Controller
 {
     function index($id){
-        $lists = Order::all() -> where('status', 'draft')
-                            -> where('user_id', $id);
-        dd($lists);
+        $orders = DB::table('orders')
+                    -> join('items', 'orders.id', '=', 'items.order_id')
+                    -> select('orders.id', 'items.*')
+                    -> where('orders.user_id', '=', $id)
+                    -> where('orders.status', '=', 'draft')
+                    -> get();
+        dd($orders);
         return view('consumer.lists');
     }
 
