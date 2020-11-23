@@ -5,30 +5,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
 class ConsumerController extends Controller
 {
     function index($id)
     {
-        $db_order_ids = DB::table('orders')
+        $data = DB::table('orders')
             ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id')
+            ->select('orders.id', 'items.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.status', '=', 'draft')
-            ->groupBy('orders.id')
+            ->orderByDesc('orders.id')
             ->get();
-        $db_order_ids->each(function ($value, $key){
-            $id = collect($value) -> get('id');
-            $data = DB::table('orders')
-                ->join('items', 'orders.id', '=', 'items.order_id')
-                ->select('orders.id', 'items.*')
-                ->where('orders.user_id', '=', $id)
-                ->where('orders.status', '=', 'draft')
-                ->orderByDesc('orders.id')
-                ->get();
-            dd($data, $id, $key);
-        });
-        dd($db_order_ids);
+        $first_item = collect($data->shift());
+        $first_item_id = $first_item->get('order_id');
+        $res = array(
+            $first_item_id => array($first_item->toArray())
+        );
+        foreach ($data as $item) {
+            $object = collect($item);
+            foreach ($res as $key => $value) {
+                if ($key === $object -> get('order_id')) {
+                    array_push($value, $object->toArray());
+                    $res[$key] = $value;
+                }
+                else{
+                    $res[$object -> get('order_id')] = array($object -> toArray());
+                }
+            }
+        }
+        dd($res);
         return view('consumer.lists');
     }
 
