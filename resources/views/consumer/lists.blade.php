@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+    @dd($orders)
     <!-- This is just a mock for making the CSS -->
     <main id="grocery-lists">
         @for($i = 0; $i < 5; $i++)

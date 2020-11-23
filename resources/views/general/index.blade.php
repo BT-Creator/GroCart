@@ -24,7 +24,7 @@
                 counting.
                 Our UI and Lists system makes creating and keeping track of orders simple and helps you focus on the
                 important things in life.</p>
-            <div><span class="fas fa-key"></span><a href="{{route("consumer_lists", 1)}}">Consumer</a></div>
+            <div><span class="fas fa-key"></span><a href="{{route("consumer_lists", [1])}}">Consumer</a></div>
         </article>
         <img src="{{asset("images/store_owner.jpg")}}" alt="Photo of cashier stand">
         <article>

@@ -33,8 +33,7 @@ class ConsumerController extends Controller
                 }
             }
         }
-        dd($res);
-        return view('consumer.lists');
+        return view('consumer.lists', ['orders' => $res]);
     }
 
     function openList()

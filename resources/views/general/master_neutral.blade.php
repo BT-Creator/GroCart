@@ -21,7 +21,7 @@
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
         <a class="button" href="{{route("index_route")}}"><span class="fas fa-question"></span>About us</a>
-        <a class="button" href="{{route("consumer_lists", 1)}}"><span class="fas fa-key"></span>Consumer</a>
+        <a class="button" href="{{route("consumer_lists", [1])}}"><span class="fas fa-key"></span>Consumer</a>
         <a class="button" href="{{route("501_route")}}"><span class="fas fa-key"></span>Driver</a>
         <a class="button" href="{{route("501_route")}}"><span class="fas fa-key"></span>Store Owner</a>
     </nav>
