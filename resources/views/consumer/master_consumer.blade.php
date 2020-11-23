@@ -20,6 +20,7 @@
 <header>
     <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
     <nav>
+        <a class="button" href="{{route('create_list', 1)}}"><span class="fas fa-plus-circle"></span>New Item</a>
         <a class="button" href="{{route('consumer_lists', 1)}}"><span class="fas fa-list"></span>Lists</a>
         <a class="button" href="{{route('501_route')}}"><span class="fas fa-history"></span>History</a>
         <a class="button" href="{{route('consumer_profile')}}"><span class="fas fa-user"></span>Profile</a>

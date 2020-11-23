@@ -35,6 +35,9 @@ class ConsumerController extends Controller
         return view('consumer.lists', ['orders' => $res]);
     }
 
+    function createList($id){
+        return view('consumer.alter_list');
+    }
     function openList()
     {
         return view('consumer.alter_list');

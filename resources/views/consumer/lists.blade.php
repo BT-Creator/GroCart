@@ -5,7 +5,6 @@
 @endsection
 
 @section('main')
-    <!-- This is just a mock for making the CSS -->
     <main id="grocery-lists">
         @foreach($orders as $order)
             <article class="grocery-lists">
