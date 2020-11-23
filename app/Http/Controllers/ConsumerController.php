@@ -24,12 +24,11 @@ class ConsumerController extends Controller
         foreach ($data as $item) {
             $object = collect($item);
             foreach ($res as $key => $value) {
-                if ($key === $object -> get('order_id')) {
+                if ($key === $object->get('order_id')) {
                     array_push($value, $object->toArray());
                     $res[$key] = $value;
-                }
-                else{
-                    $res[$object -> get('order_id')] = array($object -> toArray());
+                } else {
+                    $res[$object->get('order_id')] = array($object->toArray());
                 }
             }
         }
