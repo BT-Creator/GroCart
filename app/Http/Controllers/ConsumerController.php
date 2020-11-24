@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 class ConsumerController extends Controller
 {
     function index($id)
@@ -35,10 +35,12 @@ class ConsumerController extends Controller
         return view('consumer.lists', ['orders' => $res]);
     }
 
-    function createList($id){
+    function openNewList()
+    {
         return view('consumer.alter_list');
     }
-    function openList()
+
+    function openExistingList()
     {
         return view('consumer.alter_list');
     }
