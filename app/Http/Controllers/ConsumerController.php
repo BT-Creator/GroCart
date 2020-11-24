@@ -32,14 +32,15 @@ class ConsumerController extends Controller
 
     function openProfile($id)
     {
-        $completed_orders = DB::table('orders')
+        $data = DB::table('orders')
             ->join('items', 'orders.id', '=', 'items.order_id')
             ->select('orders.id', 'items.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.status', '=', 'completed')
             ->orderByDesc('orders.id')
             ->get();
-        return view('consumer.profile');
+        $completed_orders = $this->formatByOrders($data);
+        return view('consumer.profile', ['order_history' => $completed_orders]);
     }
 
     function formatByOrders($data){

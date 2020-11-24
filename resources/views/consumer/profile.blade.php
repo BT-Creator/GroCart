@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+    @dd($order_history)
     <main class="profile">
         <article>
             <h1>Welcome back, <span>User</span></h1>
