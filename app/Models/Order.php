@@ -9,16 +9,16 @@ class Order extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function item(){
-        return $this -> hasMany('app\Models\Item');
+    public function items(){
+        return $this -> hasMany(Item::class);
     }
-    public function store(){
-        return $this ->hasOne('app/Models/Store');
+    public function stores(){
+        return $this ->hasOne(Store::class);
     }
-    public function delivery(){
-        return $this ->hasOne('app/Models/Delivery');
+    public function deliveries(){
+        return $this ->hasOne(Delivery::class);
     }
-    public function user(){
-        return $this -> belongsTo('app/Models/User');
+    public function users(){
+        return $this -> belongsTo(User::class);
     }
 }

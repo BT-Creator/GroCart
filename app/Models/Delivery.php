@@ -9,7 +9,7 @@ class Delivery extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function order(){
+    public function orders(){
         return $this -> belongsTo('app/Models/Order');
     }
 }

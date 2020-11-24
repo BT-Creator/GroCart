@@ -7,26 +7,27 @@
 @section('main')
     <!-- This is just a mock for making the CSS -->
     <main id="grocery-lists">
-        @for($i = 0; $i < 5; $i++)
+        @foreach($orders as $order)
             <article class="grocery-lists">
-                <h1>List Name</h1>
+                <h1>List</h1>
                 <div class="grocery-list-container">
-                    @for($j = 0; $j < 2; $j++)
-                        <section class="list-item">
-                            <h2>Milk</h2>
-                            <p>Just plain old milk.</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>Tresors</h2>
-                            <p><span>Weight:</span> 1 KG</p>
-                            <p><span>Brand:</span> Kellogs</p>
-                        </section>
-                        <section class="list-item">
-                            <h2>American</h2>
-                            <p><span class="list-property">Weight:</span> 0,200 KG</p>
-                            <p><span class="list-property">Special Notes:</span> With unions</p>
-                        </section>
-                    @endfor
+                    @foreach($order as $item)
+                    <section class="list-item">
+                        <h2>{{$item['name']}}</h2>
+                        @isset($item['brand'])
+                            <p><span class="list-property">Brand:</span>{{$item['brand']}}</p>
+                        @endisset
+                        @isset($item['weight'])
+                            <p><span class="list-property">Weight:</span>{{$item['weight']}}</p>
+                        @endisset
+                        @isset($item['note'])
+                            <p><span class="list-property">Note:</span>{{$item['note']}}</p>
+                        @endisset
+                        @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
+                            <p>Just plain old {{$item['name']}}</p>
+                        @endisset
+                    </section>
+                    @endforeach
                 </div>
                 <div class="grocery-list-options">
                     <a class="button" href="{{route('open_list')}}"><span class="fas fa-edit"></span>Edit</a>
@@ -34,7 +35,7 @@
                     <a class="button" href="{{route('501_route')}}">Order<span class="fas fa-arrow-right"></span></a>
                 </div>
             </article>
-        @endfor
+        @endforeach
     </main>
 
 @endsection
