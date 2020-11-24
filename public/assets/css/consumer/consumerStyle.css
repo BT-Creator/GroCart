@@ -34,6 +34,7 @@ main .grocery-lists{
     border-radius: 10px;
     padding: 1vw;
     margin-bottom: 1vw;
+    height: max-content;
 }
 
 main .grocery-lists h1{
