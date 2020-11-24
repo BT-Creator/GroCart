@@ -22,7 +22,7 @@ Route::get('/501', function () {return view('placeholder');}) -> name("501_route
 Route::get('/{id}/lists', [ConsumerController::class, 'index']) -> name('consumer_lists');
 Route::get('/user/list/1', [ConsumerController::class, 'openExistingList']) -> name('open_list');
 Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> name('create_list');
-Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+Route::get('/{id}/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
 
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
 
