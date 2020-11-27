@@ -20,7 +20,7 @@ class ConsumerApiController extends Controller
                 -> select('*')
                 -> where('items.order_id', '=', $order -> get('id'))
                 -> get();
-            return [$order -> get('id') => $amount];
+            return ["id" => $order -> get('id'), "amount" => $amount -> count(), "items" => $amount];
         });
         return $orders -> toJson();
     }
