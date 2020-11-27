@@ -32,7 +32,6 @@
             </div>
             <div class="graph" id="time-graph">
                 <h2>Line Graph for time Taken for order to delivery per order</h2>
-
             </div>
         </article>
         <aside>
@@ -67,6 +66,6 @@
 @section('js')
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script type="module" src="{{asset('assets/js/config/config.js')}}"></script>
-    <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/d3.js')}}"></script>
     <script type="module" src="{{asset("assets/js/graphs.js")}}"></script>
 @endsection
