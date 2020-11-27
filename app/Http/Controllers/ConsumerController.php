@@ -40,7 +40,17 @@ class ConsumerController extends Controller
             ->orderByDesc('orders.id')
             ->get();
         $completed_orders = $this->formatByOrders($data);
-        return view('consumer.profile', ['completed_orders' => $completed_orders]);
+        $data = DB::table('orders')
+            ->join('items', 'orders.id', '=', 'items.order_id')
+            ->select('orders.id', 'items.*')
+            ->where('orders.user_id', '=', $id)
+            ->where('orders.status', '!=', 'completed')
+            ->where('orders.status', '!=', 'draft')
+            ->orderByDesc('orders.id')
+            ->get();
+        $ongoing_orders = $this->formatByOrders($data);
+        dd($ongoing_orders);
+        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders]);
     }
 
     function formatByOrders($data){
