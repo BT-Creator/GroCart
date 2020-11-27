@@ -40,7 +40,7 @@ class ConsumerController extends Controller
             ->orderByDesc('orders.id')
             ->get();
         $completed_orders = $this->formatByOrders($data);
-        return view('consumer.profile', ['order_history' => $completed_orders]);
+        return view('consumer.profile', ['completed_orders' => $completed_orders]);
     }
 
     function formatByOrders($data){
