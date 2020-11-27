@@ -27,14 +27,13 @@
             </section>
         </article>
         <article>
-            <div class="graph">
+            <div class="graph" id="item-graph">
                 <h2>Amount of items per list</h2>
+
             </div>
-            <div class="graph">
-                <h2>Line graph of goods received per order</h2>
-            </div>
-            <div class="graph">
+            <div class="graph" id="time-graph">
                 <h2>Line Graph for time Taken for order to delivery per order</h2>
+
             </div>
         </article>
         <aside>
@@ -67,6 +66,8 @@
 @endsection
 
 @section('js')
+    <script type="module" src="{{asset('assets/js/config/config.js')}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="{{asset("assets/js/orderGraph.js")}}"></script>
+    <script type="module" src="{{asset("assets/js/graphs.js")}}"></script>
 @endsection
