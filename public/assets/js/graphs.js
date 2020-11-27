@@ -17,7 +17,16 @@ function itemGraph() {
             let amount = object.amount
             return {"id": id, "amount":amount}
         })
-        console.log(dataXY)
+        addSVG(itemContainer)
+        const yScale = d3.scaleLinear().domain([0, getMax(data)])
+        const xScale = d3.scaleLinear().domain([0, data.length])
+        console.log(yScale, xScale)
     })
-    addSVG(itemContainer)
+
+    function getMax(data) {
+        let amounts = data.map((object) => {
+            return object.amount
+        });
+        return amounts.reduce((a,b) => {return Math.max(a,b)})
+    }
 }
