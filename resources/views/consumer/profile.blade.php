@@ -37,15 +37,15 @@
         </article>
         <aside>
             <h2>Ongoing orders</h2>
-            @for($i = 0; $i < 5; $i++)
+            @foreach($ongoing_orders as $id => $order)
                 <section class="profile-order">
                     <span class="fas fa-shopping-basket"></span>
                     <div>
-                        <h3>Order on 26/09/20</h3>
-                        <p>Total Items: <span>26</span></p>
+                        <h3>Order {{$id}}</h3>
+                        <p>Total Items: <span>{{count($order)}}</span></p>
                     </div>
                 </section>
-            @endfor
+            @endforeach
         </aside>
         <aside>
             <h2>Completed orders</h2>

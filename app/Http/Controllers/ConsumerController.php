@@ -49,7 +49,6 @@ class ConsumerController extends Controller
             ->orderByDesc('orders.id')
             ->get();
         $ongoing_orders = $this->formatByOrders($data);
-        dd($ongoing_orders);
         return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders]);
     }
 
