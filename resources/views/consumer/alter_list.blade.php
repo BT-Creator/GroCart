@@ -31,6 +31,23 @@
                 <article>
                     <h1>Items in List</h1>
                     <div class="list-items-container">
+                        @foreach($items[$details['id']] as $item)
+                            <section class="list-item" draggable="true">
+                                <h2>{{$item['name']}}</h2>
+                                @isset($item['brand'])
+                                    <p><span class="list-property">Brand:</span>{{$item['brand']}}</p>
+                                @endisset
+                                @isset($item['weight'])
+                                    <p><span class="list-property">Weight:</span>{{$item['weight']}}</p>
+                                @endisset
+                                @isset($item['note'])
+                                    <p><span class="list-property">Note:</span>{{$item['note']}}</p>
+                                @endisset
+                                @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
+                                    <p>Just plain old {{$item['name']}}</p>
+                                @endisset
+                            </section>
+                        @endforeach
                     </div>
                 </article>
             </div>

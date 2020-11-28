@@ -107,7 +107,7 @@ span[class="fas fa-arrow-right"]{
 
 #list-main .new-items-container, #list-main .list-items-container{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     background-color: var(--bg-color);
     border-radius: 10px;
