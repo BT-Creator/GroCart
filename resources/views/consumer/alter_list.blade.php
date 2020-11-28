@@ -12,12 +12,12 @@
                 <label for="picking_method">
                     <span class="fas fa-hand-holding"></span>
                     Picking Method:
-                    @isset($details)
-                        <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
+                    @isset($details['picking_method'])
+                        <input type="text" placeholder="Picking method" name="picking_method"
                                id="picking_method"
                                value="{{$details['picking_method']}}" maxlength="64">
                     @else
-                        <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
+                        <input type="text" placeholder="Picking method" name="picking_method"
                                id="picking_method" maxlength="64">
                     @endisset
                 </label>
@@ -92,42 +92,77 @@
                     <h3><span class="fas fa-home"></span>Delivery address:</h3>
                     <label for="delivery_street">
                         Street:
-                        <input type="text" placeholder="Street" name="delivery_address" required="required"
-                               id="delivery_street">
+                        @isset($details['delivery_street'])
+                            <input type="text" placeholder="Street" name="delivery_address" required="required"
+                                   id="delivery_street" value="{{$details['delivery_street']}}" maxlength="64">
+                        @else
+                            <input type="text" placeholder="Street" name="delivery_address" required="required"
+                                   id="delivery_street" maxlength="64">
+                        @endisset
                     </label>
                     <label for="delivery_number">
                         Number:
-                        <input type="text" name="delivery_number" required="required" id="delivery_number"
-                               placeholder="Number">
+                        @isset($details['delivery_house_number'])
+                            <input type="text" name="delivery_number" required="required" id="delivery_number"
+                                   placeholder="Number" value="{{$details['delivery_house_number']}}" maxlength="6">
+                        @else
+                            <input type="text" name="delivery_number" required="required" id="delivery_number"
+                                   placeholder="Number" maxlength="6">
+                        @endisset
                     </label>
                     <label for="delivery_postal_code">
                         Postal code:
-                        <input type="text" name="delivery_postal_code" required="required" id="delivery_postal_code"
-                               placeholder="Postal Code">
+                        @isset($details['delivery_postal_code'])
+                            <input type="text" name="delivery_postal_code" required="required" id="delivery_postal_code"
+                                   placeholder="Postal Code" value="{{$details['delivery_postal_code']}}" maxlength="8">
+                        @else
+                            <input type="text" name="delivery_postal_code" required="required" id="delivery_postal_code"
+                                   placeholder="Postal Code" maxlength="8">
+                        @endisset
                     </label>
                     <label for="delivery_city">
                         City:
-                        <input type="text" name="delivery_city" required="required" id="delivery_city"
-                               placeholder="City">
+                        @isset($details['delivery_city'])
+                            <input type="text" name="delivery_city" required="required" id="delivery_city"
+                                   placeholder="City" value="{{$details['delivery_city']}}" maxlength="64">
+                        @else
+                            <input type="text" name="delivery_city" required="required" id="delivery_city"
+                                   placeholder="City" maxlength="64">
+                        @endisset
                     </label>
                     <label for="delivery_country">
                         Country:
-                        <input type="text" name="delivery_country" required="required" id="delivery_country"
-                               placeholder="Country">
+                        @isset($details['delivery_country'])
+                            <input type="text" name="delivery_country" required="required" id="delivery_country"
+                                   placeholder="Country" value="{{$details['delivery_country']}}" maxlength="64">
+                        @else
+                            <input type="text" name="delivery_country" required="required" id="delivery_country"
+                                   placeholder="Country" maxlength="64">
+                        @endisset
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-sticky-note"></span>Delivery Notes</h3>
                     <label for="delivery_notes">
-                        <textarea name="delivery_notes" id="delivery_notes"
-                                  placeholder="Delivery notes"></textarea>
+                        @isset($details['delivery_notes'])
+                            <textarea name="delivery_notes" id="delivery_notes"
+                                      placeholder="Delivery notes">{{$details['delivery_notes']}}</textarea>
+                        @else
+                            <textarea name="delivery_notes" id="delivery_notes"
+                                      placeholder="Delivery notes"></textarea>
+                        @endisset
                     </label>
                 </section>
                 <section>
                     <h3><span class="fas fa-notes-medical"></span>Medical Notes</h3>
                     <label for="medical_notes">
-                        <textarea name="medical_notes" id="medical_notes"
-                                  placeholder="Medical notes"></textarea>
+                        @isset($details['medical_notes'])
+                            <textarea name="medical_notes" id="medical_notes"
+                                      placeholder="Medical notes">{{$details['medical_notes']}}</textarea>
+                        @else
+                            <textarea name="medical_notes" id="medical_notes"
+                                      placeholder="Medical notes"></textarea>
+                        @endisset
                     </label>
                 </section>
                 <section>
