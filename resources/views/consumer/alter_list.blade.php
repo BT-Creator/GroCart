@@ -37,11 +37,15 @@
             <aside id="list-bottom-bar" aria-label="list-bottom-bar">
                 <section>
                     <h3><span class="fas fa-store"></span>Store Address:</h3>
-                    <mark></mark>
-                    <label for="store_address">
+                    <label for="store_street">
                         Street:
-                        <input type="text" placeholder="street" name="store_address" required="required"
-                               id="store_address">
+                        @isset($details)
+                            <input type="text" placeholder="street" name="store_address" required="required"
+                                   id="store_street" value="{{$details['store_street']}}">
+                        @else
+                            <input type="text" placeholder="street" name="store_address" required="required"
+                                   id="store_address">
+                        @endisset
                     </label>
                     <label for="store_number">
                         Number:
@@ -65,10 +69,10 @@
                 </section>
                 <section>
                     <h3><span class="fas fa-home"></span>Delivery address:</h3>
-                    <label for="delivery_address">
+                    <label for="delivery_street">
                         Street:
                         <input type="text" placeholder="Street" name="delivery_address" required="required"
-                               id="delivery_address">
+                               id="delivery_street">
                     </label>
                     <label for="delivery_number">
                         Number:

@@ -16,7 +16,7 @@ class ConsumerController extends Controller
             ->where('orders.status', '=', 'draft')
             ->orderByDesc('orders.id')
             ->get();
-        $res = $this -> formatByOrders($data);
+        $res = $this->formatByOrders($data);
         return view('consumer.lists', ['orders' => $res]);
     }
 
@@ -33,13 +33,20 @@ class ConsumerController extends Controller
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();
-        $items = $this -> formatByOrders($items);
+        $items = $this->formatByOrders($items);
         $order_details = DB::table('orders')
-            -> select('*')
+            ->join('deliveries', 'orders.delivery_id', '=', 'deliveries.id')
+            ->join('stores', 'orders.store_id', '=', 'stores.id')
+            ->select('orders.id', 'orders.picking_method', 'orders.delivery_notes', 'orders.medical_notes',
+                'deliveries.street as delivery_street', 'deliveries.house_number as delivery_house_number',
+                'deliveries.postal_code as delivery_postal_code', 'deliveries.city as delivery_city',
+                'deliveries.country as delivery_country',
+                'stores.street as store_street', 'stores.house_number as store_house_number',
+                'stores.postal_code as store_postal_code', 'stores.city as stores_city', 'stores.country as store_country')
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();
-        $order_details = collect($order_details -> get(0));
+        $order_details = collect($order_details->get(0));
         return view('consumer.alter_list', ['details' => $order_details, 'items' => $items]);
     }
 
@@ -48,7 +55,8 @@ class ConsumerController extends Controller
         return view('consumer.profile');
     }
 
-    function formatByOrders($data){
+    function formatByOrders($data)
+    {
         $first_item = collect($data->shift());
         $first_item_id = $first_item->get('order_id');
         $res = array(
