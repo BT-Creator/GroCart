@@ -29,7 +29,7 @@ class ConsumerController extends Controller
     {
         $items = DB::table('orders')
             ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id', 'items.*')
+            ->select('items.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();

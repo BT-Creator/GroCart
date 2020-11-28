@@ -55,7 +55,7 @@
                                     <label for="item:{{$item['id']}}" hidden="hidden">
                                         <input type="checkbox" checked="checked" hidden="hidden"
                                                id="item:{{$item['id']}}" name="item:{{$item['id']}}"
-                                               value="{{collect($item)->toJson()}}">
+                                               value="{{collect($item)-> toJson()}}">
                                     </label>
                                 </section>
                             @endforeach

@@ -1,5 +1,8 @@
 "use strict";
+let mockId = 0
+
 export function generateItemSection(name, brand, weight, unit, notes){
+    mockId--
     let res = `<section class="list-item" draggable="true">`
     if(name.value === ""){
         throw new Error("No name was given")
@@ -7,12 +10,20 @@ export function generateItemSection(name, brand, weight, unit, notes){
     else{
         res += `<h2>${name.value}</h2>`
         if(brand.value === "" && weight.value === "" && notes.value === ""){
-            res += `<p>Just plain old ${name.value}</p></section>`
+            let json = {"id":mockId, "name":name, "brand":null, "weight":null, "note":null}
+            res += `<p>Just plain old ${name.value}</p>
+                    <label for="item:${mockId}" hidden="hidden">
+                        <input type="checkbox" hidden="hidden"
+                        id="item:${mockId}" name="item:${mockId}" value="${json}">
+                    </label>
+            </section>`
         }
         else{
             res += existenceCheck(brand)
             res += existenceCheck(weight)
             res += existenceCheck(notes)
+            res += addDataContainer(brand, weight, notes)
+            res += `</section>`
         }
     }
     return res
@@ -30,4 +41,17 @@ export function generateItemSection(name, brand, weight, unit, notes){
             return `<p><span class="list-property">${property}:</span> ${elem.value}</p>`
         }
     }
+}
+
+function addDataContainer(brand, weight, notes) {
+    let dc = `<label for="item:${mockId}" hidden="hidden">`
+    let json = `{"id":${mockId},`;
+    (brand.value === "") ? json += `"brand":null,` : json += `"brand":"${brand.value}",`;
+    (weight.value === "") ? json += `"weight":null,` : json += `"weight":${parseFloat(weight.value)},`;
+    (notes.value === "") ? json += `"notes:null` : json += `"notes":"${notes.value}"`;
+    json += `}`
+    json = JSON.parse(json)
+    dc += `<input type="checkbox" hidden="hidden" id="item:${mockId}" name="item:${mockId}" value=${JSON.stringify(json)}>
+            </label>`;
+    return dc
 }

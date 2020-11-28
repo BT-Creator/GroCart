@@ -23,8 +23,7 @@ function scriptLoader() {
     form.style.display = 'none'
     open.addEventListener("click", showDiv)
     confirm.addEventListener("click", addItem)
-    makeItemsDraggable()
-
+    makeItemsDraggable(".list-item")
 }
 
 function showDiv(e) {
