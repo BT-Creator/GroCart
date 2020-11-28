@@ -15,10 +15,10 @@
                     @isset($details)
                         <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
                                id="picking_method"
-                               value="{{$details['picking_method']}}">
+                               value="{{$details['picking_method']}}" maxlength="64">
                     @else
                         <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
-                               id="picking_method">
+                               id="picking_method" maxlength="64">
                     @endisset
                 </label>
             </aside>
@@ -39,32 +39,53 @@
                     <h3><span class="fas fa-store"></span>Store Address:</h3>
                     <label for="store_street">
                         Street:
-                        @isset($details)
+                        @isset($details['store_street'])
                             <input type="text" placeholder="street" name="store_address" required="required"
-                                   id="store_street" value="{{$details['store_street']}}">
+                                   id="store_street" value="{{$details['store_street']}}" maxlength="64">
                         @else
                             <input type="text" placeholder="street" name="store_address" required="required"
-                                   id="store_address">
+                                   id="store_address" maxlength="64">
                         @endisset
                     </label>
                     <label for="store_number">
                         Number:
-                        <input type="text" name="store_number" required="required" id="store_number"
-                               placeholder="House number">
+                        @isset($details['store_house_number'])
+                            <input type="text" name="store_number" required="required" id="store_number"
+                                   placeholder="House number" value="{{$details['store_house_number']}}" maxlength="6">
+                        @else
+                            <input type="text" name="store_number" required="required" id="store_number"
+                                   placeholder="House number" maxlength="6">
+                        @endisset
                     </label>
                     <label for="store_postal_code">
                         Postal code:
-                        <input type="text" name="store_postal_code" required="required" id="store_postal_code"
-                               placeholder="Postal Code">
+                        @isset($details['store_postal_code'])
+                            <input type="text" name="store_postal_code" required="required" id="store_postal_code"
+                                   placeholder="Postal Code" value="{{$details['store_postal_code']}}" maxlength="8">
+                        @else
+                            <input type="text" name="store_postal_code" required="required" id="store_postal_code"
+                                   placeholder="Postal Code" maxlength="8">
+                        @endisset
                     </label>
                     <label for="store_city">
                         City:
-                        <input type="text" name="store_city" required="required" id="store_city" placeholder="City">
+                        @isset($details['store_city'])
+                            <input type="text" name="store_city" required="required" id="store_city" placeholder="City"
+                                   value="{{$details['store_city']}}" maxlength="64">
+                        @else
+                            <input type="text" name="store_city" required="required" id="store_city" placeholder="City"
+                                   maxlength="64">
+                        @endisset
                     </label>
                     <label for="store_country">
                         Country:
-                        <input type="text" name="store_country" required="required" id="store_country"
-                               placeholder="Country">
+                        @isset($details['store_country'])
+                            <input type="text" name="store_country" required="required" id="store_country"
+                                   placeholder="Country" maxlength="64" value="{{$details['store_country']}}">
+                        @else
+                            <input type="text" name="store_country" required="required" id="store_country"
+                                   placeholder="Country" maxlength="64">
+                        @endisset
                     </label>
                 </section>
                 <section>

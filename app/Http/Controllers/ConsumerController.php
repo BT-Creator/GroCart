@@ -42,7 +42,7 @@ class ConsumerController extends Controller
                 'deliveries.postal_code as delivery_postal_code', 'deliveries.city as delivery_city',
                 'deliveries.country as delivery_country',
                 'stores.street as store_street', 'stores.house_number as store_house_number',
-                'stores.postal_code as store_postal_code', 'stores.city as stores_city', 'stores.country as store_country')
+                'stores.postal_code as store_postal_code', 'stores.city as store_city', 'stores.country as store_country')
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();
