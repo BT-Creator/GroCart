@@ -27,13 +27,20 @@ class ConsumerController extends Controller
 
     function openExistingList($id, $list)
     {
-        $data = DB::table('orders')
+        $items = DB::table('orders')
             ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.*', 'items.name', 'items.brand', 'items.weight', 'items.note')
+            ->select('orders.id', 'items.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();
-        dd($data);
+        $items = $this -> formatByOrders($items);
+        $order_details = DB::table('orders')
+            -> select('*')
+            ->where('orders.user_id', '=', $id)
+            ->where('orders.id', '=', $list)
+            ->get();
+        $order_details = collect($order_details -> get(0));
+        dd($items, $order_details);
         return view('consumer.alter_list');
     }
 
