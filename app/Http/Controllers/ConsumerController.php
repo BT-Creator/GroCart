@@ -51,7 +51,15 @@ class ConsumerController extends Controller
     }
 
     function updateExistingList(Request $request, $id, $list) {
-        dd($request, $id, $list);
+        $input = $request -> post();
+        $items = [];
+        foreach ($input as $key => $value){
+            if(str_contains($key, 'item')){
+                $item = collect(json_decode($value));
+                $items[$item -> get('id')] = $item -> toArray();
+            }
+        }
+        dd($request -> post(), $id, $list, $items);
     }
 
     function addList(Request $request, $id) {
