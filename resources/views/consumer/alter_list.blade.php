@@ -9,14 +9,17 @@
         <form>
             <aside id="list-top-bar" aria-label="list-top-bar">
                 <a><span class="fas fa-plus-circle"></span>New Item</a>
-                <label for="list_name">
-                    <span class="fas fa-signature"></span>List Name:
-                    <input type="text" name="list_name" id="list_name">
-                </label>
                 <label for="picking_method">
                     <span class="fas fa-hand-holding"></span>
                     Picking Method:
-                    <input type="text" placeholder="As cheap as possible" name="picking_method" id="picking_method">
+                    @isset($details)
+                        <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
+                               id="picking_method"
+                               value="{{$details['picking_method']}}">
+                    @else
+                        <input type="text" placeholder="How do you want your items to be chosen?" name="picking_method"
+                               id="picking_method">
+                    @endisset
                 </label>
             </aside>
             <div id="list-main">

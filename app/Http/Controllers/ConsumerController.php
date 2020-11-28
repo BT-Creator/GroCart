@@ -40,8 +40,7 @@ class ConsumerController extends Controller
             ->where('orders.id', '=', $list)
             ->get();
         $order_details = collect($order_details -> get(0));
-        dd($items, $order_details);
-        return view('consumer.alter_list');
+        return view('consumer.alter_list', ['details' => $order_details, 'items' => $items]);
     }
 
     function openProfile()
