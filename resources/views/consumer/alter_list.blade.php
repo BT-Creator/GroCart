@@ -6,7 +6,12 @@
 
 @section('main')
     <main>
-        <form>
+        @isset($details, $items)
+        <form method="post" action="{{route('update_list', [1, $details['id']])}}">
+        @else
+        <form method="post" action="{{route('add_list', [1])}}">
+        @endisset
+            @csrf
             <aside id="list-top-bar" aria-label="list-top-bar">
                 <a><span class="fas fa-plus-circle"></span>New Item</a>
                 <label for="picking_method">
@@ -31,23 +36,25 @@
                 <article>
                     <h1>Items in List</h1>
                     <div class="list-items-container">
-                        @foreach($items[$details['id']] as $item)
-                            <section class="list-item" draggable="true">
-                                <h2>{{$item['name']}}</h2>
-                                @isset($item['brand'])
-                                    <p><span class="list-property">Brand:</span>{{$item['brand']}}</p>
-                                @endisset
-                                @isset($item['weight'])
-                                    <p><span class="list-property">Weight:</span>{{$item['weight']}}</p>
-                                @endisset
-                                @isset($item['note'])
-                                    <p><span class="list-property">Note:</span>{{$item['note']}}</p>
-                                @endisset
-                                @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
-                                    <p>Just plain old {{$item['name']}}</p>
-                                @endisset
-                            </section>
-                        @endforeach
+                        @isset($details, $items)
+                            @foreach($items[$details['id']] as $item)
+                                <section class="list-item" draggable="true">
+                                    <h2>{{$item['name']}}</h2>
+                                    @isset($item['brand'])
+                                        <p><span class="list-property">Brand:</span>{{$item['brand']}}</p>
+                                    @endisset
+                                    @isset($item['weight'])
+                                        <p><span class="list-property">Weight:</span>{{$item['weight']}}</p>
+                                    @endisset
+                                    @isset($item['note'])
+                                        <p><span class="list-property">Note:</span>{{$item['note']}}</p>
+                                    @endisset
+                                    @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
+                                        <p>Just plain old {{$item['name']}}</p>
+                                    @endisset
+                                </section>
+                            @endforeach
+                        @endisset
                     </div>
                 </article>
             </div>
@@ -57,11 +64,11 @@
                     <label for="store_street">
                         Street:
                         @isset($details['store_street'])
-                            <input type="text" placeholder="street" name="store_address" required="required"
+                            <input type="text" placeholder="street" name="store_street" required="required"
                                    id="store_street" value="{{$details['store_street']}}" maxlength="64">
                         @else
-                            <input type="text" placeholder="street" name="store_address" required="required"
-                                   id="store_address" maxlength="64">
+                            <input type="text" placeholder="street" name="store_street" required="required"
+                                   id="store_street" maxlength="64">
                         @endisset
                     </label>
                     <label for="store_number">
@@ -189,17 +196,18 @@
                                 class="fas fa-save"></span>Save List
                         </button>
                     </label>
-                    <label for="list_order">
-                        <button type="button" name="list_order" id="list_order" class="button"><span
-                                class="fas fa-money-bill-wave-alt"></span>Order List
-                        </button>
-                    </label>
-                    <label for="list_delete">
-                        <button type="reset" name="list_delete" id="list_delete" class="button"><span
-                                class="fas fa-trash"></span>Delete
-                            List
-                        </button>
-                    </label>
+                    @isset($details, $items)
+                        <label for="list_order">
+                            <button type="button" name="list_order" id="list_order" class="button"><span
+                                    class="fas fa-money-bill-wave-alt"></span>Order List
+                            </button>
+                        </label>
+                        <label for="list_delete">
+                            <button type="reset" name="list_delete" id="list_delete" class="button"><span
+                                    class="fas fa-trash"></span>Delete List
+                            </button>
+                        </label>
+                    @endisset
                 </section>
             </aside>
         </form>

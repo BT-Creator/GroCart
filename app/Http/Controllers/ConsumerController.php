@@ -50,6 +50,14 @@ class ConsumerController extends Controller
         return view('consumer.alter_list', ['details' => $order_details, 'items' => $items]);
     }
 
+    function updateExistingList(Request $request, $id, $list) {
+        dd($request, $id, $list);
+    }
+
+    function addList(Request $request, $id) {
+        dd($request, $id);
+    }
+
     function openProfile()
     {
         return view('consumer.profile');

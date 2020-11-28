@@ -16,14 +16,15 @@ document.addEventListener("DOMContentLoaded", scriptLoader);
 
 //ScriptLoader
 function scriptLoader() {
-    form.style.display = 'none'
-    open.addEventListener("click", showDiv)
-    confirm.addEventListener("click", addItem)
-    makeItemsDraggable()
     newItems.addEventListener('dragover', dropPoint)
     newItems.addEventListener('drop', drop)
     listItems.addEventListener('dragover', dropPoint)
     listItems.addEventListener('drop', drop)
+    form.style.display = 'none'
+    open.addEventListener("click", showDiv)
+    confirm.addEventListener("click", addItem)
+    makeItemsDraggable()
+
 }
 
 function showDiv(e) {

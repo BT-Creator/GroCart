@@ -194,6 +194,11 @@ span[class="fas fa-arrow-right"]{
 .new-items-container, .list-items-container{
     min-height: 5rem;
 }
+
+#list-order{
+    color:black;
+    padding: 1vmax;
+}
 /*                    PROFILE                    */
 .profile{
     display: flex;

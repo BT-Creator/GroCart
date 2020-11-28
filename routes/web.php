@@ -24,9 +24,11 @@ Route::get('/{id}/list', [ConsumerController::class, 'index']) -> name('consumer
 Route::get('/{id}/list/{list}', [ConsumerController::class, 'openExistingList']) -> name('open_list');
 Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> name('create_list');
 Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
+Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
 
+/* AUTH (NOT IMPLEMENTED) */
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
