@@ -40,8 +40,9 @@ class ConsumerController extends Controller
         return view('consumer.alter_list');
     }
 
-    function openExistingList()
+    function openExistingList($id, $list)
     {
+        dd($id, $list);
         return view('consumer.alter_list');
     }
 
