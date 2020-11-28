@@ -28,13 +28,13 @@
                 </label>
             </aside>
             <div id="list-main">
-                <article>
-                    <h1>Items</h1>
+                <fieldset>
+                    <legend>Items</legend>
                     <div class="new-items-container">
                     </div>
-                </article>
-                <article>
-                    <h1>Items in List</h1>
+                </fieldset>
+                <fieldset>
+                    <legend>Items in List</legend>
                     <div class="list-items-container">
                         @isset($details, $items)
                             @foreach($items[$details['id']] as $item)
@@ -52,11 +52,16 @@
                                     @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
                                         <p>Just plain old {{$item['name']}}</p>
                                     @endisset
+                                    <label for="item:{{$item['id']}}" hidden="hidden">
+                                        <input type="checkbox" checked="checked" hidden="hidden"
+                                               id="item:{{$item['id']}}" name="item:{{$item['id']}}"
+                                               value="{{collect($item)->toJson()}}">
+                                    </label>
                                 </section>
                             @endforeach
                         @endisset
                     </div>
-                </article>
+                </fieldset>
             </div>
             <aside id="list-bottom-bar" aria-label="list-bottom-bar">
                 <section>
