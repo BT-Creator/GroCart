@@ -16,6 +16,33 @@ class ConsumerController extends Controller
             ->where('orders.status', '=', 'draft')
             ->orderByDesc('orders.id')
             ->get();
+        $res = $this -> formatByOrders($data);
+        return view('consumer.lists', ['orders' => $res]);
+    }
+
+    function openNewList()
+    {
+        return view('consumer.alter_list');
+    }
+
+    function openExistingList($id, $list)
+    {
+        $data = DB::table('orders')
+            ->join('items', 'orders.id', '=', 'items.order_id')
+            ->select('orders.*', 'items.name', 'items.brand', 'items.weight', 'items.note')
+            ->where('orders.user_id', '=', $id)
+            ->where('orders.id', '=', $list)
+            ->get();
+        dd($data);
+        return view('consumer.alter_list');
+    }
+
+    function openProfile()
+    {
+        return view('consumer.profile');
+    }
+
+    function formatByOrders($data){
         $first_item = collect($data->shift());
         $first_item_id = $first_item->get('order_id');
         $res = array(
@@ -32,22 +59,6 @@ class ConsumerController extends Controller
                 }
             }
         }
-        return view('consumer.lists', ['orders' => $res]);
-    }
-
-    function openNewList()
-    {
-        return view('consumer.alter_list');
-    }
-
-    function openExistingList($id, $list)
-    {
-        dd($id, $list);
-        return view('consumer.alter_list');
-    }
-
-    function openProfile()
-    {
-        return view('consumer.profile');
+        return $res;
     }
 }
