@@ -5,7 +5,6 @@ include 'Utilities/Validation.php';
 include 'Utilities/Query.php';
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 class ConsumerController extends Controller
 {
@@ -102,7 +101,7 @@ class ConsumerController extends Controller
         $store_id = $this -> insertStore($store_address);
         $order_id = $this -> insertOrder($details, $delivery_id, $store_id, $id);
         $this -> insertItems($items, $order_id);
-        return $this->openExistingList($id, $order_id);
+        return redirect()->route('open_list', [$id, $order_id]);
     }
 
     private function insertDelivery($delivery_address)
