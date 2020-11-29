@@ -3,8 +3,8 @@ namespace App\Http\Controllers;
 include 'Utilities/Format.php';
 include 'Utilities/Validation.php';
 include 'Utilities/Query.php';
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 class ConsumerController extends Controller
 {
     function index($id)
@@ -33,10 +33,11 @@ class ConsumerController extends Controller
         $details = validateDetails($request);
         $store_address = validateStoreAddress($request);
         $delivery_address = validateDeliveryAddress($request);
-        $ref = collect(formatByItems(collect(DB::table('items')
-                                        -> where('order_id', '=', $list)
-                                        -> get()))) -> forget('id') -> toArray();
+        $ref = formatByItems(getItemsFromList($id, $list));
         $this -> updateItemTable($items, $ref);
+        $this -> updateDeliveryTable($delivery_address, $id, $list);
+        $this -> updateStoreTable($store_address, $id, $list);
+        $this -> updateOrderTable($details, $id, $list);
         dd($items, $ref, $details, $store_address, $delivery_address);
     }
 
@@ -54,13 +55,34 @@ class ConsumerController extends Controller
     private function updateItemTable($items, $ref){
         foreach (array_keys($ref) as $key){
             if(!key_exists($key, $items)){
-                echo "Deleting item $key";
+                echo "Deleting item $key \n";
             }
         }
         foreach ($items as $key => $value){
             if($key < 0){
-                echo "Detecting new item; inserting...";
+                echo "Detecting new item; inserting... \n";
             }
         }
+    }
+
+    private function updateDeliveryTable(array $delivery_address, int $userId, int $listId)
+    {
+        $details = getOrderDetails($userId, $listId);
+        $delivery_id = collect($details[0]) -> get('delivery_id');
+        echo "Updating delivery with id $delivery_id for list $listId of user $userId \n";
+    }
+
+    private function updateStoreTable(array $store_address, $userId, $listId)
+    {
+        $details = getOrderDetails($userId, $listId);
+        $store_id = collect($details[0]) -> get('store_id');
+        echo "Updating store with id $store_id for list $listId of user $userId \n";
+    }
+
+    private function updateOrderTable(array $order_details, $userId, $listId)
+    {
+        $details = getOrderDetails($userId, $listId);
+        echo "Updating order with id $listId of user $userId \n";
+        dd($details);
     }
 }
