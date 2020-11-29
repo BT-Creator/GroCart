@@ -59,8 +59,10 @@ class ConsumerController extends Controller
                 $items[$item -> get('id')] = $item -> toArray();
             }
         }
-        dd($request -> post(), $id, $list, $items);
+        $entries = $this -> formatByItems(collect(DB::table('items') -> where('order_id', '=', $list) -> get()));
+        dd($items, $entries);
     }
+
 
     function addList(Request $request, $id) {
         dd($request, $id);
@@ -88,6 +90,15 @@ class ConsumerController extends Controller
                     $res[$object->get('order_id')] = array($object->toArray());
                 }
             }
+        }
+        return $res;
+    }
+
+    function formatByItems($data){
+        $res = [];
+        foreach ($data as $key => $entry){
+            $entry = collect($entry);
+            $res[$entry -> get('id')] = $entry;
         }
         return $res;
     }

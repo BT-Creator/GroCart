@@ -12,15 +12,15 @@
                 <div class="grocery-list-container" >
                     @foreach($order as $item)
                     <section class="list-item">
-                        <h2>{{$item['name']}}</h2>
+                        <h2>{{str_replace('_', ' ', $item['name'])}}</h2>
                         @isset($item['brand'])
-                            <p><span class="list-property">Brand:</span>{{$item['brand']}}</p>
+                            <p><span class="list-property">Brand:</span>{{str_replace('_', ' ', $item['brand'])}}</p>
                         @endisset
                         @isset($item['weight'])
                             <p><span class="list-property">Weight:</span>{{$item['weight']}}</p>
                         @endisset
                         @isset($item['note'])
-                            <p><span class="list-property">Note:</span>{{$item['note']}}</p>
+                            <p><span class="list-property">Note:</span>{{str_replace('_', ' ', $item['note'])}}</p>
                         @endisset
                         @if(!isset($item['brand']) && !isset($item['weight']) && !isset($item['note']))
                             <p>Just plain old {{$item['name']}}</p>

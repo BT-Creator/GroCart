@@ -45,10 +45,10 @@ export function generateItemSection(name, brand, weight, unit, notes){
 
 function addDataContainer(brand, weight, notes) {
     let dc = `<label for="item:${mockId}" hidden="hidden">`
-    let json = `{"id":${mockId},`;
-    (brand.value === "") ? json += `"brand":null,` : json += `"brand":"${brand.value}",`;
+    let json = `{"id":${mockId}, "name":${name.value.split(' ').join("_")}`;
+    (brand.value === "") ? json += `"brand":null,` : json += `"brand":"${brand.value.split(' ').join("_")}",`;
     (weight.value === "") ? json += `"weight":null,` : json += `"weight":${parseFloat(weight.value)},`;
-    (notes.value === "") ? json += `"notes:null` : json += `"notes":"${notes.value}"`;
+    (notes.value === "") ? json += `"notes":null` : json += `"notes":"${notes.value.split(' ').join("_")}"`;
     json += `}`
     json = JSON.parse(json)
     dc += `<input type="checkbox" hidden="hidden" id="item:${mockId}" name="item:${mockId}" value=${JSON.stringify(json)}>
