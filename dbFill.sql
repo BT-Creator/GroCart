@@ -1,8 +1,14 @@
 create database if not exists grocart;
 
 /*Before importing the database, do not forget to run migrating if the Authentication module is implemented.*/
-
 use grocart;
+
+set foreign_key_checks = 0;
+drop table if exists deliveries;
+drop table if exists stores;
+drop table if exists orders;
+drop table if exists items;
+set foreign_key_checks = 1;
 
 create table if not exists items
 (
@@ -47,13 +53,13 @@ create table if not exists orders
 );
 
 ALTER TABLE items
-    ADD foreign key if not exists (order_id) references orders (id);
+    ADD foreign key (order_id) references orders (id);
 
 ALTER TABLE orders
-    ADD foreign key if not exists (delivery_id) references deliveries (id);
+    ADD foreign key (delivery_id) references deliveries (id);
 
 ALTER TABLE orders
-    ADD foreign key if not exists (store_id) references stores (id);
+    ADD foreign key (store_id) references stores (id);
 
 insert into stores(street, house_number, postal_code, city, country)
 VALUES ('Haag Pines', '1855', '82792-01', 'Port Muhammadhaven', 'Guernsey'),
@@ -112,63 +118,63 @@ VALUES ('Cheapest', 'draft', 7, 1, 1),
        ('Cheapest', 'completed', 7, 1, 1);
 
 insert into items(name, brand, weight, note, order_id)
-VALUES ('Milk', 'Apro', 1, 'Almond version', 1),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 2),
-       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free', 3),
-       ('Chicken Breast', 'KFP', 0.600, 'Without hamstrings', 4),
-       ('Milk', 'Apro', 1, 'Almond version', 5),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 6),
-       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free', 7),
-       ('Chicken Breast', 'KFP', 0.600, 'Without hamstrings', 8),
-       ('Milk', 'Apro', 1, 'Almond version', 9),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 10),
-       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free', 11),
-       ('Chicken Breast', 'KFP', 0.600, 'Without hamstrings', 12),
-       ('Milk', 'Apro', 1, 'Almond version', 13),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 14),
-       ('Tiger bread', 'Vereyecken', 0.300, 'Gluten-free', 15),
-       ('Chicken Breast', 'KFP', 0.600, 'Without hamstrings', 16),
-       ('Milk', 'Apro', 1, 'Almond version', 17),
-       ('Chocolate Chip Cookies', 'Traders Joe', 0.200, 'Dark Chocolate', 18);
+VALUES ('Milk', 'Apro', 1, 'Almond_version', 1),
+       ('Chocolate_Chip_Cookies', 'Traders_Joe', 0.200, 'Dark_Chocolate', 2),
+       ('Tiger_bread', 'Vereyecken', 0.300, 'Gluten-free', 3),
+       ('Chicken_Breast', 'KFP', 0.600, 'Without hamstrings', 4),
+       ('Milk', 'Apro', 1, 'Almond_version', 5),
+       ('Chocolate_Chip_Cookies', 'Traders_Joe', 0.200, 'Dark_Chocolate', 6),
+       ('Tiger_bread', 'Vereyecken', 0.300, 'Gluten-free', 7),
+       ('Chicken_Breast', 'KFP', 0.600, 'Without_hamstrings', 8),
+       ('Milk', 'Apro', 1, 'Almond_version', 9),
+       ('Chocolate_Chip_Cookies', 'Traders_Joe', 0.200, 'Dark_Chocolate', 10),
+       ('Tiger_bread', 'Vereyecken', 0.300, 'Gluten-free', 11),
+       ('Chicken_Breast', 'KFP', 0.600, 'Without_hamstrings', 12),
+       ('Milk', 'Apro', 1, 'Almond_version', 13),
+       ('Chocolate_Chip_Cookies', 'Traders_Joe', 0.200, 'Dark_Chocolate', 14),
+       ('Tiger_bread', 'Vereyecken', 0.300, 'Gluten-free', 15),
+       ('Chicken_Breast', 'KFP', 0.600, 'Without_hamstrings', 16),
+       ('Milk', 'Apro', 1, 'Almond_version', 17),
+       ('Chocolate_Chip_Cookies', 'Traders_Joe', 0.200, 'Dark_Chocolate', 18);
 
 
 insert into items(name, brand, note, order_id)
-values ('Beer', 'Stella', 'Six pack; bottles', 1),
-       ('Toilet Paper', 'Generic Company', '3 layers', 1),
-       ('Beer', 'Maes', 'Six pack; bottles', 2),
-       ('Beer', 'Cara', 'Six pack; bottles', 2),
-       ('Beer', 'Jupiler', 'Six pack; bottles', 3),
-       ('Beer', 'Desperados', 'Six pack; bottles', 3),
-       ('Shots', 'Flugel', 'Six pack; bottles', 4),
-       ('Cola', 'Coca-Cola', 'Palet of cans', 4),
-       ('Beer', 'Stella', 'Six pack; bottles', 5),
-       ('Toilet Paper', 'Generic Company', '3 layers', 5),
-       ('Beer', 'Maes', 'Six pack; bottles', 6),
-       ('Beer', 'Cara', 'Six pack; bottles', 6),
-       ('Beer', 'Jupiler', 'Six pack; bottles', 7),
-       ('Beer', 'Desperados', 'Six pack; bottles', 7),
-       ('Shots', 'Flugel', 'Six pack; bottles', 8),
-       ('Cola', 'Coca-Cola', 'Palet of cans', 8),
-       ('Beer', 'Stella', 'Six pack; bottles', 9),
-       ('Toilet Paper', 'Generic Company', '3 layers', 9),
-       ('Beer', 'Maes', 'Six pack; bottles', 10),
-       ('Beer', 'Cara', 'Six pack; bottles', 10),
-       ('Beer', 'Jupiler', 'Six pack; bottles', 11),
-       ('Beer', 'Desperados', 'Six pack; bottles', 11),
-       ('Shots', 'Flugel', 'Six pack; bottles', 12),
-       ('Cola', 'Coca-Cola', 'Palet of cans', 12),
-       ('Beer', 'Stella', 'Six pack; bottles', 13),
-       ('Toilet Paper', 'Generic Company', '3 layers', 13),
-       ('Beer', 'Maes', 'Six pack; bottles', 14),
-       ('Beer', 'Cara', 'Six pack; bottles', 14),
-       ('Beer', 'Jupiler', 'Six pack; bottles', 15),
-       ('Beer', 'Desperados', 'Six pack; bottles', 15),
-       ('Shots', 'Flugel', 'Six pack; bottles', 16),
-       ('Cola', 'Coca-Cola', 'Palet of cans', 16),
-       ('Beer', 'Stella', 'Six pack; bottles', 17),
-       ('Toilet Paper', 'Generic Company', '3 layers', 17),
-       ('Beer', 'Maes', 'Six pack; bottles', 18),
-       ('Beer', 'Cara', 'Six pack; bottles', 18);
+values ('Beer', 'Stella', 'Six pack;_bottles', 1),
+       ('Toilet_Paper', 'Generic_Company', '3_layers', 1),
+       ('Beer', 'Maes', 'Six pack;_bottles', 2),
+       ('Beer', 'Cara', 'Six pack;_bottles', 2),
+       ('Beer', 'Jupiler', 'Six pack;_bottles', 3),
+       ('Beer', 'Desperados', 'Six pack;_bottles', 3),
+       ('Shots', 'Flugel', 'Six pack;_bottles', 4),
+       ('Cola', 'Coca-Cola', 'Palet_of_cans', 4),
+       ('Beer', 'Stella', 'Six pack;_bottles', 5),
+       ('Toilet_Paper', 'Generic_Company', '3_layers', 5),
+       ('Beer', 'Maes', 'Six pack;_bottles', 6),
+       ('Beer', 'Cara', 'Six pack;_bottles', 6),
+       ('Beer', 'Jupiler', 'Six pack;_bottles', 7),
+       ('Beer', 'Desperados', 'Six pack;_bottles', 7),
+       ('Shots', 'Flugel', 'Six pack;_bottles', 8),
+       ('Cola', 'Coca-Cola', 'Palet_of_cans', 8),
+       ('Beer', 'Stella', 'Six pack;_bottles', 9),
+       ('Toilet_Paper', 'Generic_Company', '3_layers', 9),
+       ('Beer', 'Maes', 'Six pack;_bottles', 10),
+       ('Beer', 'Cara', 'Six pack;_bottles', 10),
+       ('Beer', 'Jupiler', 'Six pack;_bottles', 11),
+       ('Beer', 'Desperados', 'Six pack;_bottles', 11),
+       ('Shots', 'Flugel', 'Six pack;_bottles', 12),
+       ('Cola', 'Coca-Cola', 'Palet_of_cans', 12),
+       ('Beer', 'Stella', 'Six pack;_bottles', 13),
+       ('Toilet Paper', 'Generic_Company', '3_layers', 13),
+       ('Beer', 'Maes', 'Six pack;_bottles', 14),
+       ('Beer', 'Cara', 'Six pack;_bottles', 14),
+       ('Beer', 'Jupiler', 'Six pack;_bottles', 15),
+       ('Beer', 'Desperados', 'Six pack;_bottles', 15),
+       ('Shots', 'Flugel', 'Six pack;_bottles', 16),
+       ('Cola', 'Coca-Cola', 'Palet_of_cans', 16),
+       ('Beer', 'Stella', 'Six pack;_bottles', 17),
+       ('Toilet_Paper', 'Generic_Company', '3_layers', 17),
+       ('Beer', 'Maes', 'Six pack;_bottles', 18),
+       ('Beer', 'Cara', 'Six pack;_bottles', 18);
 
 insert into items(name, order_id)
 values ('Milk', 1),
@@ -213,23 +219,23 @@ values ('Milk', 1),
        ('Oranges', 18);
 
 insert into items(name, weight, order_id)
-values ('Gura Bread', 0.300, 1),
-       ('American Special', 0.250, 1),
+values ('Gura_Bread', 0.300, 1),
+       ('American_Special', 0.250, 1),
        ('Salami', 0.150, 2),
-       ('Minced Meat', 2, 3),
+       ('Minced_Meat', 2, 3),
        ('Bradwurst', 0.300, 4),
-       ('Gura Bread', 0.300, 5),
-       ('American Special', 0.250, 6),
+       ('Gura_Bread', 0.300, 5),
+       ('American_Special', 0.250, 6),
        ('Salami', 0.150, 7),
-       ('Minced Meat', 2, 8),
+       ('Minced_Meat', 2, 8),
        ('Bradwurst', 0.300, 9),
-       ('Gura Bread', 0.300, 10),
-       ('American Special', 0.250, 11),
+       ('Gura_Bread', 0.300, 10),
+       ('American_Special', 0.250, 11),
        ('Salami', 0.150, 12),
-       ('Minced Meat', 2, 13),
+       ('Minced_Meat', 2, 13),
        ('Bradwurst', 0.300, 14),
-       ('Gura Bread', 0.300, 15),
-       ('American Special', 0.250, 16),
+       ('Gura_Bread', 0.300, 15),
+       ('American_Special', 0.250, 16),
        ('Salami', 0.150, 17),
-       ('Minced Meat', 2, 18),
+       ('Minced_Meat', 2, 18),
        ('Bradwurst', 0.300, 18);

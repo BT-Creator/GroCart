@@ -99,7 +99,7 @@ span[class="fas fa-arrow-right"]{
     margin-bottom: 2em;
 }
 
-#list-main h1{
+#list-main legend, #list-main h1{
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 0.5em;
@@ -107,7 +107,7 @@ span[class="fas fa-arrow-right"]{
 
 #list-main .new-items-container, #list-main .list-items-container{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     background-color: var(--bg-color);
     border-radius: 10px;
@@ -193,6 +193,11 @@ span[class="fas fa-arrow-right"]{
 
 .new-items-container, .list-items-container{
     min-height: 5rem;
+}
+
+#list-order{
+    color:black;
+    padding: 1vmax;
 }
 /*                    PROFILE                    */
 .profile{
