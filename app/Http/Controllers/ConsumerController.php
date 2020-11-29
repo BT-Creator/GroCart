@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+include 'Utilities/Format.php';
+include 'Utilities/Validation.php';
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +19,7 @@ class ConsumerController extends Controller
             ->where('orders.status', '=', 'draft')
             ->orderByDesc('orders.id')
             ->get();
-        $res = $this->formatByOrders($data);
+        $res = formatByOrders($data);
         return view('consumer.lists', ['orders' => $res]);
     }
 
@@ -34,7 +36,7 @@ class ConsumerController extends Controller
             ->where('orders.user_id', '=', $id)
             ->where('orders.id', '=', $list)
             ->get();
-        $items = $this->formatByOrders($items);
+        $items = formatByOrders($items);
         $order_details = DB::table('orders')
             ->join('deliveries', 'orders.delivery_id', '=', 'deliveries.id')
             ->join('stores', 'orders.store_id', '=', 'stores.id')
@@ -52,28 +54,16 @@ class ConsumerController extends Controller
     }
 
     function updateExistingList(Request $request, $id, $list) {
-        $item_attributes = [];
-        foreach ($request -> post() as $key => $value){
-            if(str_contains($key, 'item:')){
-                array_push($item_attributes, $key);
-            }
-        }
-        $items = [];
-        $validated_items = $this -> validateItems($request, $item_attributes);
-        foreach ($validated_items as $item_json){
-            $item = collect(json_decode($item_json)) -> toArray();
-            if(!array_key_exists('order_id', $item)){
-                $item['order_id'] = intval($list);
-            }
-            $items[$item['id']] = $item;
-
-        }
-        $details = $this -> validateList($request);
-        $ref = $this -> formatByItems(collect(DB::table('items')
+        $validated_items = validateItems($request);
+        $items = jsonCollectionToItemArray($validated_items, $list);
+        $details = validateDetails($request);
+        $store_address = validateStoreAddress($request);
+        $delivery_address = validateDeliveryAddress($request);
+        $ref = formatByItems(collect(DB::table('items')
                                         -> where('order_id', '=', $list)
                                         -> get()));
         $this -> updateItemDB($items, $ref);
-        dd($items, $ref, $details);
+        dd($items, $details, $store_address, $delivery_address);
     }
 
 
@@ -84,37 +74,6 @@ class ConsumerController extends Controller
     function openProfile()
     {
         return view('consumer.profile');
-    }
-
-    //Format Functions
-    function formatByOrders($data)
-    {
-        $first_item = collect($data->shift());
-        $first_item_id = $first_item->get('order_id');
-        $res = array(
-            $first_item_id => array($first_item->toArray())
-        );
-        foreach ($data as $item) {
-            $object = collect($item);
-            foreach ($res as $key => $value) {
-                if ($key === $object->get('order_id')) {
-                    array_push($value, $object->toArray());
-                    $res[$key] = $value;
-                } else {
-                    $res[$object->get('order_id')] = array($object->toArray());
-                }
-            }
-        }
-        return $res;
-    }
-
-    function formatByItems($data){
-        $res = [];
-        foreach ($data as $key => $entry){
-            $entry = collect($entry);
-            $res[$entry -> get('id')] = collect($entry) -> toArray();
-        }
-        return $res;
     }
 
     //DB Sub-functions
@@ -129,32 +88,5 @@ class ConsumerController extends Controller
                 echo "Detecting new item; inserting...";
             }
         }
-    }
-
-    //Validation
-    private function validateList(Request $request){
-        $rules = [
-            "picking_method" => "nullable|string|max:64",
-            "store_street" => "string|max:64",
-            "store_number" => "string|max:6",
-            "store_postal_code" => "string|max:8",
-            "store_city" => "string|max:64",
-            "store_country" => "string|max:64",
-            "delivery_street" => "string|max:64",
-            "delivery_number" => "string|max:6",
-            "delivery_postal_code" => "string|max:8",
-            "delivery_city" => "string|max:64",
-            "delivery_country" => "string|max:64",
-            "delivery_notes" => "string|nullable",
-        ];
-        return $request -> validate($rules);
-    }
-
-    private function validateItems(Request $request, array $item_attributes){
-        $rules = [];
-        foreach ($item_attributes as $attribute){
-            $rules[$attribute] = "json";
-        }
-        return $request -> validate($rules);
     }
 }
