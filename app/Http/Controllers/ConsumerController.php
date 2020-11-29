@@ -62,7 +62,11 @@ class ConsumerController extends Controller
         $validated_items = $this -> validateItems($request, $item_attributes);
         foreach ($validated_items as $item_json){
             $item = collect(json_decode($item_json)) -> toArray();
+            if(!array_key_exists('order_id', $item)){
+                $item['order_id'] = intval($list);
+            }
             $items[$item['id']] = $item;
+
         }
         $details = $this -> validateList($request);
         $ref = $this -> formatByItems(collect(DB::table('items')
@@ -118,6 +122,11 @@ class ConsumerController extends Controller
         foreach (array_keys($ref) as $key){
             if(!key_exists($key, $items)){
                 echo "Deleting item $key";
+            }
+        }
+        foreach ($items as $key => $value){
+            if($key < 0){
+                echo "Detecting new item; inserting...";
             }
         }
     }
