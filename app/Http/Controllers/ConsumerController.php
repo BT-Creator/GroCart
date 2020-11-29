@@ -58,22 +58,13 @@ class ConsumerController extends Controller
                 array_push($item_attributes, $key);
             }
         }
-        $details = $this -> validateList($request);
-        $items = $this -> validateItems($request, $item_attributes);
-        dd($details,$items);
-        dd($details, $request, $items);
-        foreach ($input as $key => $value){
-            if(str_contains($key, 'item')){
-                $item = collect(json_decode($value));
-                if(!$item -> contains('order_id')){
-                    $item -> put('order_id', $list);
-                }
-                $items[$item -> get('id')] = $item -> forget('id') -> toArray();
-            }
-            else{
-                $details[$key] = $value;
-            }
+        $items = [];
+        $validated_items = $this -> validateItems($request, $item_attributes);
+        foreach ($validated_items as $item_json){
+            $item = collect(json_decode($item_json)) -> toArray();
+            $items[$item['id']] = $item;
         }
+        $details = $this -> validateList($request);
         $ref = $this -> formatByItems(collect(DB::table('items')
                                         -> where('order_id', '=', $list)
                                         -> get()));
