@@ -1,7 +1,7 @@
 "use strict";
 let mockId = 0
 
-export function generateItemSection(name, brand, weight, unit, notes){
+export function generateItemSection(name, brand, weight, unit, note){
     mockId--
     let res = `<section class="list-item" draggable="true">`
     if(name.value === ""){
@@ -9,7 +9,7 @@ export function generateItemSection(name, brand, weight, unit, notes){
     }
     else{
         res += `<h2>${name.value}</h2>`
-        if(brand.value === "" && weight.value === "" && notes.value === ""){
+        if(brand.value === "" && weight.value === "" && note.value === ""){
             let json = JSON.parse(`{"id":${mockId}, "name":"${name.value.split(' ').join("_")}", "brand":null, "weight":null, "note":null}`)
             res += `<p>Just plain old ${name.value}</p>
                     <label for="item:${mockId}" hidden="hidden">
@@ -21,8 +21,8 @@ export function generateItemSection(name, brand, weight, unit, notes){
         else{
             res += existenceCheck(brand)
             res += existenceCheck(weight)
-            res += existenceCheck(notes)
-            res += addDataContainer(name, brand, weight, notes)
+            res += existenceCheck(note)
+            res += addDataContainer(name, brand, weight, note)
             res += `</section>`
         }
     }
@@ -48,7 +48,7 @@ function addDataContainer(name, brand, weight, notes) {
     let json = `{"id":${mockId},"name":"${name.value.split(' ').join("_")}",`;
     (brand.value === "") ? json += `"brand":null,` : json += `"brand":"${brand.value.split(' ').join("_")}",`;
     (weight.value === "") ? json += `"weight":null,` : json += `"weight":${parseFloat(weight.value)},`;
-    (notes.value === "") ? json += `"notes":null` : json += `"notes":"${notes.value.split(' ').join("_")}"`;
+    (notes.value === "") ? json += `"note":null` : json += `"note":"${notes.value.split(' ').join("_")}"`;
     json += `}`
     json = JSON.parse(json)
     dc += `<input type="checkbox" hidden="hidden" id="item:${mockId}" name="item:${mockId}" value=${JSON.stringify(json)}>

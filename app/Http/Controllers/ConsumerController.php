@@ -5,6 +5,7 @@ include 'Utilities/Validation.php';
 include 'Utilities/Query.php';
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 class ConsumerController extends Controller
 {
@@ -31,9 +32,9 @@ class ConsumerController extends Controller
     function updateExistingList(Request $request, $id, $list) {
         $validated_items = validateItems($request);
         $items = jsonCollectionToItemArray($validated_items, $list);
-        $details = validateDetails($request);
-        $store_address = validateStoreAddress($request);
-        $delivery_address = validateDeliveryAddress($request);
+        $details = collect(validateDetails($request));
+        $store_address = collect(validateStoreAddress($request));
+        $delivery_address = collect(validateDeliveryAddress($request));
         $ref = formatByItems(getItemsFromList($id, $list));
         $this -> updateItemTable($items, $ref);
         $this -> updateDeliveryTable($delivery_address, $id, $list);
@@ -62,11 +63,10 @@ class ConsumerController extends Controller
         }
     }
 
-    private function updateDeliveryTable(array $delivery_address, int $userId, int $listId)
+    private function updateDeliveryTable($delivery_address, int $userId, int $listId)
     {
         $details = getOrderDetails($userId, $listId);
         $delivery_id = collect($details[0]) -> get('delivery_id');
-        $delivery_address = collect($delivery_address);
         DB::table('deliveries')
             ->where('id', '=', $delivery_id)
             ->update(['street' => $delivery_address -> get('delivery_street'),
@@ -76,11 +76,10 @@ class ConsumerController extends Controller
                 'country' => $delivery_address -> get('delivery_country')]);
     }
 
-    private function updateStoreTable(array $store_address, $userId, $listId)
+    private function updateStoreTable($store_address, $userId, $listId)
     {
         $details = getOrderDetails($userId, $listId);
         $store_id = collect($details[0]) -> get('store_id');
-        $store_address = collect($store_address);
         DB::table('stores') -> where('id', '=', $store_id)
             ->update(['street' => $store_address -> get('store_street'),
                 'house_number' => $store_address -> get('store_number'),
@@ -89,44 +88,61 @@ class ConsumerController extends Controller
                 'country' => $store_address -> get('store_country')]);
     }
 
-    private function updateOrderTable(array $order_details, $listId)
+    private function updateOrderTable($order_details, $listId)
     {
-        $order_details = collect($order_details);
         DB::table('orders') -> where('id', '=', $listId) -> update($order_details -> toArray());
     }
 
     function addList(Request $request, $id) {
-        $items = validateItems($request);
-        $details = validateDetails($request);
-        $store_address = validateStoreAddress($request);
-        $delivery_address = validateDeliveryAddress($request);
-        dd($request, $items, $details, $store_address, $delivery_address);
+        $items = collect(validateItems($request));
+        $details = collect(validateDetails($request));
+        $store_address = collect(validateStoreAddress($request));
+        $delivery_address = collect(validateDeliveryAddress($request));
         $delivery_id = $this -> insertDelivery($delivery_address);
         $store_id = $this -> insertStore($store_address);
-        $order_id = $this -> insertOrder($details, $delivery_id, $store_id);
+        $order_id = $this -> insertOrder($details, $delivery_id, $store_id, $id);
         $this -> insertItems($items, $order_id);
+        return $this->openExistingList($id, $order_id);
+    }
+
+    private function insertDelivery($delivery_address)
+    {
+        return DB::table('deliveries')->insertGetId(
+            ['street' => $delivery_address -> get('delivery_street'),
+            'house_number' => $delivery_address -> get('delivery_number'),
+            'postal_code' => $delivery_address -> get('delivery_postal_code'),
+            'city' => $delivery_address -> get('delivery_city'),
+            'country' => $delivery_address -> get('delivery_country')]);
+    }
+
+    private function insertStore($store_address)
+    {
+        return DB::table('stores')->insertGetId(
+            ['street' => $store_address -> get('store_street'),
+            'house_number' => $store_address -> get('store_number'),
+            'postal_code' => $store_address -> get('store_postal_code'),
+            'city' => $store_address -> get('store_city'),
+            'country' => $store_address -> get('store_country')]);
+    }
+
+    private function insertOrder($order, int $delivery_id, int $store_id, int $user_id)
+    {
+        $addon = ['delivery_id' => $delivery_id, 'store_id' => $store_id, 'user_id' => $user_id];
+        return DB::table('orders')->insertGetId(array_merge($order -> toArray(), $addon));
+    }
+
+    private function insertItems($items, int $order_id)
+    {
+        foreach ($items as $key => $value){
+            $item = collect(json_decode($value));
+            $item = $item-> forget("id") -> put('order_id', $order_id) -> toArray();
+            DB::table('items') -> insert($item) ;
+        }
     }
 
     function openProfile()
     {
         return view('consumer.profile');
-    }
-
-    //DB Sub-functions
-    private function insertDelivery(array $delivery_address)
-    {
-    }
-
-    private function insertStore(array $store_address)
-    {
-    }
-
-    private function insertOrder(array $order, int $delivery_id, int $store_id)
-    {
-    }
-
-    private function insertItems(array $items, int $order_id)
-    {
     }
 
 }
