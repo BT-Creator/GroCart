@@ -53,14 +53,24 @@ class ConsumerController extends Controller
     function updateExistingList(Request $request, $id, $list) {
         $input = $request -> post();
         $items = [];
+        $details = [];
         foreach ($input as $key => $value){
             if(str_contains($key, 'item')){
                 $item = collect(json_decode($value));
-                $items[$item -> get('id')] = $item -> toArray();
+                if(!$item -> contains('order_id')){
+                    $item -> put('order_id', $list);
+                }
+                $items[$item -> get('id')] = $item -> forget('id') -> toArray();
+            }
+            else{
+                $details[$key] = $value;
             }
         }
-        $entries = $this -> formatByItems(collect(DB::table('items') -> where('order_id', '=', $list) -> get()));
-        dd($items, $entries);
+        $ref = $this -> formatByItems(collect(DB::table('items')
+                                        -> where('order_id', '=', $list)
+                                        -> get()));
+        $this -> updateItemDB($items, $ref);
+        dd($items, $ref, $details);
     }
 
 
@@ -98,8 +108,16 @@ class ConsumerController extends Controller
         $res = [];
         foreach ($data as $key => $entry){
             $entry = collect($entry);
-            $res[$entry -> get('id')] = $entry;
+            $res[$entry -> get('id')] = collect($entry) -> toArray();
         }
         return $res;
+    }
+
+    private function updateItemDB($items, $ref){
+        foreach (array_keys($ref) as $key){
+            if(!key_exists($key, $items)){
+                echo "Deleting item $key";
+            }
+        }
     }
 }
