@@ -5,6 +5,7 @@ include 'Utilities/Validation.php';
 include 'Utilities/Query.php';
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 class ConsumerController extends Controller
 {
     function index($id)
@@ -29,7 +30,7 @@ class ConsumerController extends Controller
 
     function updateExistingList(Request $request, $id, $list) {
         $validated_items = validateItems($request);
-        $items = collect(jsonCollectionToItemArray($validated_items, $list)) -> forget('id') -> toArray();
+        $items = jsonCollectionToItemArray($validated_items, $list);
         $details = validateDetails($request);
         $store_address = validateStoreAddress($request);
         $delivery_address = validateDeliveryAddress($request);
@@ -37,8 +38,8 @@ class ConsumerController extends Controller
         $this -> updateItemTable($items, $ref);
         $this -> updateDeliveryTable($delivery_address, $id, $list);
         $this -> updateStoreTable($store_address, $id, $list);
-        $this -> updateOrderTable($details, $id, $list);
-        dd($items, $ref, $details, $store_address, $delivery_address);
+        $this -> updateOrderTable($details, $list);
+        return $this->openExistingList($id, $list);
     }
 
 
@@ -55,12 +56,19 @@ class ConsumerController extends Controller
     private function updateItemTable($items, $ref){
         foreach (array_keys($ref) as $key){
             if(!key_exists($key, $items)){
-                echo "Deleting item $key \n";
+                DB::table('items') -> where('id', '=', $key) -> delete();
             }
         }
         foreach ($items as $key => $value){
-            if($key < 0){
-                echo "Detecting new item; inserting... \n";
+            if($key < 0) {
+                $new_item = collect($value);
+                DB::table('items') -> insert(
+                    ['name' => $new_item -> get('name'),
+                    'brand' => $new_item -> get('brand'),
+                    'weight' => $new_item -> get('weight'),
+                    'note' => $new_item -> get('note'),
+                    'order_id' => $new_item -> get('order_id')]
+                );
             }
         }
     }
@@ -69,20 +77,32 @@ class ConsumerController extends Controller
     {
         $details = getOrderDetails($userId, $listId);
         $delivery_id = collect($details[0]) -> get('delivery_id');
-        echo "Updating delivery with id $delivery_id for list $listId of user $userId \n";
+        $delivery_address = collect($delivery_address);
+        DB::table('deliveries')
+           ->where('id', '=', $delivery_id)
+           ->update(['street' => $delivery_address -> get('delivery_street'),
+               'house_number' => $delivery_address -> get('delivery_number'),
+               'postal_code' => $delivery_address -> get('delivery_postal_code'),
+               'city' => $delivery_address -> get('delivery_city'),
+               'country' => $delivery_address -> get('delivery_country')]);
     }
 
     private function updateStoreTable(array $store_address, $userId, $listId)
     {
         $details = getOrderDetails($userId, $listId);
         $store_id = collect($details[0]) -> get('store_id');
-        echo "Updating store with id $store_id for list $listId of user $userId \n";
+        $store_address = collect($store_address);
+        DB::table('stores') -> where('id', '=', $store_id)
+            ->update(['street' => $store_address -> get('store_street'),
+                'house_number' => $store_address -> get('store_number'),
+                'postal_code' => $store_address -> get('store_postal_code'),
+                'city' => $store_address -> get('store_city'),
+                'country' => $store_address -> get('store_country')]);
     }
 
-    private function updateOrderTable(array $order_details, $userId, $listId)
+    private function updateOrderTable(array $order_details, $listId)
     {
-        $details = getOrderDetails($userId, $listId);
-        echo "Updating order with id $listId of user $userId \n";
-        dd($details);
+        $order_details = collect($order_details);
+        DB::table('orders') -> where('id', '=', $listId) -> update($order_details -> toArray());
     }
 }
