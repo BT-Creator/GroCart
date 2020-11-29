@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ConsumerController extends Controller
 {
+    //Main Functions
     function index($id)
     {
         $data = DB::table('orders')
@@ -51,7 +52,8 @@ class ConsumerController extends Controller
     }
 
     function updateExistingList(Request $request, $id, $list) {
-        $input = $request -> post();
+        $input = $this -> validateList($request);
+        dd($input);
         $items = [];
         $details = [];
         foreach ($input as $key => $value){
@@ -83,6 +85,7 @@ class ConsumerController extends Controller
         return view('consumer.profile');
     }
 
+    //Format Functions
     function formatByOrders($data)
     {
         $first_item = collect($data->shift());
@@ -113,11 +116,32 @@ class ConsumerController extends Controller
         return $res;
     }
 
+    //DB Sub-functions
     private function updateItemDB($items, $ref){
         foreach (array_keys($ref) as $key){
             if(!key_exists($key, $items)){
                 echo "Deleting item $key";
             }
         }
+    }
+
+    //Validation
+    private function validateList(Request $request){
+        $rules = [
+            "picking_method" => "nullable|string|max:64",
+            "store_street" => "string|max:64",
+            "store_number" => "string|max:6",
+            "store_postal_code" => "string|max:8",
+            "store_city" => "string|max:64",
+            "store_country" => "string|max:64",
+            "delivery_street" => "string|max:64",
+            "delivery_number" => "string|max:6",
+            "delivery_postal_code" => "string|max:8",
+            "delivery_city" => "string|max:64",
+            "delivery_country" => "string|max:64",
+            "delivery_notes" => "string|nullable",
+            "item:*" => "json"
+        ];
+        return $request -> validate($rules);
     }
 }

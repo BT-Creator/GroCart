@@ -6,6 +6,16 @@
 
 @section('main')
     <main>
+        @if($errors -> any())
+            <mark>Something went wrong</mark>
+            <details>
+                <ul>
+                @foreach($errors -> all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </details>
+        @endif
         @isset($details, $items)
         <form method="post" action="{{route('update_list', [1, $details['id']])}}">
         @else
@@ -122,10 +132,10 @@
                     <label for="delivery_street">
                         Street:
                         @isset($details['delivery_street'])
-                            <input type="text" placeholder="Street" name="delivery_address" required="required"
+                            <input type="text" placeholder="Street" name="delivery_street" required="required"
                                    id="delivery_street" value="{{$details['delivery_street']}}" maxlength="64">
                         @else
-                            <input type="text" placeholder="Street" name="delivery_address" required="required"
+                            <input type="text" placeholder="Street" name="delivery_street" required="required"
                                    id="delivery_street" maxlength="64">
                         @endisset
                     </label>
@@ -197,7 +207,7 @@
                 <section>
                     <h3>List options</h3>
                     <label for="list_save">
-                        <button type="submit" name="list_save" id="list_save" class="button"><span
+                        <button type="submit" id="list_save" class="button"><span
                                 class="fas fa-save"></span>Save List
                         </button>
                     </label>
