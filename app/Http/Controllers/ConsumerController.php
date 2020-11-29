@@ -42,17 +42,6 @@ class ConsumerController extends Controller
         return $this->openExistingList($id, $list);
     }
 
-
-    function addList(Request $request, $id) {
-        dd($request, $id);
-    }
-
-    function openProfile()
-    {
-        return view('consumer.profile');
-    }
-
-    //DB Sub-functions
     private function updateItemTable($items, $ref){
         foreach (array_keys($ref) as $key){
             if(!key_exists($key, $items)){
@@ -64,10 +53,10 @@ class ConsumerController extends Controller
                 $new_item = collect($value);
                 DB::table('items') -> insert(
                     ['name' => $new_item -> get('name'),
-                    'brand' => $new_item -> get('brand'),
-                    'weight' => $new_item -> get('weight'),
-                    'note' => $new_item -> get('note'),
-                    'order_id' => $new_item -> get('order_id')]
+                        'brand' => $new_item -> get('brand'),
+                        'weight' => $new_item -> get('weight'),
+                        'note' => $new_item -> get('note'),
+                        'order_id' => $new_item -> get('order_id')]
                 );
             }
         }
@@ -79,12 +68,12 @@ class ConsumerController extends Controller
         $delivery_id = collect($details[0]) -> get('delivery_id');
         $delivery_address = collect($delivery_address);
         DB::table('deliveries')
-           ->where('id', '=', $delivery_id)
-           ->update(['street' => $delivery_address -> get('delivery_street'),
-               'house_number' => $delivery_address -> get('delivery_number'),
-               'postal_code' => $delivery_address -> get('delivery_postal_code'),
-               'city' => $delivery_address -> get('delivery_city'),
-               'country' => $delivery_address -> get('delivery_country')]);
+            ->where('id', '=', $delivery_id)
+            ->update(['street' => $delivery_address -> get('delivery_street'),
+                'house_number' => $delivery_address -> get('delivery_number'),
+                'postal_code' => $delivery_address -> get('delivery_postal_code'),
+                'city' => $delivery_address -> get('delivery_city'),
+                'country' => $delivery_address -> get('delivery_country')]);
     }
 
     private function updateStoreTable(array $store_address, $userId, $listId)
@@ -105,4 +94,39 @@ class ConsumerController extends Controller
         $order_details = collect($order_details);
         DB::table('orders') -> where('id', '=', $listId) -> update($order_details -> toArray());
     }
+
+    function addList(Request $request, $id) {
+        $items = validateItems($request);
+        $details = validateDetails($request);
+        $store_address = validateStoreAddress($request);
+        $delivery_address = validateDeliveryAddress($request);
+        dd($request, $items, $details, $store_address, $delivery_address);
+        $delivery_id = $this -> insertDelivery($delivery_address);
+        $store_id = $this -> insertStore($store_address);
+        $order_id = $this -> insertOrder($details, $delivery_id, $store_id);
+        $this -> insertItems($items, $order_id);
+    }
+
+    function openProfile()
+    {
+        return view('consumer.profile');
+    }
+
+    //DB Sub-functions
+    private function insertDelivery(array $delivery_address)
+    {
+    }
+
+    private function insertStore(array $store_address)
+    {
+    }
+
+    private function insertOrder(array $order, int $delivery_id, int $store_id)
+    {
+    }
+
+    private function insertItems(array $items, int $order_id)
+    {
+    }
+
 }
