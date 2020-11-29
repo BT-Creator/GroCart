@@ -10,7 +10,7 @@ export function generateItemSection(name, brand, weight, unit, notes){
     else{
         res += `<h2>${name.value}</h2>`
         if(brand.value === "" && weight.value === "" && notes.value === ""){
-            let json = {"id":mockId, "name":name, "brand":null, "weight":null, "note":null}
+            let json = {"id":mockId, "name":name.value, "brand":null, "weight":null, "note":null}
             res += `<p>Just plain old ${name.value}</p>
                     <label for="item:${mockId}" hidden="hidden">
                         <input type="checkbox" hidden="hidden"
@@ -22,7 +22,7 @@ export function generateItemSection(name, brand, weight, unit, notes){
             res += existenceCheck(brand)
             res += existenceCheck(weight)
             res += existenceCheck(notes)
-            res += addDataContainer(brand, weight, notes)
+            res += addDataContainer(name, brand, weight, notes)
             res += `</section>`
         }
     }
@@ -43,9 +43,9 @@ export function generateItemSection(name, brand, weight, unit, notes){
     }
 }
 
-function addDataContainer(brand, weight, notes) {
+function addDataContainer(name, brand, weight, notes) {
     let dc = `<label for="item:${mockId}" hidden="hidden">`
-    let json = `{"id":${mockId}, "name":${name.value.split(' ').join("_")}`;
+    let json = `{"id":${mockId},"name":"${name.value.split(' ').join("_")}",`;
     (brand.value === "") ? json += `"brand":null,` : json += `"brand":"${brand.value.split(' ').join("_")}",`;
     (weight.value === "") ? json += `"weight":null,` : json += `"weight":${parseFloat(weight.value)},`;
     (notes.value === "") ? json += `"notes":null` : json += `"notes":"${notes.value.split(' ').join("_")}"`;
