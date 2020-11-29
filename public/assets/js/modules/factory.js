@@ -10,11 +10,11 @@ export function generateItemSection(name, brand, weight, unit, notes){
     else{
         res += `<h2>${name.value}</h2>`
         if(brand.value === "" && weight.value === "" && notes.value === ""){
-            let json = {"id":mockId, "name":name.value, "brand":null, "weight":null, "note":null}
+            let json = JSON.parse(`{"id":${mockId}, "name":"${name.value.split(' ').join("_")}", "brand":null, "weight":null, "note":null}`)
             res += `<p>Just plain old ${name.value}</p>
                     <label for="item:${mockId}" hidden="hidden">
                         <input type="checkbox" hidden="hidden"
-                        id="item:${mockId}" name="item:${mockId}" value="${json}">
+                        id="item:${mockId}" name="item:${mockId}" value=${JSON.stringify(json)}>
                     </label>
             </section>`
         }

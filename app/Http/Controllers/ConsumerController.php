@@ -52,10 +52,16 @@ class ConsumerController extends Controller
     }
 
     function updateExistingList(Request $request, $id, $list) {
-        $input = $this -> validateList($request);
-        dd($input);
-        $items = [];
-        $details = [];
+        $item_attributes = [];
+        foreach ($request -> post() as $key => $value){
+            if(str_contains($key, 'item:')){
+                array_push($item_attributes, $key);
+            }
+        }
+        $details = $this -> validateList($request);
+        $items = $this -> validateItems($request, $item_attributes);
+        dd($details,$items);
+        dd($details, $request, $items);
         foreach ($input as $key => $value){
             if(str_contains($key, 'item')){
                 $item = collect(json_decode($value));
@@ -140,8 +146,15 @@ class ConsumerController extends Controller
             "delivery_city" => "string|max:64",
             "delivery_country" => "string|max:64",
             "delivery_notes" => "string|nullable",
-            "item:*" => "json"
         ];
+        return $request -> validate($rules);
+    }
+
+    private function validateItems(Request $request, array $item_attributes){
+        $rules = [];
+        foreach ($item_attributes as $attribute){
+            $rules[$attribute] = "json";
+        }
         return $request -> validate($rules);
     }
 }
