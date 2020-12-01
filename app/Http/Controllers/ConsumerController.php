@@ -167,7 +167,6 @@ class ConsumerController extends Controller
 
     function openOrder(int $user_id, int $order_id)
     {
-        return dd($user_id, $order_id);
+        return Redirect::route('501_route');
     }
-
 }
