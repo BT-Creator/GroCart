@@ -28,7 +28,7 @@ function getOrderDetails(int $userId, int $listId)
     return DB::table('orders')
         ->join('deliveries', 'orders.delivery_id', '=', 'deliveries.id')
         ->join('stores', 'orders.store_id', '=', 'stores.id')
-        ->select('orders.id', 'orders.picking_method', 'orders.delivery_notes', 'orders.medical_notes',
+        ->select('orders.id', 'orders.picking_method', 'orders.delivery_notes', 'orders.medical_notes', 'orders.status',
             'deliveries.id as delivery_id', 'deliveries.street as delivery_street', 'deliveries.house_number as delivery_house_number',
             'deliveries.postal_code as delivery_postal_code', 'deliveries.city as delivery_city',
             'deliveries.country as delivery_country',
