@@ -27,6 +27,9 @@ Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name(
 Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
 Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
 
+/*Order*/
+Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> name('make_order');
+
 /* AUTH (NOT IMPLEMENTED) */
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
