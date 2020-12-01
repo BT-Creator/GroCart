@@ -144,4 +144,8 @@ class ConsumerController extends Controller
         return view('consumer.profile');
     }
 
+    function openOrder(int $user_id, int $order_id){
+        return dd($user_id, $order_id);
+    }
+
 }
