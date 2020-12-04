@@ -1,7 +1,7 @@
 @extends('consumer.master_consumer')
 
 @section('main')
-    <main>
+    <main class="order-overview">
         <h1>Thank you for your order!</h1>
         @switch($details -> get('status'))
             @case('ordered')
@@ -21,22 +21,21 @@
                 @break
         @endswitch
         <article>
-            <h3>Order info</h3>
-            <section>
-                <h4>Store address</h4>
-                <p><span>Street</span>{{$details -> get('store_street')}}</p>
-                <p><span>House Number</span>{{$details -> get('store_house_number')}}</p>
-                <p><span>Postal code</span>{{$details -> get('store_postal_code')}}</p>
-                <p><span>City</span>{{$details -> get('store_city')}}</p>
-                <p><span>Country</span>{{$details -> get('store_country')}}</p>
+            <section class="order-info">
+                <h3>Store address</h3>
+                <p><span>Street:</span>{{$details -> get('store_street')}}</p>
+                <p><span>House Number:</span>{{$details -> get('store_house_number')}}</p>
+                <p><span>Postal code:</span>{{$details -> get('store_postal_code')}}</p>
+                <p><span>City:</span>{{$details -> get('store_city')}}</p>
+                <p><span>Country:</span>{{$details -> get('store_country')}}</p>
             </section>
-            <section>
-                <h4>Delivery address</h4>
-                <p><span>Street</span>{{$details -> get('delivery_street')}}</p>
-                <p><span>House Number</span>{{$details -> get('delivery_house_number')}}</p>
-                <p><span>Postal code</span>{{$details -> get('delivery_postal_code')}}</p>
-                <p><span>City</span>{{$details -> get('delivery_city')}}</p>
-                <p><span>Country</span>{{$details -> get('delivery_country')}}</p>
+            <section class="order-info">
+                <h3>Delivery address</h3>
+                <p><span>Street:</span>{{$details -> get('delivery_street')}}</p>
+                <p><span>House Number:</span>{{$details -> get('delivery_house_number')}}</p>
+                <p><span>Postal code:</span>{{$details -> get('delivery_postal_code')}}</p>
+                <p><span>City:</span>{{$details -> get('delivery_city')}}</p>
+                <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
             </section>
         </article>
     </main>
