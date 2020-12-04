@@ -42,7 +42,7 @@ html{
 
 .button{
     height: min-content;
-    padding: 1vmax;
+    padding: 0.5vmax;
     background-color: rgb(255,255,255);
     border: black 2px solid;
     border-radius: 10px;

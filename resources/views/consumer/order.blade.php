@@ -9,20 +9,20 @@
         <h1>Thank you for your order!</h1>
         @switch($details -> get('status'))
             @case('ordered')
-                <h2>Your list has been ordered</h2>
-                @break
+            <h2>Your list has been ordered</h2>
+            @break
             @case('assigned_to_driver')
-                <h2>Your order has been assigned to a driver</h2>
-                @break
+            <h2>Your order has been assigned to a driver</h2>
+            @break
             @case('picking')
-                <h2>Your order is being prepared by the shop owner & driver</h2>
-                @break
+            <h2>Your order is being prepared by the shop owner & driver</h2>
+            @break
             @case('delivering')
-                <h2>The driver is going on the way to your home</h2>
-                @break
+            <h2>The driver is going on the way to your home</h2>
+            @break
             @case('completed')
-                <h2>Your order has been delivered</h2>
-                @break
+            <h2>Your order has been delivered</h2>
+            @break
         @endswitch
         <aside>
             <section class="order-info">
@@ -42,5 +42,18 @@
                 <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
             </section>
         </aside>
+        @if($details -> get('status') == 'delivering')
+            <div id="map">
+
+            </div>
+        @endif
     </main>
+@endsection
+
+@section('js')
+    @if($details -> get('status') == 'delivering')
+        <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+        <script type="module" src="{{asset('assets/js/modules/map.js')}}"></script>
+        <script type="module" src="{{asset("assets/js/location.js")}}"></script>
+    @endif
 @endsection

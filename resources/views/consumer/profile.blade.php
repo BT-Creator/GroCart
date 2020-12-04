@@ -31,7 +31,7 @@
                 <h2>Amount of items per list</h2>
                 <canvas id="item-graph"></canvas>
             </div>
-            <div class="graph">
+            <div class="graph" hidden="hidden">
                 <h2>Line Graph for time Taken for order to delivery per order</h2>
                 <canvas id="time-graph"></canvas>
             </div>
@@ -45,6 +45,7 @@
                         <div>
                             <h3>Order {{$id}}</h3>
                             <p>Total Items: <span>{{count($order)}}</span></p>
+                            <a class="button" href="{{route('open_order', [1, $id])}}">Open order</a>
                         </div>
                     </section>
                 @endforeach
