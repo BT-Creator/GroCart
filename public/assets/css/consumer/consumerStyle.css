@@ -73,7 +73,7 @@ span[class="fas fa-arrow-right"]{
 
 .grocery-lists{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-content: center;
     justify-content: space-around;
 }
@@ -87,6 +87,12 @@ span[class="fas fa-arrow-right"]{
 .empty-lists h1, p, a{
     margin-bottom: 1em;
     width: max-content;
+}
+
+.list-overview{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 /*                ALTER LIST PAGE                */
 #list-top-bar{
@@ -203,27 +209,39 @@ span[class="fas fa-arrow-right"]{
     color:black;
     padding: 1vmax;
 }
+
 /*                    PROFILE                    */
-.profile{
+.profile article:nth-of-type(1){
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 1em;
 }
+
+.profile article:nth-of-type(2){
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
 
 .profile h1{
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.profile article{
-    width: 50%;
+.profile aside h2{
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .profile-card{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: column wrap;
+    justify-content: space-around;
     margin-bottom: 1em;
 }
 
@@ -236,12 +254,12 @@ span[class="fas fa-arrow-right"]{
     width: 3vmax;
 }
 
-.profile-card section h2{
-    margin-bottom: 1em;
+.profile article section h2, .profile article .graph{
+    margin-bottom: 2em;
     font-weight: bold;
 }
 
-.profile-card section h2 span, .profile-card section h2 time{
+.profile article section h2 span, .profile article section h2 time{
     font-weight: normal;
     margin-left: 0.5em;
 }
@@ -258,16 +276,22 @@ span[class="fas fa-arrow-right"]{
     background-color: var(--bg-color);
 }
 
-.profile-order span, .profile-card h3{
-    margin-right: 1em;
+.profile-order div{
+    margin-left: 3em;
 }
 
 .profile-order span{
     font-size: 3em;
 }
 
+.profile aside{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
 /*                     ORDER                     */
-.order-overview article{
+.order-overview aside{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;

@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-    <main class="grocery-lists">
+    <main class="list-overview">
         @if(empty(collect(collect($orders) -> first()) -> first()))
             <article class="empty-lists">
                 <h1>No list found :(</h1>
@@ -44,5 +44,4 @@
             @endforeach
         @endif
     </main>
-
 @endsection
