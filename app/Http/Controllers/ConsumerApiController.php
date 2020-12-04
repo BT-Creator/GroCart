@@ -13,6 +13,7 @@ class ConsumerApiController extends Controller
             ->select('orders.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.status', "!=", "draft")
+            ->orderByDesc('orders.id')
             ->get();
         $orders = $data->map(function ($item, $key){
             $order = collect($item);

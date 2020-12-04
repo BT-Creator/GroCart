@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(["prefix" => "consumer"], function (){
-    Route::get("/{id}/orders", [ConsumerApiController::class, 'getOrders']);
+    Route::get("/{id}/order", [ConsumerApiController::class, 'getOrders']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
