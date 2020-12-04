@@ -42,5 +42,13 @@
                 <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
             </section>
         </aside>
+        <div>
+
+        </div>
     </main>
+@endsection
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="{{asset("assets/js/location.js")}}"></script>
 @endsection
