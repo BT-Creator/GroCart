@@ -24,7 +24,7 @@
                 <h2>Your order has been delivered</h2>
                 @break
         @endswitch
-        <article>
+        <aside>
             <section class="order-info">
                 <h3>Store address</h3>
                 <p><span>Street:</span>{{$details -> get('store_street')}}</p>
@@ -41,6 +41,6 @@
                 <p><span>City:</span>{{$details -> get('delivery_city')}}</p>
                 <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
             </section>
-        </article>
+        </aside>
     </main>
 @endsection

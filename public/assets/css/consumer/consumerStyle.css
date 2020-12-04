@@ -291,7 +291,7 @@ span[class="fas fa-arrow-right"]{
 }
 
 /*                     ORDER                     */
-.order-overview article{
+.order-overview aside{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
