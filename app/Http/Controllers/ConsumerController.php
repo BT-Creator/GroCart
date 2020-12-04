@@ -165,10 +165,17 @@ class ConsumerController extends Controller
         return view('consumer.profile');
     }
 
-    function openOrder(int $user_id, int $order_id)
+    function makeOrder(int $user_id, int $order_id){
+        DB::table('orders') -> where('orders.id', '=', $order_id)
+            ->where('orders.id', '=', $order_id)
+            ->update(['status' => 'ordered']);
+        DB::commit();
+        $this->openOrder($user_id, $order_id);
+    }
+
+    private function openOrder(int $user_id, int $order_id)
     {
-        DB::table('orders') -> where('orders.id', '=', $order_id);
-        $order = collect(getOrderDetails($user_id, $order_id));
+        $order = getOrderDetails($user_id, $order_id);
         return view('consumer.order', ['details' => $order]);
     }
 }

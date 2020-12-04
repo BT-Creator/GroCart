@@ -28,7 +28,7 @@ Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList
 Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
 
 /*Order*/
-Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> name('make_order');
+Route::get('/{id}/order/{order}', [ConsumerController::class, 'makeOrder']) -> name('make_order');
 
 /* AUTH (NOT IMPLEMENTED) */
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
