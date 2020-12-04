@@ -13,7 +13,8 @@ class ConsumerApiController extends Controller
             ->select('orders.*')
             ->where('orders.user_id', '=', $id)
             ->where('orders.status', "!=", "draft")
-            ->orderByDesc('orders.id')
+            ->orderBy('orders.id')
+            -> limit(10)
             ->get();
         $orders = $data->map(function ($item, $key){
             $order = collect($item);
