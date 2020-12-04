@@ -27,7 +27,7 @@ Route::group(["prefix" => "consumer"], function (){
     Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
     Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
     /* Profile */
-    Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+    Route::get('/{id}/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
     /*Order*/
     Route::get('/{id}/order/{order}/pay', [ConsumerController::class, 'makeOrder']) -> name('make_order');
     Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> name('open_order');

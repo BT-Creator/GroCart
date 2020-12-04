@@ -1,5 +1,9 @@
 @extends('consumer.master_consumer')
 
+@section('title')
+    Order
+@endsection
+
 @section('main')
     <main class="order-overview">
         <h1>Thank you for your order!</h1>

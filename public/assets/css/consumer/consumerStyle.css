@@ -73,7 +73,7 @@ span[class="fas fa-arrow-right"]{
 
 .grocery-lists{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-content: center;
     justify-content: space-around;
 }
@@ -87,6 +87,12 @@ span[class="fas fa-arrow-right"]{
 .empty-lists h1, p, a{
     margin-bottom: 1em;
     width: max-content;
+}
+
+.list-overview{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 /*                ALTER LIST PAGE                */
 #list-top-bar{
@@ -203,6 +209,7 @@ span[class="fas fa-arrow-right"]{
     color:black;
     padding: 1vmax;
 }
+
 /*                    PROFILE                    */
 .profile article:nth-of-type(1){
     display: flex;
