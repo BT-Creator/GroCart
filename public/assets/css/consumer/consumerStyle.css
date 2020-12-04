@@ -71,13 +71,23 @@ span[class="fas fa-arrow-right"]{
     margin-left: 1vmax;
 }
 
-#grocery-lists{
+.grocery-lists{
     display: flex;
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-around;
 }
 
+.empty-lists{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.empty-lists h1, p, a{
+    margin-bottom: 1em;
+    width: max-content;
+}
 /*                ALTER LIST PAGE                */
 #list-top-bar{
     display: flex;
