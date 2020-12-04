@@ -114,8 +114,7 @@ insert into orders(picking_method, status, delivery_id, store_id, user_id)
 VALUES ('Cheapest', 'draft', 7, 1, 1),
        ('Cheapest', 'assigned_to_driver', 7, 1, 1),
        ('Cheapest', 'picking', 7, 1, 1),
-       ('Cheapest', 'delivering', 7, 1, 1),
-       ('Cheapest', 'completed', 7, 1, 1);
+       ('Cheapest', 'delivering', 7, 1, 1);
 
 insert into items(name, brand, weight, note, order_id)
 VALUES ('Milk', 'Apro', 1, 'Almond_version', 1),
