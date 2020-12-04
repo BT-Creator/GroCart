@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
+    <meta name="description" content="Grocart delivers the essentials within one click! With Grocart, you can do grocery shopping with ease.">
     <link rel="stylesheet" type="text/css" href="{{asset("/assets/css/reset.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("/assets/css/neutral/neutralStyle.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("/assets/css/universalStyle.css")}}">
