@@ -274,6 +274,7 @@ span[class="fas fa-arrow-right"]{
     width: max-content;
     border-radius: 10px;
     background-color: var(--bg-color);
+    height: max-content;
 }
 
 .profile-order div{

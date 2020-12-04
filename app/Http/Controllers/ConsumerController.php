@@ -176,7 +176,7 @@ class ConsumerController extends Controller
             ->where('orders.user_id', '=', $id)
             ->where('orders.status', '!=', 'completed')
             ->where('orders.status', '!=', 'draft')
-            ->orderByDesc('orders.id')
+            ->orderByDesc('orders.id', 'orders.status')
             ->get();
         $ongoing_orders = formatByOrders($data);
         return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders]);
