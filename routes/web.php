@@ -18,17 +18,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('general.index');}) -> name("index_route");
 Route::get('/501', function () {return view('placeholder');}) -> name("501_route");
 
-/* CONSUMER */
-Route::get('/{id}/list', [ConsumerController::class, 'index']) -> name('consumer_lists');
-/* List */
-Route::get('/{id}/list/{list}', [ConsumerController::class, 'openExistingList']) -> name('open_list');
-Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> name('create_list');
-Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
-Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
-Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
+Route::group(["prefix" => "consumer"], function (){
+    /* Index */
+    Route::get('/{id}/list', [ConsumerController::class, 'index']) -> name('consumer_lists');
+    /* List */
+    Route::get('/{id}/list/{list}', [ConsumerController::class, 'openExistingList']) -> name('open_list');
+    Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> name('create_list');
+    Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
+    Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
+    /* Profile */
+    Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+    /*Order*/
+    Route::get('/{id}/order/{order}', [ConsumerController::class, 'makeOrder']) -> name('make_order');
+});
 
-/*Order*/
-Route::get('/{id}/order/{order}', [ConsumerController::class, 'makeOrder']) -> name('make_order');
+
+
 
 /* AUTH (NOT IMPLEMENTED) */
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');

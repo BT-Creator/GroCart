@@ -175,7 +175,7 @@ class ConsumerController extends Controller
 
     private function openOrder(int $user_id, int $order_id)
     {
-        $order = getOrderDetails($user_id, $order_id);
+        $order = getOrderDetails($user_id, $order_id)[0];
         return view('consumer.order', ['details' => $order]);
     }
 }
