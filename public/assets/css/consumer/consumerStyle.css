@@ -295,6 +295,7 @@ span[class="fas fa-arrow-right"]{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    margin-bottom: 2rem;
 }
 
 .order-overview h1{
@@ -325,5 +326,10 @@ span[class="fas fa-arrow-right"]{
 
 .order-info h3{
     margin-bottom: 0.5em;
+}
+
+#map{
+    width: 100%;
+    height: 15em;
 }
 /*                   ANIMATIONS                  */

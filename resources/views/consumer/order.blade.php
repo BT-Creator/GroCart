@@ -42,7 +42,7 @@
                 <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
             </section>
         </aside>
-        <div>
+        <div id="map">
 
         </div>
     </main>
