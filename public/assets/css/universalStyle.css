@@ -22,11 +22,11 @@ a:visited{
     color: var(--hyperlink-used);
 }
 
-p, footer, label, button, input, textarea {
+p, footer, label, button, input, textarea, #list-order {
     font-family: 'Quicksand', sans-serif;
 }
 
-h1, h2, header, main a, figure figcaption, h3{
+h1, h2, header, main a, figure figcaption, h3, legend, h4{
     font-family: 'Ubuntu', sans-serif;
 }
 
