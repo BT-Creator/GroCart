@@ -45,10 +45,15 @@
         <div id="map">
 
         </div>
+        <div id="location" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
     </main>
 @endsection
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-    <script src="{{asset("assets/js/location.js")}}"></script>
+    <script type="module" src="{{asset('assets/js/modules/map.js')}}"></script>
+    <script type="module" src="{{asset("assets/js/location.js")}}"></script>
 @endsection
