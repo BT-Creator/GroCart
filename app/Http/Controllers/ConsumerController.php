@@ -170,10 +170,10 @@ class ConsumerController extends Controller
             ->where('orders.id', '=', $order_id)
             ->update(['status' => 'ordered']);
         DB::commit();
-        $this->openOrder($user_id, $order_id);
+        return redirect()->route('open_order', [$user_id, $order_id]);
     }
 
-    private function openOrder(int $user_id, int $order_id)
+    function openOrder(int $user_id, int $order_id)
     {
         $order = getOrderDetails($user_id, $order_id)[0];
         return view('consumer.order', ['details' => $order]);

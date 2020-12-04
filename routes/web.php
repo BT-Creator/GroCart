@@ -29,7 +29,8 @@ Route::group(["prefix" => "consumer"], function (){
     /* Profile */
     Route::get('/user/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
     /*Order*/
-    Route::get('/{id}/order/{order}', [ConsumerController::class, 'makeOrder']) -> name('make_order');
+    Route::get('/{id}/order/{order}/pay', [ConsumerController::class, 'makeOrder']) -> name('make_order');
+    Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> name('open_order');
 });
 
 
