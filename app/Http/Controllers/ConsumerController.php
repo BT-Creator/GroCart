@@ -119,9 +119,9 @@ class ConsumerController extends Controller
             $delivery_address = collect(validateDeliveryAddress($request));
             $delivery_id = $this->insertDelivery($delivery_address);
             $store_id = $this->insertStore($store_address);
-            $order_id = $this->insertOrder($details, $delivery_id, $store_id, $id);
-            $this->insertItems($items, $order_id);
-            return redirect()->route('open_list', [$id, $order_id]);
+            $list_id = $this->insertOrder($details, $delivery_id, $store_id, $id);
+            $this->insertItems($items, $list_id);
+            return redirect()->route('open_list', [$id, $list_id]);
         }
     }
 
@@ -165,8 +165,17 @@ class ConsumerController extends Controller
         return view('consumer.profile');
     }
 
+    function makeOrder(int $user_id, int $order_id){
+        DB::table('orders') -> where('orders.id', '=', $order_id)
+            ->where('orders.id', '=', $order_id)
+            ->update(['status' => 'ordered']);
+        DB::commit();
+        return redirect()->route('open_order', [$user_id, $order_id]);
+    }
+
     function openOrder(int $user_id, int $order_id)
     {
-        return Redirect::route('501_route');
+        $order = collect(getOrderDetails($user_id, $order_id)[0]);
+        return view('consumer.order', ['details' => $order]);
     }
 }
