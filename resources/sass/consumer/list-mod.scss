@@ -2,12 +2,12 @@
 @use '../themes/consumer';
 @use '../modules/components';
 
-#list-top-bar {
+.list-top-bar {
     display: flex;
     justify-content: space-around;
     margin-bottom: 1em;
 }
-#list-main {
+.list-main {
     display: grid;
     grid-template-columns: 1fr 5fr;
     flex-flow: row nowrap;
@@ -40,7 +40,7 @@
         border: 2px black solid;
     }
 }
-#list-bottom-bar {
+.list-bottom-bar {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -61,7 +61,8 @@
         }
     }
 }
-#new-item-form {
+
+.new-item-form {
     position: fixed;
     z-index: 1;
     width: calc(50% - 1rem);
