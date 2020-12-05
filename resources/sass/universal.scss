@@ -1,4 +1,5 @@
 @use "modules/style";
+@use "modules/components";
 
 a {
     text-decoration: none;
@@ -118,7 +119,6 @@ main {
     a {
         @extend %ubuntu;
     }
-
     margin-left: 2em;
     margin-right: 2em;
 }
@@ -130,7 +130,7 @@ figure {
         padding-bottom: 1vw;
         font-weight: bold;
         text-align: center;
-        color: var(--primary-color);
+        color: map-get(style.$colors, 'primary');
         font-size: 2vmin;
         min-font-size: 3rem;
     }
@@ -159,11 +159,7 @@ html {
 }
 
 .button {
-    height: min-content;
-    padding: 0.5vmax;
-    background-color: map-get(style.$colors, 'bg-offset');
-    border: black 2px solid;
-    border-radius: 10px;
+   @extend %button;
 }
 
 nav {

@@ -1,0 +1,9 @@
+@use 'style';
+
+%button{
+    height: min-content;
+    padding: 0.5vmax;
+    background-color: map-get(style.$colors, 'bg-offset');
+    border: black 2px solid;
+    border-radius: 10px;
+}
