@@ -1,5 +1,9 @@
 @extends('consumer.master_consumer')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumer/lists.css')}}">
+@endsection
+
 @section('title')
     Lists
 @endsection

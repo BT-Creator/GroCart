@@ -1,6 +1,6 @@
-@use "modules/style";
-@use "modules/components";
-@use "modules/typography";
+@use "../modules/style";
+@use "../modules/components";
+@use "../modules/typography";
 
 /* ROOT ELEMENTS */
 body {
@@ -149,11 +149,6 @@ figure {
         font-size: 2vmin;
         min-font-size: 3rem;
     }
-}
-
-/* BUTTON */
-.button {
-   @extend %button;
 }
 
 .placeholder {

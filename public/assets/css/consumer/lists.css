@@ -1,93 +1,7 @@
-.grocery-list-container {
-  border: none;
-  padding: 0;
-  background-color: initial;
-}
-
-.grocery-list-options {
-  border: none;
-  padding: 0;
-  background-color: initial;
-  display: flex;
-  justify-content: space-around;
-}
-.grocery-list-options a {
-  border: #4cb54c solid 2px;
-  padding: 1vmax;
-  border-radius: 10px;
-  margin: 1em;
-}
-.grocery-list-options span {
-  color: black;
-}
-
 form div {
   border: none;
   padding: 0;
   background-color: initial;
-}
-
-.list-item {
-  width: max-content;
-  border: #4cb54c solid 2px;
-  border-radius: 10px;
-  padding: 1vw;
-  background-color: white;
-  margin: 1em;
-  cursor: move;
-}
-.list-item h2 {
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-.list-item p {
-  margin-bottom: 5px;
-}
-.list-item span {
-  text-decoration: underline;
-}
-
-main .grocery-lists {
-  background-color: white;
-  border: #2b7c2b solid 2px;
-  border-radius: 10px;
-  padding: 1vw;
-  margin-bottom: 1vw;
-  height: max-content;
-}
-main .grocery-lists h1 {
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-main .grocery-list-container {
-  display: grid;
-  grid-template-areas: ". ." ". ." ". .";
-}
-
-span[class^=fas] {
-  text-decoration: none;
-}
-
-span[class="fas fa-arrow-right"] {
-  margin-right: 0;
-  margin-left: 1vmax;
-}
-
-.grocery-lists {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  justify-content: space-around;
-}
-
-.empty-lists {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-}
-.empty-lists h1 {
-  margin-bottom: 1em;
-  width: max-content;
 }
 
 p {
@@ -98,12 +12,6 @@ p {
 a {
   margin-bottom: 1em;
   width: max-content;
-}
-
-.list-overview {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
 }
 
 #list-top-bar {
@@ -344,4 +252,97 @@ select {
   height: 15em;
 }
 
-/*# sourceMappingURL=consumer.css.map */
+.list-item {
+  width: max-content;
+  border: #4cb54c solid 2px;
+  border-radius: 10px;
+  padding: 1vw;
+  background-color: white;
+  margin: 1em;
+  cursor: move;
+}
+.list-item h2 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.list-item p {
+  margin-bottom: 5px;
+}
+.list-item span {
+  text-decoration: underline;
+}
+
+.grocery-list-container {
+  border: none;
+  padding: 0;
+  background-color: initial;
+}
+
+.grocery-list-options {
+  border: none;
+  padding: 0;
+  background-color: initial;
+  display: flex;
+  justify-content: space-around;
+}
+.grocery-list-options a {
+  border: #4cb54c solid 2px;
+  padding: 1vmax;
+  border-radius: 10px;
+  margin: 1em;
+}
+.grocery-list-options span {
+  color: black;
+}
+
+.grocery-lists {
+  background-color: white;
+  border: #2b7c2b solid 2px;
+  border-radius: 10px;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  height: max-content;
+}
+.grocery-lists h1 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.grocery-list-container {
+  display: grid;
+  grid-template-areas: ". ." ". ." ". .";
+}
+
+.grocery-lists {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.empty-lists {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.empty-lists h1 {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+span[class^=fas] {
+  text-decoration: none;
+}
+
+span[class="fas fa-arrow-right"] {
+  margin-right: 0;
+  margin-left: 1vmax;
+}
+
+.list-overview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=lists.css.map */
