@@ -1,15 +1,12 @@
-p, label, button, #list-order, input, textarea, footer {
-  font-family: "Quicksand", sans-serif;
-}
-
-main a, h1, h2, h3, legend, h4, header, figure figcaption {
-  font-family: "Ubuntu", sans-serif;
+input, textarea, select {
+  border-radius: 10px;
+  border: solid #4cb54c 2px;
 }
 
 .button {
   height: min-content;
   padding: 0.5vmax;
-  background-color: #ededed;
+  background-color: white;
   border: black 2px solid;
   border-radius: 10px;
 }
@@ -29,6 +26,10 @@ main {
   margin-left: 2em;
   margin-right: 2em;
 }
+main a {
+  font-family: "Ubuntu", sans-serif;
+}
+
 /* GLOBAL RULES */
 a {
   text-decoration: none;
@@ -41,18 +42,24 @@ a:visited {
   color: #1d666e;
 }
 
+p, label, button, #list-order {
+  font-family: "Quicksand", sans-serif;
+}
+
 input {
+  font-family: "Quicksand", sans-serif;
   text-decoration: none;
-  border-radius: 10px;
   padding: 0.5em;
-  border: 2px solid #4cb54c;
 }
 
 textarea {
+  font-family: "Quicksand", sans-serif;
   text-decoration: none;
-  border-radius: 10px;
   padding: 0.5em;
-  border: 2px solid #4cb54c;
+}
+
+h1, h2, h3, legend, h4 {
+  font-family: "Ubuntu", sans-serif;
 }
 
 span {
@@ -63,14 +70,13 @@ span {
 
 select {
   text-decoration: none;
-  border-radius: 10px;
   padding: 0.5em;
-  border: 2px solid #4cb54c;
 }
 
 /* HEADER */
 header {
-  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #ededed;
   border-radius: 0 0 2rem 2rem;
   border-bottom: #4cb54c 2px solid;
   border-right: #4cb54c 2px solid;
@@ -103,6 +109,7 @@ header nav .button {
 
 /* FOOTER */
 footer {
+  font-family: "Quicksand", sans-serif;
   background-color: #ededed;
   border-radius: 2rem 2rem 0 0;
   border-top: #4cb54c 2px solid;
@@ -131,6 +138,7 @@ footer aside {
 
 /* FIGURES */
 figure figcaption {
+  font-family: "Ubuntu", sans-serif;
   padding-top: 1vw;
   padding-bottom: 1vw;
   font-weight: bold;
