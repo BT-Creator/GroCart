@@ -1,6 +1,26 @@
 @use "modules/style";
 @use "modules/components";
 
+/* ROOT ELEMENTS */
+body {
+    margin-left: 3vmax;
+    margin-right: 3vmax;
+    background-color: map-get(style.$colors, 'bg-offset');
+}
+
+html {
+    background-color: map-get(style.$colors, 'bg')
+}
+
+main {
+    a {
+        @extend %ubuntu;
+    }
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+/* GLOBAL RULES */
 a {
     text-decoration: none;
     color: map-get(style.$colors, 'hyperlink');
@@ -14,45 +34,7 @@ a {
     }
 }
 
-p {
-    @extend %quicksand;
-}
-
-footer {
-    @extend %quicksand;
-    background-color: map-get(style.$colors, 'bg-offset')-color;
-    border-radius: 2rem 2rem 0 0;
-    border-top: map-get(style.$colors, 'accent') 2px solid;
-    border-right: map-get(style.$colors, 'accent') 2px solid;
-    border-left: map-get(style.$colors, 'accent') 2px solid;
-    padding: 1vmin;
-    margin-top: 2vw;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-    img {
-        height: 3vw;
-        min-height: 2rem;
-        width: 3vw;
-        min-width: 2rem;
-    }
-
-    aside {
-        font-size: 1.75vmin;
-        min-font-size: 4rem;
-        text-align: end;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-evenly;
-    }
-}
-
-label {
-    @extend %quicksand;
-}
-
-button {
+p, label, button, #list-order {
     @extend %quicksand;
 }
 
@@ -72,18 +54,24 @@ textarea {
     border: 2px solid map-get(style.$colors, 'accent');
 }
 
-#list-order {
-    @extend %quicksand;
-}
-
-h1 {
+h1, h2, h3, legend, h4 {
     @extend %ubuntu;
 }
 
-h2 {
-    @extend %ubuntu;
+span {
+    margin-right: 1vmax;
+    height: 1vmax;
+    width: 1vmax;
 }
 
+select {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid map-get(style.$colors, 'accent');
+}
+
+/* HEADER */
 header {
     @extend %ubuntu;
     background-color: map-get(style.$colors, 'bg');
@@ -112,17 +100,46 @@ header {
         margin-top: 2vmax;
         padding-right: 2vw;
         width: content-box;
+
+        .button {
+            display: inline;
+            margin-left: 1vmax;
+        }
     }
 }
 
-main {
-    a {
-        @extend %ubuntu;
+/* FOOTER */
+footer {
+    @extend %quicksand;
+    background-color: map-get(style.$colors, 'bg-offset');
+    border-radius: 2rem 2rem 0 0;
+    border-top: map-get(style.$colors, 'accent') 2px solid;
+    border-right: map-get(style.$colors, 'accent') 2px solid;
+    border-left: map-get(style.$colors, 'accent') 2px solid;
+    padding: 1vmin;
+    margin-top: 2vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    img {
+        height: 3vw;
+        min-height: 2rem;
+        width: 3vw;
+        min-width: 2rem;
     }
-    margin-left: 2em;
-    margin-right: 2em;
+
+    aside {
+        font-size: 1.75vmin;
+        min-font-size: 4rem;
+        text-align: end;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+    }
 }
 
+/* FIGURES */
 figure {
     figcaption {
         @extend %ubuntu;
@@ -136,50 +153,9 @@ figure {
     }
 }
 
-h3 {
-    @extend %ubuntu;
-}
-
-legend {
-    @extend %ubuntu;
-}
-
-h4 {
-    @extend %ubuntu;
-}
-
-body {
-    margin-left: 3vmax;
-    margin-right: 3vmax;
-    background-color: map-get(style.$colors, 'bg-offset');
-}
-
-html {
-    background-color: map-get(style.$colors, 'bg')
-}
-
+/* BUTTON */
 .button {
    @extend %button;
-}
-
-nav {
-    .button {
-        display: inline;
-        margin-left: 1vmax;
-    }
-}
-
-span {
-    margin-right: 1vmax;
-    height: 1vmax;
-    width: 1vmax;
-}
-
-select {
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 0.5em;
-    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 .placeholder {
