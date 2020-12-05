@@ -17,3 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .webpackConfig(require('./webpack.config'));
+mix.sass('resources/sass/universal.scss', 'public/assets/css/universal.css')
+    .sass('resources/sass/consumer.scss', 'public/assets/css/consumer.css')
+    .sass('resources/sass/neutral.scss', 'public/assets/css/neutral.css');
