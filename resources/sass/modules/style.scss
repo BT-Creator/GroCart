@@ -4,3 +4,8 @@
     border-radius: 10px;
     border: solid map-get(typography.$colors, 'accent') 2px;
 }
+
+%border-container{
+    border-radius: 10px;
+    border: 2px black solid;
+}

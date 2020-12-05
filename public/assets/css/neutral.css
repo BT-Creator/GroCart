@@ -1,9 +1,6 @@
-.button {
-  height: min-content;
-  padding: 0.5vmax;
-  background-color: white;
-  border: black 2px solid;
+main img {
   border-radius: 10px;
+  border: solid #4cb54c 2px;
 }
 
 .list-item {
@@ -60,8 +57,6 @@ main img {
   min-width: 10rem;
   width: 12vw;
   min-height: 10rem;
-  border-radius: 10px;
-  border: solid #4cb54c 2px;
   margin-left: 2vmax;
 }
 main article h1 {

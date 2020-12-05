@@ -1,5 +1,6 @@
 @use '../modules/typography';
 @use '../themes/consumer';
+@use '../modules/style';
 
 .profile {
     article {
@@ -50,6 +51,7 @@
         justify-content: space-around;
     }
 }
+
 .profile-card {
     display: flex;
     flex-flow: column wrap;
@@ -63,15 +65,15 @@
         width: 3vmax;
     }
 }
+
 .profile-order {
+    @extend %border-accent;
     display: flex;
     flex-flow: row wrap;
     padding: 1em;
     margin-bottom: 1em;
     align-content: center;
-    border: map-get(typography.$colors, 'accent') solid 2px;
     width: max-content;
-    border-radius: 10px;
     background-color: map-get(typography.$colors, 'bg');
     height: max-content;
     div {

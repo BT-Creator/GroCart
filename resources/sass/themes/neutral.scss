@@ -31,12 +31,11 @@ main {
     grid-column-gap: 2vw;
     grid-row-gap: 1.5vmin;
     img {
+        @extend %border-accent;
         height: 12vw;
         min-width: 10rem;
         width: 12vw;
         min-height: 10rem;
-        border-radius: 10px;
-        border: solid map-get(typography.$colors, 'accent') 2px;
         margin-left: 2vmax;
     }
     article {

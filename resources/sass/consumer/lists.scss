@@ -1,6 +1,7 @@
 @use '../modules/typography';
 @use '../themes/consumer';
 @use '../modules/components';
+@use '../modules/style';
 
 .grocery-list-container {
     border: none;
@@ -17,9 +18,8 @@
     display: flex;
     justify-content: space-around;
     a {
-        border: map-get(typography.$colors, 'accent') solid 2px;
+        @extend %border-accent;
         padding: 1vmax;
-        border-radius: 10px;
         margin: 1em;
     }
     span {
@@ -28,9 +28,8 @@
 }
 
 .grocery-lists {
+    @extend %border-container;
     background-color: map-get(typography.$colors, 'bg');
-    border: map-get(typography.$colors, 'secondary') solid 2px;
-    border-radius: 10px;
     padding: 1vw;
     margin-bottom: 1vw;
     height: max-content;

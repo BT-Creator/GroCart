@@ -1,12 +1,14 @@
 @use '../modules/typography';
 @use '../themes/consumer';
 @use '../modules/components';
+@use '../modules/style';
 
 .list-top-bar {
     display: flex;
     justify-content: space-around;
     margin-bottom: 1em;
 }
+
 .list-main {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -24,24 +26,23 @@
         margin-bottom: 0.5em;
     }
     .new-items-container {
+        @extend %border-container;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         background-color: map-get(typography.$colors, 'bg');
-        border-radius: 10px;
-        border: 2px black solid;
         min-height: 5rem;
     }
     .list-items-container {
+        @extend %border-container;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         background-color: map-get(typography.$colors, 'bg');
-        border-radius: 10px;
-        border: 2px black solid;
         min-height: 5rem;
     }
 }
+
 .list-bottom-bar {
     display: flex;
     flex-flow: row wrap;
@@ -65,13 +66,12 @@
 }
 
 .new-item-form {
+    @extend %border-accent;
     position: fixed;
     z-index: 1;
     width: calc(50% - 1rem);
     height: calc(50% - 1rem);
     background-color: map-get(typography.$colors, 'bg');
-    border-radius: 10px;
-    border: 2px solid map-get(typography.$colors, 'accent');
     display: flex;
     flex-flow: column nowrap;
     top: 25%;
@@ -106,6 +106,7 @@
         border-color: black;
     }
 }
+
 select {
     display: block;
     margin-bottom: 0.5rem;
