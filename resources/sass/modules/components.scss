@@ -1,0 +1,30 @@
+@use 'style';
+@use 'typography';
+
+.button{
+    height: min-content;
+    padding: 0.5vmax;
+    background-color: map-get(typography.$colors, 'button-bg');
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+.list-item {
+    width: max-content;
+    border: map-get(typography.$colors, 'accent') solid 2px;
+    border-radius: 10px;
+    padding: 1vw;
+    background-color: map-get(typography.$colors, 'bg');
+    margin: 1em;
+    cursor: move;
+    h2 {
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+    p {
+        margin-bottom: 5px;
+    }
+    span {
+        text-decoration: underline;
+    }
+}

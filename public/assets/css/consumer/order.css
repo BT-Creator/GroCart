@@ -1,0 +1,58 @@
+form div {
+  border: none;
+  padding: 0;
+  background-color: initial;
+}
+
+p {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+a {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+.order-info {
+  border-radius: 10px;
+  border: 2px black solid;
+}
+
+.order-overview aside {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.order-overview h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1em;
+  color: #2b7c2b;
+}
+.order-overview h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+}
+
+.order-info {
+  background-color: white;
+  padding: 1em;
+  width: max-content;
+}
+.order-info p {
+  margin-bottom: 0.5em;
+}
+.order-info h3 {
+  margin-bottom: 0.5em;
+}
+
+#map {
+  width: 100%;
+  height: 15em;
+}
+
+/*# sourceMappingURL=order.css.map */

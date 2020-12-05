@@ -1,0 +1,97 @@
+form div {
+  border: none;
+  padding: 0;
+  background-color: initial;
+}
+
+p {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+a {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+.profile-order {
+  border-radius: 10px;
+  border: solid #4cb54c 2px;
+}
+
+.profile article:nth-of-type(1) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+.profile article:nth-of-type(2) {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+.profile article section h2 {
+  margin-bottom: 2em;
+  font-weight: bold;
+}
+.profile article section h2 span {
+  font-weight: normal;
+  margin-left: 0.5em;
+}
+.profile article section h2 time {
+  font-weight: normal;
+  margin-left: 0.5em;
+}
+.profile article .graph {
+  margin-bottom: 2em;
+  font-weight: bold;
+}
+.profile h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.profile aside {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.profile aside h2 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.profile-card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+.profile-card figcaption {
+  font-size: 1.5em;
+}
+.profile-card image {
+  height: 3vmax;
+  width: 3vmax;
+}
+
+.profile-order {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  margin-bottom: 1em;
+  align-content: center;
+  width: max-content;
+  background-color: white;
+  height: max-content;
+}
+.profile-order div {
+  margin-left: 3em;
+}
+.profile-order span {
+  font-size: 3em;
+}
+
+/*# sourceMappingURL=profile.css.map */

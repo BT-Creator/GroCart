@@ -1,0 +1,164 @@
+@use "../modules/style";
+@use "../modules/components";
+@use "../modules/typography";
+
+/* ROOT ELEMENTS */
+body {
+    margin-left: 3vmax;
+    margin-right: 3vmax;
+    background-color: map-get(typography.$colors, 'bg-offset');
+}
+
+html {
+    background-color: map-get(typography.$colors, 'bg')
+}
+
+main {
+    a {
+        font-family: typography.$ubuntu;
+    }
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+/* GLOBAL RULES */
+a {
+    text-decoration: none;
+    color: map-get(typography.$colors, 'hyperlink');
+
+    &:hover {
+        color: map-get(typography.$colors, 'accent');
+    }
+
+    &:visited {
+        color: map-get(typography.$colors, 'hyperlink-used')
+    }
+}
+
+p, label, button, #list-order {
+    font-family: typography.$quicksand;
+}
+
+input {
+    font-family: typography.$quicksand;
+    @extend %border-accent;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+textarea {
+    font-family: typography.$quicksand;
+    @extend %border-accent;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+h1, h2, h3, legend, h4 {
+    font-family: typography.$ubuntu;
+}
+
+span {
+    margin-right: 1vmax;
+    height: 1vmax;
+    width: 1vmax;
+}
+
+select {
+    @extend %border-accent;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+/* HEADER */
+header {
+    font-family: typography.$ubuntu;
+    background-color: map-get(typography.$colors, 'bg-offset');
+    border-radius: 0 0 2rem 2rem;
+    border-bottom: map-get(typography.$colors, 'accent') 2px solid;
+    border-right: map-get(typography.$colors, 'accent') 2px solid;
+    border-left: map-get(typography.$colors, 'accent') 2px solid;
+    padding-bottom: 1vmax;
+    padding-top: 1vmax;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin-bottom: 1vw;
+
+    img {
+        margin-left: 1rem;
+        width: 7rem;
+        height: 7rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        margin-top: 2vmax;
+        padding-right: 2vw;
+        width: content-box;
+
+        .button {
+            display: inline;
+            margin-left: 1vmax;
+        }
+    }
+}
+
+/* FOOTER */
+footer {
+    font-family: typography.$quicksand;
+    background-color: map-get(typography.$colors, 'bg-offset');
+    border-radius: 2rem 2rem 0 0;
+    border-top: map-get(typography.$colors, 'accent') 2px solid;
+    border-right: map-get(typography.$colors, 'accent') 2px solid;
+    border-left: map-get(typography.$colors, 'accent') 2px solid;
+    padding: 1vmin;
+    margin-top: 2vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    img {
+        height: 3vw;
+        min-height: 2rem;
+        width: 3vw;
+        min-width: 2rem;
+    }
+
+    aside {
+        font-size: 1.75vmin;
+        min-font-size: 4rem;
+        text-align: end;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+    }
+}
+
+/* FIGURES */
+figure {
+    figcaption {
+        font-family: typography.$ubuntu;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        font-weight: bold;
+        text-align: center;
+        color: map-get(typography.$colors, 'primary');
+        font-size: 2vmin;
+        min-font-size: 3rem;
+    }
+}
+
+.placeholder {
+    h1 {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    span {
+        padding-right: 4vw;
+        color: map-get(typography.$colors, 'accent');
+    }
+}

@@ -1,5 +1,9 @@
 @extends('consumer.master_consumer')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumer/list-mod.css')}}">
+@endsection
+
 @section('title')
     List Name
 @endsection
@@ -22,7 +26,7 @@
         <form method="post" action="{{route('add_list', [1])}}">
         @endisset
             @csrf
-            <aside id="list-top-bar" aria-label="list-top-bar">
+            <aside class="list-top-bar" aria-label="list-top-bar">
                 <a><span class="fas fa-plus-circle"></span>New Item</a>
                 <label for="picking_method">
                     <span class="fas fa-hand-holding"></span>
@@ -37,7 +41,7 @@
                     @endisset
                 </label>
             </aside>
-            <div id="list-main">
+            <div class="list-main">
                 <fieldset>
                     <legend>Items</legend>
                     <div class="new-items-container">
@@ -73,7 +77,7 @@
                     </div>
                 </fieldset>
             </div>
-            <aside id="list-bottom-bar" aria-label="list-bottom-bar">
+            <aside class="list-bottom-bar" aria-label="list-bottom-bar">
                 <section>
                     <h3><span class="fas fa-store"></span>Store Address:</h3>
                     <label for="store_street">
@@ -227,7 +231,7 @@
             </aside>
         </form>
     </main>
-    <form id="new-item-form">
+    <form class="new-item-form">
         <mark></mark>
         <div>
             <h3>Add a new item</h3>
