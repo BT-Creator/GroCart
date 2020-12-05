@@ -1,0 +1,17 @@
+%quicksand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+%ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+$colors: (
+    bg: rgb(255, 255, 255),
+    bg-offset: rgb(237, 237, 237),
+    primary: rgb(67, 160, 67),
+    secondary: rgb(43, 124, 43),
+    accent: rgb(76, 181, 76),
+    hyperlink: rgb(62, 220, 237),
+    hyperlink-used: rgb(29, 102, 110)
+)

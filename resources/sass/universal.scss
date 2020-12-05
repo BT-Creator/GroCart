@@ -1,35 +1,29 @@
-$bg-color: rgb(255, 255, 255);
-$bg-offset-color: rgb(237, 237, 237);
-$primary-color: rgb(67, 160, 67);
-$secondary-color: rgb(43, 124, 43);
-$accent-color: rgb(76, 181, 76);
-$hyperlink: rgb(62, 220, 237);
-$hyperlink-used: rgb(29, 102, 110);
+@use "modules/style";
 
 a {
     text-decoration: none;
-    color: $hyperlink;
+    color: map-get(style.$colors, 'hyperlink');
 
     &:hover {
-        color: $accent-color;
+        color: map-get(style.$colors, 'accent');
     }
 
     &:visited {
-        color: $hyperlink-used;
+        color: map-get(style.$colors, 'hyperlink-used')
     }
 }
 
 p {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
 }
 
 footer {
-    font-family: 'Quicksand', sans-serif;
-    background-color: $bg-offset-color;
+    @extend %quicksand;
+    background-color: map-get(style.$colors, 'bg-offset')-color;
     border-radius: 2rem 2rem 0 0;
-    border-top: $accent-color 2px solid;
-    border-right: $accent-color 2px solid;
-    border-left: $accent-color 2px solid;
+    border-top: map-get(style.$colors, 'accent') 2px solid;
+    border-right: map-get(style.$colors, 'accent') 2px solid;
+    border-left: map-get(style.$colors, 'accent') 2px solid;
     padding: 1vmin;
     margin-top: 2vw;
     display: flex;
@@ -54,48 +48,48 @@ footer {
 }
 
 label {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
 }
 
 button {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
 }
 
 input {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid $accent-color;
+    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 textarea {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid $accent-color;
+    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 #list-order {
-    font-family: 'Quicksand', sans-serif;
+    @extend %quicksand;
 }
 
 h1 {
-    font-family: 'Ubuntu', sans-serif;
+    @extend %ubuntu;
 }
 
 h2 {
-    font-family: 'Ubuntu', sans-serif;
+    @extend %ubuntu;
 }
 
 header {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: $bg-color;
+    @extend %ubuntu;
+    background-color: map-get(style.$colors, 'bg');
     border-radius: 0 0 2rem 2rem;
-    border-bottom: $accent-color 2px solid;
-    border-right: $accent-color 2px solid;
-    border-left: $accent-color 2px solid;
+    border-bottom: map-get(style.$colors, 'accent') 2px solid;
+    border-right: map-get(style.$colors, 'accent') 2px solid;
+    border-left: map-get(style.$colors, 'accent') 2px solid;
     padding-bottom: 1vmax;
     padding-top: 1vmax;
     display: flex;
@@ -122,7 +116,7 @@ header {
 
 main {
     a {
-        font-family: 'Ubuntu', sans-serif;
+        @extend %ubuntu;
     }
 
     margin-left: 2em;
@@ -131,7 +125,7 @@ main {
 
 figure {
     figcaption {
-        font-family: 'Ubuntu', sans-serif;
+        @extend %ubuntu;
         padding-top: 1vw;
         padding-bottom: 1vw;
         font-weight: bold;
@@ -143,31 +137,31 @@ figure {
 }
 
 h3 {
-    font-family: 'Ubuntu', sans-serif;
+    @extend %ubuntu;
 }
 
 legend {
-    font-family: 'Ubuntu', sans-serif;
+    @extend %ubuntu;
 }
 
 h4 {
-    font-family: 'Ubuntu', sans-serif;
+    @extend %ubuntu;
 }
 
 body {
     margin-left: 3vmax;
     margin-right: 3vmax;
-    background-color: $bg-offset-color;
+    background-color: map-get(style.$colors, 'bg-offset');
 }
 
 html {
-    background-color: white;
+    background-color: map-get(style.$colors, 'bg')
 }
 
 .button {
     height: min-content;
     padding: 0.5vmax;
-    background-color: $bg-offset-color;
+    background-color: map-get(style.$colors, 'bg-offset');
     border: black 2px solid;
     border-radius: 10px;
 }
@@ -189,7 +183,7 @@ select {
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid $accent-color;
+    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 .placeholder {
@@ -200,6 +194,6 @@ select {
 
     span {
         padding-right: 4vw;
-        color: $accent-color;
+        color: map-get(style.$colors, 'accent');
     }
 }
