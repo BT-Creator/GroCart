@@ -30,6 +30,7 @@
         background-color: map-get(typography.$colors, 'bg');
         border-radius: 10px;
         border: 2px black solid;
+        min-height: 5rem;
     }
     .list-items-container {
         display: flex;
@@ -38,6 +39,7 @@
         background-color: map-get(typography.$colors, 'bg');
         border-radius: 10px;
         border: 2px black solid;
+        min-height: 5rem;
     }
 }
 .list-bottom-bar {
@@ -108,12 +110,7 @@ select {
     display: block;
     margin-bottom: 0.5rem;
 }
-.new-items-container {
-    min-height: 5rem;
-}
-.list-items-container {
-    min-height: 5rem;
-}
+
 #list-order {
     color: black;
     padding: 1vmax;
