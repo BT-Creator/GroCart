@@ -8,14 +8,14 @@ $hyperlink-used: rgb(29, 102, 110);
 
 a {
     text-decoration: none;
-    color: var(--hyperlink);
+    color: $hyperlink;
 
     &:hover {
-        color: var(--accent-color);
+        color: $accent-color;
     }
 
     &:visited {
-        color: var(--hyperlink-used);
+        color: $hyperlink-used;
     }
 }
 
@@ -25,11 +25,11 @@ p {
 
 footer {
     font-family: 'Quicksand', sans-serif;
-    background-color: var(--bg-offset-color);
+    background-color: $bg-offset-color;
     border-radius: 2rem 2rem 0 0;
-    border-top: var(--accent-color) 2px solid;
-    border-right: var(--accent-color) 2px solid;
-    border-left: var(--accent-color) 2px solid;
+    border-top: $accent-color 2px solid;
+    border-right: $accent-color 2px solid;
+    border-left: $accent-color 2px solid;
     padding: 1vmin;
     margin-top: 2vw;
     display: flex;
@@ -66,7 +66,7 @@ input {
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid var(--accent-color);
+    border: 2px solid $accent-color;
 }
 
 textarea {
@@ -74,7 +74,7 @@ textarea {
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid var(--accent-color);
+    border: 2px solid $accent-color;
 }
 
 #list-order {
@@ -91,11 +91,11 @@ h2 {
 
 header {
     font-family: 'Ubuntu', sans-serif;
-    background-color: var(--bg-offset-color);
+    background-color: $bg-color;
     border-radius: 0 0 2rem 2rem;
-    border-bottom: var(--accent-color) 2px solid;
-    border-right: var(--accent-color) 2px solid;
-    border-left: var(--accent-color) 2px solid;
+    border-bottom: $accent-color 2px solid;
+    border-right: $accent-color 2px solid;
+    border-left: $accent-color 2px solid;
     padding-bottom: 1vmax;
     padding-top: 1vmax;
     display: flex;
@@ -157,7 +157,7 @@ h4 {
 body {
     margin-left: 3vmax;
     margin-right: 3vmax;
-    background-color: var(--bg-offset-color);
+    background-color: $bg-offset-color;
 }
 
 html {
@@ -167,7 +167,7 @@ html {
 .button {
     height: min-content;
     padding: 0.5vmax;
-    background-color: rgb(255, 255, 255);
+    background-color: $bg-offset-color;
     border: black 2px solid;
     border-radius: 10px;
 }
@@ -189,7 +189,7 @@ select {
     text-decoration: none;
     border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid var(--accent-color);
+    border: 2px solid $accent-color;
 }
 
 .placeholder {
@@ -200,6 +200,6 @@ select {
 
     span {
         padding-right: 4vw;
-        color: rgb(76, 181, 76);
+        color: $accent-color;
     }
 }
