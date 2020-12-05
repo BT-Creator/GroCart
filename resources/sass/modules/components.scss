@@ -1,9 +1,10 @@
 @use 'style';
+@use 'typography';
 
 %button{
     height: min-content;
     padding: 0.5vmax;
-    background-color: map-get(style.$colors, 'bg-offset');
+    background-color: map-get(typography.$colors, 'button-bg');
     border: black 2px solid;
     border-radius: 10px;
 }

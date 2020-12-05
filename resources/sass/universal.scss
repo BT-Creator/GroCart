@@ -1,20 +1,21 @@
 @use "modules/style";
 @use "modules/components";
+@use "modules/typography";
 
 /* ROOT ELEMENTS */
 body {
     margin-left: 3vmax;
     margin-right: 3vmax;
-    background-color: map-get(style.$colors, 'bg-offset');
+    background-color: map-get(typography.$colors, 'bg-offset');
 }
 
 html {
-    background-color: map-get(style.$colors, 'bg')
+    background-color: map-get(typography.$colors, 'bg')
 }
 
 main {
     a {
-        @extend %ubuntu;
+        font-family: typography.$ubuntu;
     }
     margin-left: 2em;
     margin-right: 2em;
@@ -23,39 +24,37 @@ main {
 /* GLOBAL RULES */
 a {
     text-decoration: none;
-    color: map-get(style.$colors, 'hyperlink');
+    color: map-get(typography.$colors, 'hyperlink');
 
     &:hover {
-        color: map-get(style.$colors, 'accent');
+        color: map-get(typography.$colors, 'accent');
     }
 
     &:visited {
-        color: map-get(style.$colors, 'hyperlink-used')
+        color: map-get(typography.$colors, 'hyperlink-used')
     }
 }
 
 p, label, button, #list-order {
-    @extend %quicksand;
+    font-family: typography.$quicksand;
 }
 
 input {
-    @extend %quicksand;
+    font-family: typography.$quicksand;
+    @extend %border-accent;
     text-decoration: none;
-    border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 textarea {
-    @extend %quicksand;
+    font-family: typography.$quicksand;
+    @extend %border-accent;
     text-decoration: none;
-    border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 h1, h2, h3, legend, h4 {
-    @extend %ubuntu;
+    font-family: typography.$ubuntu;
 }
 
 span {
@@ -65,20 +64,19 @@ span {
 }
 
 select {
+    @extend %border-accent;
     text-decoration: none;
-    border-radius: 10px;
     padding: 0.5em;
-    border: 2px solid map-get(style.$colors, 'accent');
 }
 
 /* HEADER */
 header {
-    @extend %ubuntu;
-    background-color: map-get(style.$colors, 'bg');
+    font-family: typography.$ubuntu;
+    background-color: map-get(typography.$colors, 'bg-offset');
     border-radius: 0 0 2rem 2rem;
-    border-bottom: map-get(style.$colors, 'accent') 2px solid;
-    border-right: map-get(style.$colors, 'accent') 2px solid;
-    border-left: map-get(style.$colors, 'accent') 2px solid;
+    border-bottom: map-get(typography.$colors, 'accent') 2px solid;
+    border-right: map-get(typography.$colors, 'accent') 2px solid;
+    border-left: map-get(typography.$colors, 'accent') 2px solid;
     padding-bottom: 1vmax;
     padding-top: 1vmax;
     display: flex;
@@ -110,12 +108,12 @@ header {
 
 /* FOOTER */
 footer {
-    @extend %quicksand;
-    background-color: map-get(style.$colors, 'bg-offset');
+    font-family: typography.$quicksand;
+    background-color: map-get(typography.$colors, 'bg-offset');
     border-radius: 2rem 2rem 0 0;
-    border-top: map-get(style.$colors, 'accent') 2px solid;
-    border-right: map-get(style.$colors, 'accent') 2px solid;
-    border-left: map-get(style.$colors, 'accent') 2px solid;
+    border-top: map-get(typography.$colors, 'accent') 2px solid;
+    border-right: map-get(typography.$colors, 'accent') 2px solid;
+    border-left: map-get(typography.$colors, 'accent') 2px solid;
     padding: 1vmin;
     margin-top: 2vw;
     display: flex;
@@ -142,12 +140,12 @@ footer {
 /* FIGURES */
 figure {
     figcaption {
-        @extend %ubuntu;
+        font-family: typography.$ubuntu;
         padding-top: 1vw;
         padding-bottom: 1vw;
         font-weight: bold;
         text-align: center;
-        color: map-get(style.$colors, 'primary');
+        color: map-get(typography.$colors, 'primary');
         font-size: 2vmin;
         min-font-size: 3rem;
     }
@@ -166,6 +164,6 @@ figure {
 
     span {
         padding-right: 4vw;
-        color: map-get(style.$colors, 'accent');
+        color: map-get(typography.$colors, 'accent');
     }
 }

@@ -1,4 +1,5 @@
 @use 'modules/style';
+@use 'modules/typography';
 
 figure {
     margin-top: 1vmax;
@@ -18,7 +19,7 @@ figure {
         font-weight: bold;
         text-align: center;
         font-size: 3vmax;
-        color: map-get(style.$colors, 'primary');
+        color: map-get(typography.$colors, 'primary');
     }
 }
 
@@ -34,12 +35,12 @@ main {
         width: 12vw;
         min-height: 10rem;
         border-radius: 10px;
-        border: solid map-get(style.$colors, 'accent') 2px;
+        border: solid map-get(typography.$colors, 'accent') 2px;
         margin-left: 2vmax;
     }
     article {
         h1 {
-            color: map-get(style.$colors, 'secondary');
+            color: map-get(typography.$colors, 'secondary');
             font-size: 3vw;
             margin-bottom: 1vw;
         }

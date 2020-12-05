@@ -1,17 +1,6 @@
-%quicksand {
-    font-family: 'Quicksand', sans-serif;
-}
+@use "typography";
 
-%ubuntu {
-    font-family: 'Ubuntu', sans-serif;
+%border-accent{
+    border-radius: 10px;
+    border: solid map-get(typography.$colors, 'accent') 2px;
 }
-
-$colors: (
-    bg: rgb(255, 255, 255),
-    bg-offset: rgb(237, 237, 237),
-    primary: rgb(67, 160, 67),
-    secondary: rgb(43, 124, 43),
-    accent: rgb(76, 181, 76),
-    hyperlink: rgb(62, 220, 237),
-    hyperlink-used: rgb(29, 102, 110)
-)
