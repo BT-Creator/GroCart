@@ -11,6 +11,26 @@ input, textarea, select {
   border-radius: 10px;
 }
 
+.list-item {
+  width: max-content;
+  border: #4cb54c solid 2px;
+  border-radius: 10px;
+  padding: 1vw;
+  background-color: white;
+  margin: 1em;
+  cursor: move;
+}
+.list-item h2 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.list-item p {
+  margin-bottom: 5px;
+}
+.list-item span {
+  text-decoration: underline;
+}
+
 /* ROOT ELEMENTS */
 body {
   margin-left: 3vmax;
@@ -148,7 +168,6 @@ figure figcaption {
   min-font-size: 3rem;
 }
 
-/* BUTTON */
 .placeholder h1 {
   font-size: 3vw;
   text-align: center;

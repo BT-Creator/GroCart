@@ -1,7 +1,7 @@
 @use 'style';
 @use 'typography';
 
-%button{
+.button{
     height: min-content;
     padding: 0.5vmax;
     background-color: map-get(typography.$colors, 'button-bg');

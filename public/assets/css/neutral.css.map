@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "sourceRoot": "",
-    "sources": [
-        "../../../resources/sass/themes/neutral.scss"
-    ],
-    "names": [],
-    "mappings": "AAGA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA;;;AAIR;EACI;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;;AAEJ;EACI;;AAEJ;EACI;EACA;EACA",
-    "file": "neutral.css"
-}
+{"version":3,"sourceRoot":"","sources":["../../../resources/sass/modules/components.scss","../../../resources/sass/themes/neutral.scss"],"names":[],"mappings":"AAGA;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;;AAEJ;EACI;;AAEJ;EACI;;;ACvBR;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA;;;AAIR;EACI;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;;AAEJ;EACI;;AAEJ;EACI;EACA;EACA","file":"neutral.css"}
