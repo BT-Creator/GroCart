@@ -1,0 +1,205 @@
+$bg-color: rgb(255, 255, 255);
+$bg-offset-color: rgb(237, 237, 237);
+$primary-color: rgb(67, 160, 67);
+$secondary-color: rgb(43, 124, 43);
+$accent-color: rgb(76, 181, 76);
+$hyperlink: rgb(62, 220, 237);
+$hyperlink-used: rgb(29, 102, 110);
+
+a {
+    text-decoration: none;
+    color: var(--hyperlink);
+
+    &:hover {
+        color: var(--accent-color);
+    }
+
+    &:visited {
+        color: var(--hyperlink-used);
+    }
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+footer {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-offset-color);
+    border-radius: 2rem 2rem 0 0;
+    border-top: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    padding: 1vmin;
+    margin-top: 2vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    img {
+        height: 3vw;
+        min-height: 2rem;
+        width: 3vw;
+        min-width: 2rem;
+    }
+
+    aside {
+        font-size: 1.75vmin;
+        min-font-size: 4rem;
+        text-align: end;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+    }
+}
+
+label {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+input {
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid var(--accent-color);
+}
+
+textarea {
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid var(--accent-color);
+}
+
+#list-order {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--bg-offset-color);
+    border-radius: 0 0 2rem 2rem;
+    border-bottom: var(--accent-color) 2px solid;
+    border-right: var(--accent-color) 2px solid;
+    border-left: var(--accent-color) 2px solid;
+    padding-bottom: 1vmax;
+    padding-top: 1vmax;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin-bottom: 1vw;
+
+    img {
+        margin-left: 1rem;
+        width: 7rem;
+        height: 7rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        margin-top: 2vmax;
+        padding-right: 2vw;
+        width: content-box;
+    }
+}
+
+main {
+    a {
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+figure {
+    figcaption {
+        font-family: 'Ubuntu', sans-serif;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        font-weight: bold;
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 2vmin;
+        min-font-size: 3rem;
+    }
+}
+
+h3 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+legend {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h4 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    margin-left: 3vmax;
+    margin-right: 3vmax;
+    background-color: var(--bg-offset-color);
+}
+
+html {
+    background-color: white;
+}
+
+.button {
+    height: min-content;
+    padding: 0.5vmax;
+    background-color: rgb(255, 255, 255);
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+nav {
+    .button {
+        display: inline;
+        margin-left: 1vmax;
+    }
+}
+
+span {
+    margin-right: 1vmax;
+    height: 1vmax;
+    width: 1vmax;
+}
+
+select {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: 2px solid var(--accent-color);
+}
+
+.placeholder {
+    h1 {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    span {
+        padding-right: 4vw;
+        color: rgb(76, 181, 76);
+    }
+}
