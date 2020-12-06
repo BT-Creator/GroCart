@@ -79,6 +79,9 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript">
+        localStorage.setItem('id', {{Auth::id()}})
+    </script>
     <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>
     <script type="module" src="{{asset('assets/js/config/config.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
