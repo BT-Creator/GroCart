@@ -171,4 +171,22 @@ select {
   padding: 1vmax;
 }
 
+.list-item {
+  display: block;
+  box-shadow: 0 0 0 #4cb54c;
+  animation: pulseAnim 2s infinite;
+}
+
+@keyframes pulseAnim {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 181, 76, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 181, 76, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 181, 76, 0);
+  }
+}
+
 /*# sourceMappingURL=list-mod.css.map */
