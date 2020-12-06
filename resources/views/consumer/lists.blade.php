@@ -14,7 +14,7 @@
             <article class="empty-lists">
                 <h1>No list found :(</h1>
                 <p>How about creating one?</p>
-                <a class="button" href="{{route('create_list', 1)}}"><span class="fas fa-plus-circle"></span>New List</a>
+                <a class="button" href="{{route('create_list', Auth::id())}}"><span class="fas fa-plus-circle"></span>New List</a>
             </article>
         @else
             @foreach($orders as $order)
@@ -40,9 +40,9 @@
                     @endforeach
                 </div>
                 <div class="grocery-list-options">
-                    <a class="button" href="{{route('open_list', [1, $order[0]['order_id']])}}"><span class="fas fa-edit"></span>Edit</a>
+                    <a class="button" href="{{route('open_list', [Auth::id(), $order[0]['order_id']])}}"><span class="fas fa-edit"></span>Edit</a>
                     <a class="button" href="{{route('501_route')}}"><span class="fas fa-trash"></span>Delete</a>
-                    <a class="button" href="{{route('make_order', [1, $order[0]['order_id']])}}">Order<span class="fas fa-arrow-right"></span></a>
+                    <a class="button" href="{{route('make_order', [Auth::id(), $order[0]['order_id']])}}">Order<span class="fas fa-arrow-right"></span></a>
                 </div>
             </article>
             @endforeach

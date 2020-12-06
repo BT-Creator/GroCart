@@ -126,6 +126,16 @@ header nav .button {
   display: inline;
   margin-left: 1vmax;
 }
+header form button {
+  text-decoration: none;
+  color: #3edced;
+}
+header form button:hover {
+  color: #4cb54c;
+}
+header form button:visited {
+  color: #1d666e;
+}
 
 /* FOOTER */
 footer {

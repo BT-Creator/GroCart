@@ -43,34 +43,45 @@
         <aside>
             <div>
                 <h2>Ongoing orders</h2>
-                @foreach($ongoing_orders as $id => $order)
-                    <section class="profile-order">
-                        <span class="fas fa-shopping-basket"></span>
-                        <div>
-                            <h3>Order {{$id}}</h3>
-                            <p>Total Items: <span>{{count($order)}}</span></p>
-                            <a class="button" href="{{route('open_order', [1, $id])}}">Open order</a>
-                        </div>
-                    </section>
-                @endforeach
+                @if(empty(collect(collect($ongoing_orders) -> first()) -> first()))
+                    <p>No ongoing orders found.</p>
+                @else
+                    @foreach($ongoing_orders as $id => $order)
+                        <section class="profile-order">
+                            <span class="fas fa-shopping-basket"></span>
+                            <div>
+                                <h3>Order {{$id}}</h3>
+                                <p>Total Items: <span>{{count($order)}}</span></p>
+                                <a class="button" href="{{route('open_order', [Auth::id(), $id])}}">Open order</a>
+                            </div>
+                        </section>
+                    @endforeach
+                @endif
             </div>
             <div>
                 <h2>Completed orders</h2>
-                @foreach($completed_orders as $id => $order)
-                    <section class="profile-order">
-                        <span class="fas fa-shopping-basket"></span>
-                        <div>
-                            <h3>Order {{$id}}</h3>
-                            <p>Total Items: <span>{{count($order)}}</span></p>
-                        </div>
-                    </section>
-                @endforeach
+                @if(empty(collect(collect($completed_orders) -> first()) -> first()))
+                    <p>No completed orders found.</p>
+                @else
+                    @foreach($completed_orders as $id => $order)
+                        <section class="profile-order">
+                            <span class="fas fa-shopping-basket"></span>
+                            <div>
+                                <h3>Order {{$id}}</h3>
+                                <p>Total Items: <span>{{count($order)}}</span></p>
+                            </div>
+                        </section>
+                    @endforeach
+                @endif
             </div>
         </aside>
     </main>
 @endsection
 
 @section('js')
+    <script type="text/javascript">
+        localStorage.setItem('id', {{Auth::id()}})
+    </script>
     <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>
     <script type="module" src="{{asset('assets/js/config/config.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

@@ -104,6 +104,21 @@ header {
             margin-left: 1vmax;
         }
     }
+
+    form{
+        button{
+            text-decoration: none;
+            color: map-get(typography.$colors, 'hyperlink');
+
+            &:hover {
+                color: map-get(typography.$colors, 'accent');
+            }
+
+            &:visited {
+                color: map-get(typography.$colors, 'hyperlink-used')
+            }
+        }
+    }
 }
 
 /* FOOTER */

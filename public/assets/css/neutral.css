@@ -3,6 +3,14 @@ main img {
   border: solid #4cb54c 2px;
 }
 
+.button {
+  height: min-content;
+  padding: 0.5vmax;
+  background-color: white;
+  border: black 2px solid;
+  border-radius: 10px;
+}
+
 .list-item {
   width: max-content;
   border: #4cb54c solid 2px;
