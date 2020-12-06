@@ -74,7 +74,7 @@
     margin-bottom: 1em;
     align-content: center;
     width: max-content;
-    background-color: map-get(typography.$colors, 'bg');
+    background-color: map-get(typography.$colors, 'bg-offset');
     height: max-content;
     div {
         margin-left: 3em;

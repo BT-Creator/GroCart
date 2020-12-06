@@ -24,20 +24,12 @@ a {
   border: 2px black solid;
 }
 
-/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
 .button {
   height: min-content;
   padding: 0.5vmax;
   background-color: white;
   border: black 2px solid;
   border-radius: 10px;
-  transition: transform 250ms ease-in-out;
-}
-.button:hover {
-  transform: scale(1.1);
-}
-.button:active {
-  transform: scale(0.9);
 }
 
 .list-item {
@@ -84,7 +76,7 @@ a {
 }
 
 .grocery-lists {
-  background-color: white;
+  background-color: #ededed;
   padding: 1vw;
   margin-bottom: 1vw;
   height: max-content;
