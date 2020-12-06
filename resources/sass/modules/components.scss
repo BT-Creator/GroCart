@@ -10,11 +10,14 @@
     border: black 2px solid;
     border-radius: 10px;
     transition: transform 250ms ease-in-out;
-
+    color: map-get(typography.$colors, 'hyperlink');
+    &:visited {
+        color: map-get(typography.$colors, 'hyperlink-used')
+    }
     &:hover {
         transform: scale(1.10);
+        color: map-get(typography.$colors, 'accent');
     }
-
     &:active {
         transform: scale(.9);
     }
@@ -28,13 +31,16 @@
     background-color: map-get(typography.$colors, 'bg');
     margin: 1em;
     cursor: move;
+
     h2 {
         font-weight: bold;
         margin-bottom: 1em;
     }
+
     p {
         margin-bottom: 5px;
     }
+
     span {
         text-decoration: underline;
     }
