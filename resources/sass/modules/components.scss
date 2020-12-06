@@ -1,12 +1,23 @@
 @use 'style';
 @use 'typography';
 
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
+
 .button{
     height: min-content;
     padding: 0.5vmax;
     background-color: map-get(typography.$colors, 'button-bg');
     border: black 2px solid;
     border-radius: 10px;
+    transition: transform 250ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.10);
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
 }
 
 .list-item {
