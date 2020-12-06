@@ -21,12 +21,12 @@
             </details>
         @endif
         @isset($details, $items)
-        <form method="post" action="{{route('update_list', [1, $details['id']])}}">
+        <form method="post" action="{{route('update_list', [Auth::id(), $details['id']])}}">
         @else
-        <form method="post" action="{{route('add_list', [1])}}">
+        <form method="post" action="{{route('add_list', [Auth::id()])}}">
         @endisset
             @csrf
-            <aside class="list-top-bar" aria-label="list-top-bar">
+            <aside class="list-top-bar">
                 <a><span class="fas fa-plus-circle"></span>New Item</a>
                 <label for="picking_method">
                     <span class="fas fa-hand-holding"></span>
