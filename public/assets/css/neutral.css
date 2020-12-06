@@ -46,10 +46,7 @@ main img {
 
 .name {
   padding: 0.5vw;
-}
-
-.name {
-  color: #1b202d;
+  margin-left: 1rem;
 }
 
 .name:hover {

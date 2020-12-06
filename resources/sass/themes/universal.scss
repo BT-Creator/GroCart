@@ -171,3 +171,7 @@ figure {
         color: map-get(typography.$colors, 'accent');
     }
 }
+
+#list_save, #list_order, #list_delete{
+    background-color: map-get(typography.$colors, 'bg-offset');
+}
