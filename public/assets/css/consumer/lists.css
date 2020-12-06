@@ -24,34 +24,6 @@ a {
   border: 2px black solid;
 }
 
-.button {
-  height: min-content;
-  padding: 0.5vmax;
-  background-color: white;
-  border: black 2px solid;
-  border-radius: 10px;
-}
-
-.list-item {
-  width: max-content;
-  border: #4cb54c solid 2px;
-  border-radius: 10px;
-  padding: 1vw;
-  background-color: white;
-  margin: 1em;
-  cursor: move;
-}
-.list-item h2 {
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-.list-item p {
-  margin-bottom: 5px;
-}
-.list-item span {
-  text-decoration: underline;
-}
-
 .grocery-list-container {
   border: none;
   padding: 0;

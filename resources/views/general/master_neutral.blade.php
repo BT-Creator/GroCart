@@ -27,7 +27,7 @@
                 <button class="button" type="submit"><span class="fas fa-sign-out-alt"></span>Logout</button>
             </form>
 
-            <p class="button">Welcome {{collect(Auth::user()) -> get('name')}}</p>
+            <p class="name">Welcome {{collect(Auth::user()) -> get('name')}}</p>
         </nav>
     @else
         <nav>
