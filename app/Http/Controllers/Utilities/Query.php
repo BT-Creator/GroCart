@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-function getOrdersAndItems(int $userId)
+function getOrdersAndItems(int $userId): Collection
 {
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
@@ -13,7 +14,7 @@ function getOrdersAndItems(int $userId)
         ->get();
 }
 
-function getItemsFromList(int $userId, int $listId)
+function getItemsFromList(int $userId, int $listId): Collection
 {
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
@@ -23,7 +24,7 @@ function getItemsFromList(int $userId, int $listId)
         ->get();
 }
 
-function getOrderDetails(int $userId, int $listId)
+function getOrderDetails(int $userId, int $listId): Collection
 {
     return DB::table('orders')
         ->join('deliveries', 'orders.delivery_id', '=', 'deliveries.id')
@@ -39,7 +40,8 @@ function getOrderDetails(int $userId, int $listId)
         ->get();
 }
 
-function getOngoingOrders($user_id){
+function getOngoingOrders($user_id): Collection
+{
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
         ->select('orders.id', 'items.*')
@@ -50,7 +52,8 @@ function getOngoingOrders($user_id){
         ->get();
 }
 
-function getCompletedOrders($user_id){
+function getCompletedOrders($user_id): Collection
+{
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
         ->select('orders.id', 'items.*')
