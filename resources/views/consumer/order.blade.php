@@ -29,9 +29,30 @@
             @break
         @endswitch
         <figure>
-            <svg xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" height="200" width="910">
                 <g>
-                    <circle r="20" cx="50" cy="50" stroke="black" fill="orange" id="smallRect"></circle>
+                    <circle r="50" cx="55" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-payed"></circle>
+                    <line stroke="black" stroke-width="5" x1="110" x2="200" y1="100" y2="100"></line>
+                    <text x="23" y="105">Ordered</text>
+                </g>
+                <g>
+                    <circle r="50" cx="255" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-assigned"></circle>
+                    <line stroke="black" stroke-width="5" x1="310" x2="400" y1="100" y2="100"></line>
+                    <text x="220" y="105">Assigned</text>
+                </g>
+                <g>
+                    <circle r="50" cx="455" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-picking"></circle>
+                    <line stroke="black" stroke-width="5" x1="510" x2="600" y1="100" y2="100"></line>
+                    <text x="427" y="105">Picking</text>
+                </g>
+                <g>
+                    <circle r="50" cx="655" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-delivering"></circle>
+                    <line stroke="black" stroke-width="5" x1="710" x2="800" y1="100" y2="100"></line>
+                    <text x="617" y="105">Delivering</text>
+                </g>
+                <g>
+                    <circle r="50" cx="855" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-completed"></circle>
+                    <text x="817" y="105">Delivered</text>
                 </g>
             </svg>
         </figure>

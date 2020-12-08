@@ -26,6 +26,10 @@
             display: block;
             margin-right: auto;
             margin-left: auto;
+            text{
+                font-family: typography.$quicksand;
+                font-weight: bold;
+            }
         }
     }
 }

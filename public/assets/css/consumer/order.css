@@ -108,6 +108,15 @@ a {
   margin-bottom: 1em;
   font-size: 1.25rem;
 }
+.order-overview figure svg {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.order-overview figure svg text {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
 
 .order-info {
   background-color: white;
