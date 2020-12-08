@@ -28,6 +28,10 @@
             <h2>Your order has been delivered</h2>
             @break
         @endswitch
+        <figure>
+            <canvas id="order-process">
+            </canvas>
+        </figure>
         <aside>
             <section class="order-info">
                 <h3>Store address</h3>
@@ -57,7 +61,8 @@
 @section('js')
     @if($details -> get('status') == 'delivering')
         <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-        <script type="module" src="{{asset('assets/js/modules/map.js')}}"></script>
+        <script type="module" src="{{asset('assets/js/modules/location.js')}}"></script>
         <script type="module" src="{{asset("assets/js/location.js")}}"></script>
     @endif
+    <script src="{{asset('assets/js/order.js')}}"></script>
 @endsection
