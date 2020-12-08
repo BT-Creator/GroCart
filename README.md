@@ -1,61 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![Header](resources/markdown/header.png)
+# Introduction
+Welcome to the **Grocart** Repository, powered by **[Laravel](https://laravel.com/)**, the PHP framework for Web Artisans.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Grocart is a remote shopping service that allows you to keep track of the groceries you need and order them with ease, thanks to our list system.
+## Before we dive in...
+This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Setup instruction
+Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
+1. Clone this project to your machine
+2. Fill the `.env` file with the needed database credentials. When in development, these were the credentials
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=grocart
+    DB_USERNAME=grocartUser
+    DB_PASSWORD=gr0Ware_House
+    ```
+   With the `grocartUser` having all right except `GRANT OPTION` on the database grocart.
+3. The authentication of the application is based on Laravel's [Jetstream](https://jetstream.laravel.com/1.x/introduction.html), so the database can be constructed in 2 ways:
+    - If you chose to use `dbFill.sql`, you'll need to run the migrations before importing the data. 
+        1. Make a database with a name of your choosing and make a user with the needed rights.
+        2. Fill the `.env` file in with the relevant data.
+        3. In the root folder, run `php artisan migrate` in order to prepare the database for autentication.
+        4. Before importing the data, load the website and make a user, but **do not go to the homepage of the user**.
+        5. After this, execute `dbFill.sql` in your DB IDE of choice.
+        6. Proceed to the homepage, where you should see the following:
+        ![Successful data import](resources/markdown/data-import-user.png)
+           If this is the case, then congrats, the data has been imported correctly.
+            - **!!!** If you don't see any data, but the website doesn't give any data, it could be that the auto-increment is based on previous data that lived in the database. This isn't that bad, but if you want to fix this, make sure you use a clean database. **!!!**
+    
+4. In `public/assets/js/config` you'll find a singular file called `config.js`. In this file, please change the base URL to the URL you've configured, followed by `/api`
+    
+    *For illustration purposes, if your server URL is `https://webtech.local` you'll need to change the link in `public/assets/js/config` to `htpps://webtech.local/api`*
+# File Structure
+## Project specific
+### `app/Http/Controllers/Utilities`
+#### `Format.php`
+`Format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
+#### `Query.php`
+`Query.php` is a separate PHP file that contains code for interacting with the DB. The DB facade of Laravel, which results in more control over the queries, does bring a bunch of code with it and because of this, it can make it much more difficult to read the code.
+This separate file contains calls to the DB that can be called with a method. It will return a collection of the data it received.
+#### `Validation.php`
+`Validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
+### `app/Models`
+This directory contains models that can be used in conjunction with Laravel Eloquent system. My personal preference when interacting with the DB is using the DB facade, because you have more control when forming a query.
+### `public/assets`
+Public contains all CSS, JS and images that can be served to the end-user.
+#### CSS
+All CSS has be complied using SASS. For more info about the SASS files, go tho the [SASS section](#sass).
+#### JS
+The JS files have been modularized in order to take advantage of the import & export functionality. The modules can be found in the directory `modules`
+##### `config`
+This directory contains a single file for configuration purposes. In order to make sure that the Data visualization works, you'll need to change the base URL to the URL you have configured. This has been mentioned in [the setup guide](#setup-instruction).
+### `resources`
+#### `markdown`
+Contains the images used in this markdown file
+#### `sass`
+The directory SASS is where all SCSS files live. These were auto-compiled to `public/assets/css` using SASS's `watch` function
+##### Consumer
+The consumer directory contains all files that have been complied to be used for the consumer-side of the web app.
+##### Modules
+The directory `modules` contains some elements that used through every CSS file, like the typography, general styling rules, etc...
+##### Themes
+Per section of the website, theme files have been provided. This style some common elements that appear in the website. It also contains a universal.scss file that is used as a baseline CSS file for building new sections of the website.
+### `views`
+Contains the `.blade.php` templates that have been used in this project.
+# Used libraries, services & snippets
+For this project, multiple external tools have been used:
+- [Chart.js](https://www.chartjs.org/), a visualization tool.
+- [OpenLayers](https://openlayers.org/), an open source map provider.
+- [Fontawesome](https://fontawesome.com/), a icon provider.
+- [Emilkowalski's CSS effects snippets](https://emilkowalski.github.io/css-effects-snippets/), a repository for common CSS animation snippets.
