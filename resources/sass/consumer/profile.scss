@@ -8,7 +8,8 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
-            margin-bottom: 1em;
+            margin-bottom: 2em;
+            margin-top: 2em;
         }
         &:nth-of-type(2) {
             display: flex;
@@ -56,13 +57,13 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    margin-bottom: 1em;
-    figcaption {
-        font-size: 1.5em;
-    }
-    image {
-        height: 3vmax;
-        width: 3vmax;
+    img {
+        display: block;
+        height: 5vmax;
+        width: 5vmax;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

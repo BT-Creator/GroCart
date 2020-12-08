@@ -14,9 +14,12 @@
             <div class="profile-card">
                 <h1>Welcome back, <span>{{collect(Auth::user()) -> get('name')}}</span></h1>
                 <figure>
-                    <img src="#" alt="Profile Pic">
-                    <figcaption>{{collect(Auth::user()) -> get('name')}}</figcaption>
+                    <img src="{{collect(Auth::user()) -> get('profile_photo_url')}}" alt="Profile Picture of {{collect(Auth::user()) -> get('name')}}">
                 </figure>
+                <form>
+                    <input type="file">
+                    <input type="submit" value="Upload" class="button">
+                </form>
             </div>
             <section>
                 @if(empty(collect(collect($ongoing_orders) -> first()) -> first()))
@@ -27,12 +30,10 @@
                 <h2>Items received: <span>{{$item_amount}}</span></h2>
                 @endif
                     <h2>Joined since
-                        <time datetime="2019-12-01 07:00">2019-12-01</time>
+                        <time datetime="{{explode("T",collect(Auth::user()) -> get('created_at'))[0]}}">
+                            {{explode("T",collect(Auth::user()) -> get('created_at'))[0]}}</time>
                     </h2>
-                <form>
-                    <input type="file">
-                    <input type="submit" value="Upload" class="button">
-                </form>
+
             </section>
         </article>
         <article>
