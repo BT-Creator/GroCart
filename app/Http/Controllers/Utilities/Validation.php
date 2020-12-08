@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-function validateDetails(Request $request)
+function validateDetails(Request $request): array
 {
     $rules = [
         "picking_method" => "nullable|string|max:64",
@@ -12,7 +12,7 @@ function validateDetails(Request $request)
     return $request->validate($rules);
 }
 
-function validateStoreAddress(Request $request)
+function validateStoreAddress(Request $request): array
 {
     $rules = [
         "store_street" => "string|max:64",
@@ -24,7 +24,7 @@ function validateStoreAddress(Request $request)
     return $request->validate($rules);
 }
 
-function validateDeliveryAddress(Request $request)
+function validateDeliveryAddress(Request $request): array
 {
     $rules = [
         "delivery_street" => "string|max:64",
@@ -36,7 +36,7 @@ function validateDeliveryAddress(Request $request)
     return $request->validate($rules);
 }
 
-function validateItems(Request $request)
+function validateItems(Request $request): array
 {
     $item_attributes = [];
     foreach ($request->post() as $key => $value) {

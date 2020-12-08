@@ -5,6 +5,7 @@ include 'Utilities/Format.php';
 include 'Utilities/Validation.php';
 include 'Utilities/Query.php';
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -105,7 +106,7 @@ class ConsumerController extends Controller
         DB::table('orders')->where('id', '=', $listId)->update($order_details->toArray());
     }
 
-    function addList(Request $request, $id)
+    function addList(Request $request, $id): RedirectResponse
     {
         $items = validateItems($request);
         if (empty($items)) {
@@ -125,7 +126,7 @@ class ConsumerController extends Controller
         }
     }
 
-    private function insertDelivery($delivery_address)
+    private function insertDelivery($delivery_address): int
     {
         return DB::table('deliveries')->insertGetId(
             ['street' => $delivery_address->get('delivery_street'),
@@ -135,7 +136,7 @@ class ConsumerController extends Controller
                 'country' => $delivery_address->get('delivery_country')]);
     }
 
-    private function insertStore($store_address)
+    private function insertStore($store_address): int
     {
         return DB::table('stores')->insertGetId(
             ['street' => $store_address->get('store_street'),
@@ -145,7 +146,7 @@ class ConsumerController extends Controller
                 'country' => $store_address->get('store_country')]);
     }
 
-    private function insertOrder($order, int $delivery_id, int $store_id, int $user_id)
+    private function insertOrder($order, int $delivery_id, int $store_id, int $user_id): int
     {
         $addon = ['delivery_id' => $delivery_id, 'store_id' => $store_id, 'user_id' => $user_id];
         return DB::table('orders')->insertGetId(array_merge($order->toArray(), $addon));
@@ -162,27 +163,30 @@ class ConsumerController extends Controller
 
     function openProfile($id)
     {
-        $data = DB::table('orders')
-            ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id', 'items.*')
-            ->where('orders.user_id', '=', $id)
-            ->where('orders.status', '=', 'completed')
-            ->orderByDesc('orders.id')
-            ->get();
-        $completed_orders = formatByOrders($data);
-        $data = DB::table('orders')
-            ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id', 'items.*')
-            ->where('orders.user_id', '=', $id)
-            ->where('orders.status', '!=', 'completed')
-            ->where('orders.status', '!=', 'draft')
-            ->orderByDesc('orders.id', 'orders.status')
-            ->get();
-        $ongoing_orders = formatByOrders($data);
-        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders]);
+        $completed_orders = formatByOrders(getCompletedOrders($id));
+        $ongoing_orders = formatByOrders(getOngoingOrders($id));
+        $item_amount = 0;
+        $status_data = DB::table('orders') -> select('orders.id', 'orders.status')
+            -> where('orders.status', '!=', 'completed')
+            -> where('orders.status', '!=', 'draft')
+            -> where('orders.user_id', '=', $id) -> get();
+        $status = [];
+        foreach ($status_data as $order){
+            $id = collect($order) -> get('id');
+            $order_status = collect($order) -> get('status');
+            $status[$id] = str_replace('_', ' ', $order_status);
+        }
+        foreach ($completed_orders as $order){
+            $item_amount += count($order);
+        }
+        foreach ($ongoing_orders as $order){
+            $item_amount += count($order);
+        }
+        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status, 'item_amount' => $item_amount]);
     }
 
-    function makeOrder(int $user_id, int $order_id){
+    function makeOrder(int $user_id, int $order_id): RedirectResponse
+    {
         DB::table('orders') -> where('orders.id', '=', $order_id)
             ->where('orders.id', '=', $order_id)
             ->update(['status' => 'ordered']);
