@@ -54,10 +54,10 @@
                     <text x="427" y="105">Picking</text>
                 </g>
                 <g>
-                    @if(!$details -> get('status') === 'delivering' | !$details -> get('status') === 'completed')
-                        <circle r="50" cx="655" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-delivering"></circle>
-                    @else
+                    @if($details -> get('status') === 'delivering'| $details -> get('status') === 'completed')
                         <circle r="50" cx="655" cy="100" stroke="black" stroke-width="5" fill-opacity="1" id="bar-delivering" fill="#2b7c2b"></circle>
+                    @else
+                        <circle r="50" cx="655" cy="100" stroke="black" stroke-width="5" fill-opacity="0.0" id="bar-delivering"></circle>
                     @endif
                     <line stroke="black" stroke-width="5" x1="710" x2="800" y1="100" y2="100"></line>
                     <text x="617" y="105">Delivering</text>
