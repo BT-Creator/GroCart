@@ -24,7 +24,7 @@
                     <h2>Items received: <span>none</span></h2>
                 @else
                 <h2>Amount of lists made: <span>{{count($ongoing_orders) + count($completed_orders)}} lists</span></h2>
-                <h2>Items received: <span></span></h2>
+                <h2>Items received: <span>{{$item_amount}}</span></h2>
                 @endif
                     <h2>Joined since
                         <time datetime="2019-12-01 07:00">2019-12-01</time>
@@ -85,7 +85,7 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript">
+    <script>
         localStorage.setItem('id', {{Auth::id()}})
     </script>
     <script type="module" src="{{asset('assets/js/modules/selectors.js')}}"></script>

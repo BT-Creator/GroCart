@@ -162,8 +162,9 @@ class ConsumerController extends Controller
 
     function openProfile($id)
     {
-        $completed_orders = formatByOrders(getCompletedOrders($id));;
+        $completed_orders = formatByOrders(getCompletedOrders($id));
         $ongoing_orders = formatByOrders(getOngoingOrders($id));
+        $item_amount = 0;
         $status_data = DB::table('orders') -> select('orders.id', 'orders.status')
             -> where('orders.status', '!=', 'completed')
             -> where('orders.status', '!=', 'draft')
@@ -174,7 +175,13 @@ class ConsumerController extends Controller
             $order_status = collect($order) -> get('status');
             $status[$id] = str_replace('_', ' ', $order_status);
         }
-        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status]);
+        foreach ($completed_orders as $order){
+            $item_amount += count($order);
+        }
+        foreach ($ongoing_orders as $order){
+            $item_amount += count($order);
+        }
+        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status, 'item_amount' => $item_amount]);
     }
 
     function makeOrder(int $user_id, int $order_id){
