@@ -29,8 +29,11 @@
             @break
         @endswitch
         <figure>
-            <canvas id="order-process">
-            </canvas>
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <circle r="20" cx="50" cy="50" stroke="black" fill="orange" id="smallRect"></circle>
+                </g>
+            </svg>
         </figure>
         <aside>
             <section class="order-info">
@@ -64,5 +67,4 @@
         <script type="module" src="{{asset('assets/js/modules/location.js')}}"></script>
         <script type="module" src="{{asset("assets/js/location.js")}}"></script>
     @endif
-    <script src="{{asset('assets/js/order.js')}}"></script>
 @endsection

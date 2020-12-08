@@ -21,6 +21,13 @@
         margin-bottom: 1em;
         font-size: 1.25rem;
     }
+    figure{
+        svg{
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
 }
 
 .order-info {
