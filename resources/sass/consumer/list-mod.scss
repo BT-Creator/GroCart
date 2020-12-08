@@ -1,12 +1,35 @@
 @use '../modules/typography';
 @use '../themes/consumer';
-@use '../modules/components';
 @use '../modules/style';
 
 .list-top-bar {
     display: flex;
     justify-content: space-around;
     margin-bottom: 1em;
+    a {
+        display: inline-block;
+        position: relative;
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: map-get(typography.$colors, 'accent');
+        transform-origin: bottom right;
+        transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+        color: map-get(typography.$colors, 'accent');
+    }
+
 }
 
 .list-main {
@@ -115,4 +138,22 @@ select {
 #list-order {
     color: black;
     padding: 1vmax;
+}
+
+.list-item{
+    display: block;
+    box-shadow: 0 0 0 map-get(typography.$colors, 'accent');
+    animation: pulseAnim 2s infinite;
+}
+
+@keyframes pulseAnim {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 181, 76, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 181, 76, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 181, 76, 0);
+    }
 }

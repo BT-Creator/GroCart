@@ -1,6 +1,5 @@
 @use '../modules/typography';
 @use '../themes/consumer';
-@use '../modules/components';
 @use '../modules/style';
 
 .grocery-list-container {
@@ -29,7 +28,7 @@
 
 .grocery-lists {
     @extend %border-container;
-    background-color: map-get(typography.$colors, 'bg');
+    background-color: map-get(typography.$colors, 'bg-offset');
     padding: 1vw;
     margin-bottom: 1vw;
     height: max-content;

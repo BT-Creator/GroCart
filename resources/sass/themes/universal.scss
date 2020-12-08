@@ -3,12 +3,6 @@
 @use "../modules/typography";
 
 /* ROOT ELEMENTS */
-body {
-    margin-left: 3vmax;
-    margin-right: 3vmax;
-    background-color: map-get(typography.$colors, 'bg-offset');
-}
-
 html {
     background-color: map-get(typography.$colors, 'bg')
 }
@@ -17,8 +11,8 @@ main {
     a {
         font-family: typography.$ubuntu;
     }
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 3vmax;
+    margin-right: 3vmax;
 }
 
 /* GLOBAL RULES */
@@ -26,12 +20,12 @@ a {
     text-decoration: none;
     color: map-get(typography.$colors, 'hyperlink');
 
-    &:hover {
-        color: map-get(typography.$colors, 'accent');
-    }
-
     &:visited {
         color: map-get(typography.$colors, 'hyperlink-used')
+    }
+
+    &:hover {
+        color: map-get(typography.$colors, 'accent');
     }
 }
 
@@ -176,4 +170,8 @@ figure {
         padding-right: 4vw;
         color: map-get(typography.$colors, 'accent');
     }
+}
+
+#list_save, #list_order, #list_delete{
+    background-color: map-get(typography.$colors, 'bg-offset');
 }

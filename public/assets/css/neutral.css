@@ -3,12 +3,25 @@ main img {
   border: solid #4cb54c 2px;
 }
 
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
 .button {
   height: min-content;
   padding: 0.5vmax;
   background-color: white;
   border: black 2px solid;
   border-radius: 10px;
+  transition: transform 250ms ease-in-out;
+  color: #3edced;
+}
+.button:visited {
+  color: #1d666e;
+}
+.button:hover {
+  transform: scale(1.1);
+  color: #4cb54c;
+}
+.button:active {
+  transform: scale(0.9);
 }
 
 .list-item {
@@ -31,6 +44,36 @@ main img {
   text-decoration: underline;
 }
 
+.name {
+  padding: 0.5vw;
+  margin-left: 1rem;
+}
+
+.name:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 figure {
   margin-top: 1vmax;
   margin-bottom: 1vmax;

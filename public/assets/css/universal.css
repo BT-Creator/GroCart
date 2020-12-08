@@ -3,12 +3,25 @@ input, textarea, select {
   border: solid #4cb54c 2px;
 }
 
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
 .button {
   height: min-content;
   padding: 0.5vmax;
   background-color: white;
   border: black 2px solid;
   border-radius: 10px;
+  transition: transform 250ms ease-in-out;
+  color: #3edced;
+}
+.button:visited {
+  color: #1d666e;
+}
+.button:hover {
+  transform: scale(1.1);
+  color: #4cb54c;
+}
+.button:active {
+  transform: scale(0.9);
 }
 
 .list-item {
@@ -31,20 +44,44 @@ input, textarea, select {
   text-decoration: underline;
 }
 
-/* ROOT ELEMENTS */
-body {
-  margin-left: 3vmax;
-  margin-right: 3vmax;
-  background-color: #ededed;
+.name {
+  padding: 0.5vw;
+  margin-left: 1rem;
 }
 
+.name:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* ROOT ELEMENTS */
 html {
   background-color: white;
 }
 
 main {
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 3vmax;
+  margin-right: 3vmax;
 }
 main a {
   font-family: "Ubuntu", sans-serif;
@@ -55,11 +92,11 @@ a {
   text-decoration: none;
   color: #3edced;
 }
-a:hover {
-  color: #4cb54c;
-}
 a:visited {
   color: #1d666e;
+}
+a:hover {
+  color: #4cb54c;
 }
 
 p, label, button, #list-order {
@@ -185,6 +222,10 @@ figure figcaption {
 .placeholder span {
   padding-right: 4vw;
   color: #4cb54c;
+}
+
+#list_save, #list_order, #list_delete {
+  background-color: #ededed;
 }
 
 /*# sourceMappingURL=universal.css.map */
