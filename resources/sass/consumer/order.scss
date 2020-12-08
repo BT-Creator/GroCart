@@ -21,6 +21,17 @@
         margin-bottom: 1em;
         font-size: 1.25rem;
     }
+    figure{
+        svg{
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            text{
+                font-family: typography.$quicksand;
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 .order-info {
@@ -39,4 +50,15 @@
 #map {
     width: 100%;
     height: 15em;
+}
+
+@media screen and (max-width: 1000px) {
+    .order-overview{
+        figure{
+            svg{
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
 }
