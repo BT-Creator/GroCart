@@ -12,14 +12,14 @@
     <main class="profile">
         <article>
             <div class="profile-card">
-                <h1>Welcome back, <span>User</span></h1>
+                <h1>Welcome back, <span>{{collect(Auth::user()) -> get('name')}}</span></h1>
                 <figure>
                     <img src="#" alt="Profile Pic">
-                    <figcaption>User Name</figcaption>
+                    <figcaption>{{collect(Auth::user()) -> get('name')}}</figcaption>
                 </figure>
             </div>
             <section>
-                <h2>Amount of lists made: <span>40 Lists</span></h2>
+                <h2>Amount of lists made: <span></span></h2>
                 <h2>Items received: <span>1534 items</span></h2>
                 <h2>Joined since
                     <time datetime="2019-12-01 07:00">2019-12-01</time>
@@ -52,6 +52,7 @@
                             <div>
                                 <h3>Order {{$id}}</h3>
                                 <p>Total Items: <span>{{count($order)}}</span></p>
+                                <p>Status: {{$status_data[$id]}}</p>
                                 <a class="button" href="{{route('open_order', [Auth::id(), $id])}}">Open order</a>
                             </div>
                         </section>

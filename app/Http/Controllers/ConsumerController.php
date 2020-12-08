@@ -179,7 +179,17 @@ class ConsumerController extends Controller
             ->orderByDesc('orders.id', 'orders.status')
             ->get();
         $ongoing_orders = formatByOrders($data);
-        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders]);
+        $status_data = DB::table('orders') -> select('orders.id', 'orders.status')
+            -> where('orders.status', '!=', 'completed')
+            -> where('orders.status', '!=', 'draft')
+            -> where('orders.user_id', '=', $id) -> get();
+        $status = [];
+        foreach ($status_data as $order){
+            $id = collect($order) -> get('id');
+            $order_status = collect($order) -> get('status');
+            $status[$id] = str_replace('_', ' ', $order_status);
+        }
+        return view('consumer.profile', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status]);
     }
 
     function makeOrder(int $user_id, int $order_id){

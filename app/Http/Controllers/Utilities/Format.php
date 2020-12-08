@@ -1,6 +1,6 @@
 <?php
 
-function formatByOrders($data)
+function formatByOrders($data): array
 {
     $first_item = collect($data->shift());
     $first_item_id = $first_item->get('order_id');
@@ -21,7 +21,8 @@ function formatByOrders($data)
     return $res;
 }
 
-function formatByItems($data){
+function formatByItems($data): array
+{
     $res = [];
     foreach ($data as $key => $entry){
         $entry = collect($entry);
@@ -30,7 +31,8 @@ function formatByItems($data){
     return $res;
 }
 
-function jsonCollectionToItemArray(array $json_collection, $list){
+function jsonCollectionToItemArray(array $json_collection, $list): array
+{
     $res = [];
     foreach ($json_collection as $item_json){
         $item = collect(json_decode($item_json)) -> toArray();
