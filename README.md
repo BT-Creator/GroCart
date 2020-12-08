@@ -7,9 +7,9 @@ Grocart is a remote shopping service that allows you to keep track of the grocer
 This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
 
 ## Setup instruction
-Assuming you have a working Laravel server and you know how to clone Laravel projects to that machine:
+Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
 1. Clone this project to your machine
-2. Fill the `.env` file with the needed database credentials. When in development, this were the credentials
+2. Fill the `.env` file with the needed database credentials. When in development, these were the credentials
     ```
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -33,3 +33,12 @@ Assuming you have a working Laravel server and you know how to clone Laravel pro
             - **!!!** If you don't see any data, but the website doesn't give any data, it could be that the auto-increment is based on previous data that lived in the database. This isn't that bad, but if you want to fix this, make sure you use a clean database. **!!!**
     
 # File Structure
+## Project specific
+### `app/Http/Controllers/Utilities`
+#### `Format.php`
+`Format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
+#### `Query.php`
+`Query.php` is a separate PHP file that contains code for interacting with the DB. The DB facade of Laravel, which results in more control over the queries, does bring a bunch of code with it and because of this, it can make it much more difficult to read the code.
+This separate file contains calls to the DB that can be called with a method. It will return a collection of the data it received.
+#### `Validation.php`
+`Validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
