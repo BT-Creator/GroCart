@@ -135,4 +135,11 @@ a {
   height: 15em;
 }
 
+@media screen and (max-width: 1000px) {
+  .order-overview figure svg {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 /*# sourceMappingURL=order.css.map */
