@@ -38,3 +38,24 @@ function getOrderDetails(int $userId, int $listId)
         ->where('orders.id', '=', $listId)
         ->get();
 }
+
+function getOngoingOrders($user_id){
+    return DB::table('orders')
+        ->join('items', 'orders.id', '=', 'items.order_id')
+        ->select('orders.id', 'items.*')
+        ->where('orders.user_id', '=', $user_id)
+        ->where('orders.status', '!=', 'completed')
+        ->where('orders.status', '!=', 'draft')
+        ->orderByDesc('orders.id', 'orders.status')
+        ->get();
+}
+
+function getCompletedOrders($user_id){
+    return DB::table('orders')
+        ->join('items', 'orders.id', '=', 'items.order_id')
+        ->select('orders.id', 'items.*')
+        ->where('orders.user_id', '=', $user_id)
+        ->where('orders.status', '=', 'completed')
+        ->orderByDesc('orders.id')
+        ->get();
+}

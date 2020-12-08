@@ -19,11 +19,16 @@
                 </figure>
             </div>
             <section>
-                <h2>Amount of lists made: <span></span></h2>
-                <h2>Items received: <span>1534 items</span></h2>
-                <h2>Joined since
-                    <time datetime="2019-12-01 07:00">2019-12-01</time>
-                </h2>
+                @if(empty(collect(collect($ongoing_orders) -> first()) -> first()))
+                    <h2>Amount of lists made: <span>none</span></h2>
+                    <h2>Items received: <span>none</span></h2>
+                @else
+                <h2>Amount of lists made: <span>{{count($ongoing_orders) + count($completed_orders)}} lists</span></h2>
+                <h2>Items received: <span></span></h2>
+                @endif
+                    <h2>Joined since
+                        <time datetime="2019-12-01 07:00">2019-12-01</time>
+                    </h2>
                 <form>
                     <input type="file">
                     <input type="submit" value="Upload" class="button">

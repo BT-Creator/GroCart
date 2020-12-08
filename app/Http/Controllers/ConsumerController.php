@@ -162,23 +162,8 @@ class ConsumerController extends Controller
 
     function openProfile($id)
     {
-        $data = DB::table('orders')
-            ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id', 'items.*')
-            ->where('orders.user_id', '=', $id)
-            ->where('orders.status', '=', 'completed')
-            ->orderByDesc('orders.id')
-            ->get();
-        $completed_orders = formatByOrders($data);
-        $data = DB::table('orders')
-            ->join('items', 'orders.id', '=', 'items.order_id')
-            ->select('orders.id', 'items.*')
-            ->where('orders.user_id', '=', $id)
-            ->where('orders.status', '!=', 'completed')
-            ->where('orders.status', '!=', 'draft')
-            ->orderByDesc('orders.id', 'orders.status')
-            ->get();
-        $ongoing_orders = formatByOrders($data);
+        $completed_orders = formatByOrders(getCompletedOrders($id));;
+        $ongoing_orders = formatByOrders(getOngoingOrders($id));
         $status_data = DB::table('orders') -> select('orders.id', 'orders.status')
             -> where('orders.status', '!=', 'completed')
             -> where('orders.status', '!=', 'draft')
