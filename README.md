@@ -28,10 +28,12 @@ Assuming you have a working Laravel server, and you know how to clone Laravel pr
         5. After this, execute `dbFill.sql` in your DB IDE of choice.
         6. Proceed to the homepage, where you should see the following:
         ![Successful data import](resources/markdown/data-import-user.png)
-           If this is the case, then congrats, the data has been imported correctly
-         
+           If this is the case, then congrats, the data has been imported correctly.
             - **!!!** If you don't see any data, but the website doesn't give any data, it could be that the auto-increment is based on previous data that lived in the database. This isn't that bad, but if you want to fix this, make sure you use a clean database. **!!!**
     
+4. In `public/assets/js/config` you'll find a singular file called `config.js`. In this file, please change the base URL to the URL you've configured, followed by `/api`
+    
+    *For illustration purposes, if your server URL is `https://webtech.local` you'll need to change the link in `public/assets/js/config` to `htpps://webtech.local/api`*
 # File Structure
 ## Project specific
 ### `app/Http/Controllers/Utilities`
@@ -42,3 +44,32 @@ Assuming you have a working Laravel server, and you know how to clone Laravel pr
 This separate file contains calls to the DB that can be called with a method. It will return a collection of the data it received.
 #### `Validation.php`
 `Validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
+### `app/Models`
+This directory contains models that can be used in conjunction with Laravel Eloquent system. My personal preference when interacting with the DB is using the DB facade, because you have more control when forming a query.
+### `public/assets`
+Public contains all CSS, JS and images that can be served to the end-user.
+#### CSS
+All CSS has be complied using SASS. For more info about the SASS files, go tho the [SASS section](#sass).
+#### JS
+The JS files have been modularized in order to take advantage of the import & export functionality. The modules can be found in the directory `modules`
+##### `config`
+This directory contains a single file for configuration purposes. In order to make sure that the Data visualization works, you'll need to change the base URL to the URL you have configured. This has been mentioned in [the setup guide](#setup-instruction).
+### `resources`
+#### `markdown`
+Contains the images used in this markdown file
+#### `sass`
+The directory SASS is where all SCSS files live. These were auto-compiled to `public/assets/css` using SASS's `watch` function
+##### Consumer
+The consumer directory contains all files that have been complied to be used for the consumer-side of the web app.
+##### Modules
+The directory `modules` contains some elements that used through every CSS file, like the typography, general styling rules, etc...
+##### Themes
+Per section of the website, theme files have been provided. This style some common elements that appear in the website. It also contains a universal.scss file that is used as a baseline CSS file for building new sections of the website.
+### `views`
+Contains the `.blade.php` templates that have been used in this project.
+# Used libraries, services & snippets
+For this project, multiple external tools have been used:
+- [Chart.js](https://www.chartjs.org/), a visualization tool.
+- [OpenLayers](https://openlayers.org/), an open source map provider.
+- [Fontawesome](https://fontawesome.com/), a icon provider.
+- [Emilkowalski's CSS effects snippets](https://emilkowalski.github.io/css-effects-snippets/), a repository for common CSS animation snippets.
