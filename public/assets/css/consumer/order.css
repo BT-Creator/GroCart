@@ -109,11 +109,15 @@ a {
   width: max-content;
 }
 
-.order-overview aside {
+aside {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   margin-bottom: 2rem;
+}
+
+.order-overview {
+  min-height: 0;
 }
 .order-overview h1 {
   text-align: center;
@@ -141,6 +145,7 @@ a {
   background-color: white;
   padding: 1em;
   width: max-content;
+  height: max-content;
 }
 .order-info p {
   margin-bottom: 0.5em;
