@@ -73,8 +73,10 @@ Special care has been taken in order to make the website as accessible as possib
 
 |Page|Lighthouse results|AXE Testing|W3C Validator|
 |---|---|---|---|
-|/ (Index Page)| ![Lighthouse results](resources/markdown/lh-index.png)|0 problems|No errors/warnings|
+|/ (Index Page)| ![Lighthouse results](resources/markdown/lh-index.png)|No remarks|Valid|
+|/consumers/{id}/lists| ![Lighthouse results](resources/markdown/lh-list.png)|No remarks*|Valid|
 
+ <span>*</span>*AXE will sometimes indicate that it thinks it sees a potential issue, but that it's unable to verify this. These issues are accounted for.*
 # Used libraries, services & snippets
 For this project, multiple external tools have been used:
 - [Chart.js](https://www.chartjs.org/), a visualization tool.
