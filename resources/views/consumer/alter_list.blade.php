@@ -239,9 +239,10 @@
                                     </button>
                                 </label>
                                 @isset($details, $items)
-                                    <a href="{{route('make_order', [Auth::id(), $details['id']])}}" class="button"><span
-                                            class="fas fa-money-bill-wave-alt"></span> Order list</a>
-                                    <a href="#" class="button"><span class="fas fa-trash"></span>Delete List</a>
+                                    <a href="{{route('make_order', [Auth::id(), $details['id']])}}" class="button">
+                                        <span class="fas fa-money-bill-wave-alt"></span> Order list</a>
+                                    <a href="{{route('delete_list', [Auth::id(), $details['id']])}}" class="button">
+                                        <span class="fas fa-trash"></span>Delete List</a>
                                 @endisset
                             </section>
                         </aside>

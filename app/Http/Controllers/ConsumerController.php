@@ -33,6 +33,10 @@ class ConsumerController extends Controller
         return view('consumer.alter_list', ['details' => $order_details, 'items' => $items]);
     }
 
+    function deleteList(int $user_id, $list_id){
+        dd($user_id, $list_id);
+    }
+
     function updateExistingList(Request $request, $id, $list)
     {
         $validated_items = validateItems($request);
@@ -199,4 +203,6 @@ class ConsumerController extends Controller
         $order = collect(getOrderDetails($user_id, $order_id)[0]);
         return view('consumer.order', ['details' => $order]);
     }
+
+
 }
