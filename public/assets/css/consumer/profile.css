@@ -54,6 +54,23 @@
   animation-iteration-count: 1;
 }
 
+.profile-order {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  margin-bottom: 1em;
+  align-content: center;
+  width: max-content;
+  background-color: #ededed;
+  height: max-content;
+}
+.profile-order div {
+  margin-left: 3em;
+}
+.profile-order span {
+  font-size: 3em;
+}
+
 @keyframes swingHorizontal {
   15% {
     transform: translateX(5px);
@@ -147,23 +164,6 @@ a {
   margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
-}
-
-.profile-order {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 1em;
-  margin-bottom: 1em;
-  align-content: center;
-  width: max-content;
-  background-color: #ededed;
-  height: max-content;
-}
-.profile-order div {
-  margin-left: 3em;
-}
-.profile-order span {
-  font-size: 3em;
 }
 
 /*# sourceMappingURL=profile.css.map */

@@ -5,7 +5,11 @@
 @endsection
 
 @section('title')
-    List Name
+    @isset($details, $items)
+    Editing list {{$details['id']}}
+    @else
+    Creating new list
+    @endisset
 @endsection
 
 @section('main')

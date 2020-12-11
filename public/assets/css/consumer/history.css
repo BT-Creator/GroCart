@@ -1,4 +1,4 @@
-main img, .profile-order {
+.profile-order {
   border-radius: 10px;
   border: solid #4cb54c 2px;
 }
@@ -91,54 +91,19 @@ main img, .profile-order {
     transform: translateX(0);
   }
 }
-figure {
-  margin-top: 1vmax;
-  margin-bottom: 1vmax;
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  justify-content: center;
-  width: auto;
-}
-figure img {
-  width: 15vmax;
-  height: 15vmax;
-}
-figure figcaption {
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  font-weight: bold;
-  text-align: center;
-  font-size: 3vmax;
-  color: #43a043;
-}
-
 main {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 2vw;
-  grid-row-gap: 1.5vmin;
-}
-main img {
-  height: 12vw;
-  min-width: 10rem;
-  width: 12vw;
-  min-height: 10rem;
-  margin-left: 2vmax;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 main article h1 {
-  color: #2b7c2b;
-  font-size: 3vw;
-  margin-bottom: 1vw;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
 }
-main article p {
-  margin-bottom: 0.5vmax;
-}
-main article a {
-  display: inline-block;
-  margin-top: 1vmax;
-  margin-left: 0;
+main article section p {
+  margin-bottom: 1em;
 }
 
-/*# sourceMappingURL=neutral.css.map */
+/*# sourceMappingURL=history.css.map */

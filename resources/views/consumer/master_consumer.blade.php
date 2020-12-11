@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/reset.css')}}">
-    @yield('css')
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/universal.css')}}">
+    @yield('css')
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -23,10 +23,8 @@
     <nav>
         <a class="button" href="{{route('create_list', Auth::id())}}"><span class="fas fa-plus-circle"></span>New List</a>
         <a class="button" href="{{route('consumer_lists', Auth::id())}}"><span class="fas fa-list"></span>Lists</a>
-        <a class="button" href="{{route('501_route')}}"><span class="fas fa-history"></span>History</a>
+        <a class="button" href="{{route('open_history', Auth::id())}}"><span class="fas fa-history"></span>History</a>
         <a class="button" href="{{route('consumer_profile', Auth::id())}}"><span class="fas fa-user"></span>Profile</a>
-        <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Driver</a>
-        <a class="button" href="{{route('501_route')}}"><span class="fas fa-key"></span>Store Owner</a>
         <form method="post" action="{{ route('logout') }}" >
             @csrf
             <button class="button" type="submit"><span class="fas fa-sign-out-alt"></span>Logout</button>
