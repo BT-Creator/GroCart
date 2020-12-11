@@ -6,6 +6,14 @@ Grocart is a remote shopping service that allows you to keep track of the grocer
 ## Before we dive in...
 This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
 
+## Requirements
+You can see the requirements [here](https://git.ti.howest.be/TI/s3-webtechnology/2020-2021/project/bo-robbrecht/-/requirements_management/requirements), but in short, here's an overview of the technical functionalities:
+- [x] Laravel Project
+- [x] Advanced CSS
+- [x] Rest API
+- [x] 2 HTML5 API (Drag 'n Drop & Geolocation)
+- [x] Datavisualization
+
 ## Setup instruction
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
 1. Clone this project to your machine
@@ -37,13 +45,14 @@ Assuming you have a working Laravel server, and you know how to clone Laravel pr
 # File Structure
 ## Project specific
 ### `app/Http/Controllers/Utilities`
-#### `Format.php`
-`Format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
-#### `Query.php`
-`Query.php` is a separate PHP file that contains code for interacting with the DB. The DB facade of Laravel, which results in more control over the queries, does bring a bunch of code with it and because of this, it can make it much more difficult to read the code.
-This separate file contains calls to the DB that can be called with a method. It will return a collection of the data it received.
-#### `Validation.php`
-`Validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
+#### `format.php`
+`format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
+#### `dml.php`
+`dml.php` contains code that will retrieve data from a database. None of the queries here can manipulate the database in any way.
+#### `dql.php`
+`dql.php` contains code that manipulates the database in any way *(`insert`, `update`, etc...)*.
+#### `validation.php`
+`validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
 ### `app/Models`
 This directory contains models that can be used in conjunction with Laravel Eloquent system. My personal preference when interacting with the DB is using the DB facade, because you have more control when forming a query.
 ### `public/assets`

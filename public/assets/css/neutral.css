@@ -118,7 +118,7 @@ main article h1 {
 main article p {
   margin-bottom: 0.5vmax;
 }
-main article div {
+main article a {
   display: inline-block;
   margin-top: 1vmax;
   margin-left: 0;

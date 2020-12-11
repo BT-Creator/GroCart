@@ -26,6 +26,7 @@ Route::group(["prefix" => "consumer"], function (){
     Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> middleware('auth') -> name('create_list');
     Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> middleware('auth') -> name('update_list');
     Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> middleware('auth') -> name('add_list');
+    Route::get('/{id}/list/{list}/delete', [ConsumerController::class, 'deleteList']) -> middleware('auth') -> name('delete_list');
     /* Profile */
     Route::get('/{id}/profile', [ConsumerController::class, 'openProfile']) -> middleware('auth') -> name('consumer_profile');
     /*Order*/
