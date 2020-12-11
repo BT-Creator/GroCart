@@ -120,7 +120,8 @@ class ConsumerController extends Controller
         return view('consumer.history', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status]);
     }
 
-    private function getOrderStatus($user_id){
+    private function getOrderStatus($user_id): array
+    {
         $status = [];
         $status_data = getOrderStatus($user_id);
         foreach ($status_data as $order){

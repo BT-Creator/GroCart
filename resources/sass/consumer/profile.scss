@@ -1,6 +1,7 @@
 @use '../modules/typography';
 @use '../themes/consumer';
 @use '../modules/style';
+@use '../modules/components';
 
 .profile {
     article {
@@ -64,23 +65,5 @@
         margin-bottom: 1em;
         margin-left: auto;
         margin-right: auto;
-    }
-}
-
-.profile-order {
-    @extend %border-accent;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 1em;
-    margin-bottom: 1em;
-    align-content: center;
-    width: max-content;
-    background-color: map-get(typography.$colors, 'bg-offset');
-    height: max-content;
-    div {
-        margin-left: 3em;
-    }
-    span {
-        font-size: 3em;
     }
 }

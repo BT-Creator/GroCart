@@ -91,79 +91,19 @@
     transform: translateX(0);
   }
 }
-form div {
-  border: none;
-  padding: 0;
-  background-color: initial;
-}
-
-p {
-  margin-bottom: 1em;
-  width: max-content;
-}
-
-a {
-  margin-bottom: 1em;
-  width: max-content;
-}
-
-.profile article:nth-of-type(1) {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin-bottom: 2em;
-  margin-top: 2em;
-}
-.profile article:nth-of-type(2) {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-content: center;
-}
-.profile article section h2 {
-  margin-bottom: 2em;
-  font-weight: bold;
-}
-.profile article section h2 span {
-  font-weight: normal;
-  margin-left: 0.5em;
-}
-.profile article section h2 time {
-  font-weight: normal;
-  margin-left: 0.5em;
-}
-.profile article .graph {
-  margin-bottom: 2em;
-  font-weight: bold;
-}
-.profile h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-.profile aside {
+main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
 }
-.profile aside h2 {
+main article h1 {
   margin-bottom: 1em;
   font-size: 1.2em;
   font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
 }
-
-.profile-card {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
-}
-.profile-card img {
-  display: block;
-  height: 5vmax;
-  width: 5vmax;
+main article section p {
   margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/*# sourceMappingURL=profile.css.map */
+/*# sourceMappingURL=history.css.map */

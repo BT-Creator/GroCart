@@ -1,5 +1,13 @@
 @extends('consumer.master_consumer')
 
+@section('title')
+    History
+@endsection
+
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/consumer/history.css')}}">
+@endsection
+
 @section('main')
     <main>
         <article>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/reset.css')}}">
-    @yield('css')
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/universal.css')}}">
+    @yield('css')
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
