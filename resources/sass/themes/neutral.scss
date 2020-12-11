@@ -2,27 +2,30 @@
 @use '../modules/typography';
 @use '../modules/components';
 
-figure {
-    margin-top: 1vmax;
-    margin-bottom: 1vmax;
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    width: auto;
-    img {
-        width: 15vmax;
-        height: 15vmax;
-    }
-    figcaption {
-        padding-top: 1vw;
-        padding-bottom: 1vw;
-        font-weight: bold;
-        text-align: center;
-        font-size: 3vmax;
-        color: map-get(typography.$colors, 'primary');
+aside{
+    figure {
+        margin-top: 1vmax;
+        margin-bottom: 1vmax;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        justify-content: center;
+        width: auto;
+        img {
+            width: 15vmax;
+            height: 15vmax;
+        }
+        figcaption {
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            font-weight: bold;
+            text-align: center;
+            font-size: 3vmax;
+            color: map-get(typography.$colors, 'primary');
+        }
     }
 }
+
 
 main {
     display: grid;

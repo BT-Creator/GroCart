@@ -18,9 +18,6 @@
   transition: transform 250ms ease-in-out;
   color: black;
 }
-.button:visited {
-  color: #1d666e;
-}
 .button:hover {
   transform: scale(1.1);
   color: #4cb54c;

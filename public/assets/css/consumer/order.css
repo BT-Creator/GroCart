@@ -16,10 +16,7 @@
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);
@@ -123,7 +120,7 @@ a {
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 1em;
-  color: #2b7c2b;
+  color: #1e581e;
 }
 .order-overview h2 {
   text-align: center;

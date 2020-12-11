@@ -11,10 +11,7 @@
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);

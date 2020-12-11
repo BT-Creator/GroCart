@@ -13,9 +13,6 @@ input, textarea, select, .profile-order {
   transition: transform 250ms ease-in-out;
   color: black;
 }
-.button:visited {
-  color: #1d666e;
-}
 .button:hover {
   transform: scale(1.1);
   color: #4cb54c;
@@ -111,9 +108,6 @@ a {
   color: black;
   font-size: 1rem;
 }
-a:visited {
-  color: #1d666e;
-}
 a:hover {
   color: #4cb54c;
 }
@@ -184,9 +178,6 @@ header form button {
 header form button:hover {
   color: #4cb54c;
 }
-header form button:visited {
-  color: #1d666e;
-}
 
 /* FOOTER */
 footer {
@@ -209,7 +200,7 @@ footer img {
   min-width: 2rem;
   margin-right: 1em;
 }
-footer aside {
+footer div {
   font-size: 1.5rem;
   text-align: end;
   display: flex;
@@ -230,7 +221,7 @@ figure figcaption {
   padding-bottom: 1vw;
   font-weight: bold;
   text-align: center;
-  color: #43a043;
+  color: #2b7c2b;
   font-size: 1.5rem;
 }
 

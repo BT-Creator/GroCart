@@ -6,14 +6,6 @@ Grocart is a remote shopping service that allows you to keep track of the grocer
 ## Before we dive in...
 This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
 
-## Requirements
-You can see the requirements [here](https://git.ti.howest.be/TI/s3-webtechnology/2020-2021/project/bo-robbrecht/-/requirements_management/requirements), but in short, here's an overview of the technical functionalities:
-- [x] Laravel Project
-- [x] Advanced CSS
-- [x] Rest API
-- [x] 2 HTML5 API (Drag 'n Drop & Geolocation)
-- [x] Datavisualization
-
 ## Setup instruction
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
 1. Clone this project to your machine
@@ -76,6 +68,13 @@ The directory `modules` contains some elements that used through every CSS file,
 Per section of the website, theme files have been provided. This style some common elements that appear in the website. It also contains a universal.scss file that is used as a baseline CSS file for building new sections of the website.
 ### `views`
 Contains the `.blade.php` templates that have been used in this project.
+# Accessibility
+Special care has been taken in order to make the website as accessible as possible.
+
+|Page|Lighthouse results|AXE Testing|W3C Validator|
+|---|---|---|---|
+|/ (Index Page)| ![Lighthouse results](resources/markdown/lh-index.png)|0 problems|No errors/warnings|
+
 # Used libraries, services & snippets
 For this project, multiple external tools have been used:
 - [Chart.js](https://www.chartjs.org/), a visualization tool.
