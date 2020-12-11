@@ -11,7 +11,7 @@ main img, .profile-order {
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
+  color: black;
 }
 .button:visited {
   color: #1d666e;
@@ -129,7 +129,7 @@ main img {
 }
 main article h1 {
   color: #2b7c2b;
-  font-size: 3vw;
+  font-size: 1.75rem;
   margin-bottom: 1vw;
 }
 main article p {

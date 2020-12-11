@@ -41,7 +41,7 @@ main {
     article {
         h1 {
             color: map-get(typography.$colors, 'secondary');
-            font-size: 3vw;
+            font-size: 1.75rem;
             margin-bottom: 1vw;
         }
         p {

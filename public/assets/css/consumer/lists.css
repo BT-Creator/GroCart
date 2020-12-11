@@ -16,7 +16,7 @@
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
+  color: black;
 }
 .button:visited {
   color: #1d666e;
