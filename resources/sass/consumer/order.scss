@@ -2,13 +2,15 @@
 @use '../themes/consumer';
 @use '../modules/style';
 
+aside {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
 .order-overview {
-    aside {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        margin-bottom: 2rem;
-    }
+    min-height: 0;
     h1 {
         text-align: center;
         font-weight: bold;
@@ -39,6 +41,7 @@
     background-color: map-get(typography.$colors, 'bg');
     padding: 1em;
     width: max-content;
+    height: max-content;
     p {
         margin-bottom: 0.5em;
     }

@@ -11,10 +11,7 @@ input, textarea, select, .profile-order {
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);
@@ -99,6 +96,7 @@ html {
 main {
   margin-left: 3vmax;
   margin-right: 3vmax;
+  min-height: 33vw;
 }
 main a {
   font-family: "Ubuntu", sans-serif;
@@ -107,11 +105,8 @@ main a {
 /* GLOBAL RULES */
 a {
   text-decoration: none;
-  color: #3edced;
+  color: black;
   font-size: 1rem;
-}
-a:visited {
-  color: #1d666e;
 }
 a:hover {
   color: #4cb54c;
@@ -133,7 +128,7 @@ h1, h2, h3, legend, h4 {
 }
 
 span {
-  margin-right: 1vmax;
+  margin-right: 1rem;
   height: 1vmax;
   width: 1vmax;
 }
@@ -178,13 +173,10 @@ header nav .button {
 }
 header form button {
   text-decoration: none;
-  color: #3edced;
+  color: black;
 }
 header form button:hover {
   color: #4cb54c;
-}
-header form button:visited {
-  color: #1d666e;
 }
 
 /* FOOTER */
@@ -206,14 +198,20 @@ footer img {
   min-height: 2rem;
   width: 3vw;
   min-width: 2rem;
+  margin-right: 1em;
 }
-footer aside {
-  font-size: 1.75vmin;
-  min-font-size: 4rem;
+footer div {
+  font-size: 1.5rem;
   text-align: end;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
+}
+footer figure {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 /* FIGURES */
@@ -223,9 +221,8 @@ figure figcaption {
   padding-bottom: 1vw;
   font-weight: bold;
   text-align: center;
-  color: #43a043;
-  font-size: 2vmin;
-  min-font-size: 3rem;
+  color: #2b7c2b;
+  font-size: 1.5rem;
 }
 
 .placeholder h1 {

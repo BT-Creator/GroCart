@@ -43,12 +43,12 @@
 }
 
 .empty-lists {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
     h1 {
         margin-bottom: 1em;
         width: max-content;
+    }
+    p{
+        margin-bottom: 2em;
     }
 }
 

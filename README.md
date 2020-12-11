@@ -6,14 +6,6 @@ Grocart is a remote shopping service that allows you to keep track of the grocer
 ## Before we dive in...
 This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
 
-## Requirements
-You can see the requirements [here](https://git.ti.howest.be/TI/s3-webtechnology/2020-2021/project/bo-robbrecht/-/requirements_management/requirements), but in short, here's an overview of the technical functionalities:
-- [x] Laravel Project
-- [x] Advanced CSS
-- [x] Rest API
-- [x] 2 HTML5 API (Drag 'n Drop & Geolocation)
-- [x] Datavisualization
-
 ## Setup instruction
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
 1. Clone this project to your machine
@@ -45,13 +37,13 @@ Assuming you have a working Laravel server, and you know how to clone Laravel pr
 # File Structure
 ## Project specific
 ### `app/Http/Controllers/Utilities`
-#### `format.php`
+#### format.php
 `format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
-#### `dml.php`
+#### dml.php
 `dml.php` contains code that will retrieve data from a database. None of the queries here can manipulate the database in any way.
-#### `dql.php`
+#### dql.php
 `dql.php` contains code that manipulates the database in any way *(`insert`, `update`, etc...)*.
-#### `validation.php`
+#### validation.php
 `validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
 ### `app/Models`
 This directory contains models that can be used in conjunction with Laravel Eloquent system. My personal preference when interacting with the DB is using the DB facade, because you have more control when forming a query.
@@ -61,21 +53,35 @@ Public contains all CSS, JS and images that can be served to the end-user.
 All CSS has be complied using SASS. For more info about the SASS files, go tho the [SASS section](#sass).
 #### JS
 The JS files have been modularized in order to take advantage of the import & export functionality. The modules can be found in the directory `modules`
-##### `config`
+##### config
 This directory contains a single file for configuration purposes. In order to make sure that the Data visualization works, you'll need to change the base URL to the URL you have configured. This has been mentioned in [the setup guide](#setup-instruction).
 ### `resources`
-#### `markdown`
+#### markdown
 Contains the images used in this markdown file
-#### `sass`
+#### sass
 The directory SASS is where all SCSS files live. These were auto-compiled to `public/assets/css` using SASS's `watch` function
-##### Consumer
+##### consumer
 The consumer directory contains all files that have been complied to be used for the consumer-side of the web app.
-##### Modules
+##### modules
 The directory `modules` contains some elements that used through every CSS file, like the typography, general styling rules, etc...
-##### Themes
+##### themes
 Per section of the website, theme files have been provided. This style some common elements that appear in the website. It also contains a universal.scss file that is used as a baseline CSS file for building new sections of the website.
-### `views`
+### views
 Contains the `.blade.php` templates that have been used in this project.
+
+# Accessibility
+Special care has been taken in order to make the website as accessible as possible.
+
+|Page|Lighthouse results|AXE Testing|W3C Validator|
+|---|---|---|---|
+|`/` (Index Page)| ![Lighthouse results](resources/markdown/lh-index.png)|No remarks|Valid|
+|`/consumers/{id}/lists` (Lists page)| ![Lighthouse results](resources/markdown/lh-list.png)|No remarks*|Valid|
+|`/consumer/{id}/history` (History page) | ![Lighthouse results](resources/markdown/lh-history.png)|No remarks*|Valid|
+|`/cosumer/{id}/profile` (Profile page) | ![Lighthouse results](resources/markdown/lh-profile.png)|No remarks*|Valid|
+|`/consumer/{id}/list/{list}` (List Edit page) | ![Lighthouse results](resources/markdown/lh-edit.png)|2 moderate remarks*|Valid|
+|`/consumer/{id}/order/{list}` (Order list) | ![Lighthouse results](resources/markdown/lh-order.png)|No remarks*|Valid|
+
+ <span>*</span>*AXE will sometimes indicate that it thinks it sees a potential issue, but that it's unable to verify this. These issues are accounted for.*
 # Used libraries, services & snippets
 For this project, multiple external tools have been used:
 - [Chart.js](https://www.chartjs.org/), a visualization tool.

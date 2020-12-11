@@ -16,10 +16,7 @@
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);
@@ -112,6 +109,12 @@ a {
   width: max-content;
 }
 
+h3, h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
 .list-top-bar {
   display: flex;
   justify-content: space-around;
@@ -147,11 +150,6 @@ a {
   margin-bottom: 2em;
 }
 .list-main legend {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
-}
-.list-main h1 {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0.5em;
@@ -216,7 +214,7 @@ a {
   color: black;
 }
 .new-item-form div a:hover {
-  color: #2b7c2b;
+  color: #1e581e;
 }
 .new-item-form div h3 {
   font-weight: bold;

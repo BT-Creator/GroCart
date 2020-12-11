@@ -1,10 +1,12 @@
 @extends("general.master_neutral")
 
 @section("main")
-    <figure>
-        <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
-        <figcaption>Grocart</figcaption>
-    </figure>
+    <aside>
+        <figure>
+            <img src="{{asset("/assets/media/logo.svg")}}" height="300" width="300" alt="Logo Grocart">
+            <figcaption>Grocart</figcaption>
+        </figure>
+    </aside>
     <main>
         <img src="{{asset("images/driver.jpg")}}" alt="Person driving his car">
         <article>

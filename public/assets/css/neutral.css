@@ -11,10 +11,7 @@ main img, .profile-order {
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);
@@ -91,7 +88,7 @@ main img, .profile-order {
     transform: translateX(0);
   }
 }
-figure {
+aside figure {
   margin-top: 1vmax;
   margin-bottom: 1vmax;
   display: flex;
@@ -100,17 +97,17 @@ figure {
   justify-content: center;
   width: auto;
 }
-figure img {
+aside figure img {
   width: 15vmax;
   height: 15vmax;
 }
-figure figcaption {
+aside figure figcaption {
   padding-top: 1vw;
   padding-bottom: 1vw;
   font-weight: bold;
   text-align: center;
   font-size: 3vmax;
-  color: #43a043;
+  color: #2b7c2b;
 }
 
 main {
@@ -128,8 +125,8 @@ main img {
   margin-left: 2vmax;
 }
 main article h1 {
-  color: #2b7c2b;
-  font-size: 3vw;
+  color: #1e581e;
+  font-size: 1.75rem;
   margin-bottom: 1vw;
 }
 main article p {

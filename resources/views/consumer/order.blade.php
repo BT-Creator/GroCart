@@ -72,36 +72,36 @@
                 </g>
             </svg>
         </figure>
-        <aside>
-            <section class="order-info">
-                <h3>Store address</h3>
-                <p><span>Street:</span>{{$details -> get('store_street')}}</p>
-                <p><span>House Number:</span>{{$details -> get('store_house_number')}}</p>
-                <p><span>Postal code:</span>{{$details -> get('store_postal_code')}}</p>
-                <p><span>City:</span>{{$details -> get('store_city')}}</p>
-                <p><span>Country:</span>{{$details -> get('store_country')}}</p>
-            </section>
-            <section class="order-info">
-                <h3>Delivery address</h3>
-                <p><span>Street:</span>{{$details -> get('delivery_street')}}</p>
-                <p><span>House Number:</span>{{$details -> get('delivery_house_number')}}</p>
-                <p><span>Postal code:</span>{{$details -> get('delivery_postal_code')}}</p>
-                <p><span>City:</span>{{$details -> get('delivery_city')}}</p>
-                <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
-            </section>
-        </aside>
-        @if($details -> get('status') == 'delivering')
-            <div id="map">
-
-            </div>
-        @endif
     </main>
+    <aside>
+        <section class="order-info">
+            <h3>Store address</h3>
+            <p><span>Street:</span>{{$details -> get('store_street')}}</p>
+            <p><span>House Number:</span>{{$details -> get('store_house_number')}}</p>
+            <p><span>Postal code:</span>{{$details -> get('store_postal_code')}}</p>
+            <p><span>City:</span>{{$details -> get('store_city')}}</p>
+            <p><span>Country:</span>{{$details -> get('store_country')}}</p>
+        </section>
+        <section class="order-info">
+            <h3>Delivery address</h3>
+            <p><span>Street:</span>{{$details -> get('delivery_street')}}</p>
+            <p><span>House Number:</span>{{$details -> get('delivery_house_number')}}</p>
+            <p><span>Postal code:</span>{{$details -> get('delivery_postal_code')}}</p>
+            <p><span>City:</span>{{$details -> get('delivery_city')}}</p>
+            <p><span>Country:</span>{{$details -> get('delivery_country')}}</p>
+        </section>
+    </aside>
+    @if($details -> get('status') == 'delivering')
+        <div id="map">
+
+        </div>
+    @endif
 @endsection
 
 @section('js')
     @if($details -> get('status') == 'delivering')
         <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-        <script type="module" src="{{asset('assets/js/modules/location.js')}}"></script>
+        <script type="module" src="{{asset('assets/js/modules/map.js')}}"></script>
         <script type="module" src="{{asset("assets/js/location.js")}}"></script>
     @endif
 @endsection

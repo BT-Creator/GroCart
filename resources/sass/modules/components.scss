@@ -11,9 +11,6 @@
     border-radius: 10px;
     transition: transform 250ms ease-in-out;
     color: map-get(typography.$colors, 'hyperlink');
-    &:visited {
-        color: map-get(typography.$colors, 'hyperlink-used')
-    }
     &:hover {
         transform: scale(1.10);
         color: map-get(typography.$colors, 'accent');

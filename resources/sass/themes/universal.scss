@@ -13,6 +13,7 @@ main {
     }
     margin-left: 3vmax;
     margin-right: 3vmax;
+    min-height: 33vw;
 }
 
 /* GLOBAL RULES */
@@ -20,10 +21,6 @@ a {
     text-decoration: none;
     color: map-get(typography.$colors, 'hyperlink');
     font-size: 1rem;
-
-    &:visited {
-        color: map-get(typography.$colors, 'hyperlink-used')
-    }
 
     &:hover {
         color: map-get(typography.$colors, 'accent');
@@ -47,7 +44,7 @@ h1, h2, h3, legend, h4 {
 }
 
 span {
-    margin-right: 1vmax;
+    margin-right: 1rem;
     height: 1vmax;
     width: 1vmax;
 }
@@ -102,10 +99,6 @@ header {
             &:hover {
                 color: map-get(typography.$colors, 'accent');
             }
-
-            &:visited {
-                color: map-get(typography.$colors, 'hyperlink-used')
-            }
         }
     }
 }
@@ -129,15 +122,22 @@ footer {
         min-height: 2rem;
         width: 3vw;
         min-width: 2rem;
+        margin-right: 1em;
     }
 
-    aside {
-        font-size: 1.75vmin;
-        min-font-size: 4rem;
+    div{
+        font-size: 1.5rem;
         text-align: end;
         display: flex;
         flex-flow: column wrap;
         justify-content: space-evenly;
+    }
+
+    figure{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
     }
 }
 
@@ -150,8 +150,7 @@ figure {
         font-weight: bold;
         text-align: center;
         color: map-get(typography.$colors, 'primary');
-        font-size: 2vmin;
-        min-font-size: 3rem;
+        font-size: 1.5rem;
     }
 }
 

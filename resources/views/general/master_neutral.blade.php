@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Bo Robbrecht"/>
+    <meta name="description" content="Grocart delivers the essentials within one click! With Grocart, you can do grocery shopping with ease.">
     <link rel="stylesheet" type="text/css" href="{{asset("/assets/css/reset.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("assets/css/neutral.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("/assets/css/universal.css")}}">
@@ -47,10 +48,10 @@
         <img src="{{asset("/assets/media/logo.svg")}}" alt="Logo GroCart">
         <figcaption>GroCart Inc. All rights reserved</figcaption>
     </figure>
-    <aside>
+    <div>
         <p>Made by Bo Robbrecht</p>
         <p>All photos are take from <a href="https://www.pexels.com/">Pexels</a></p>
-        <p>For more information on the license, <a href="https://www.pexels.com/license/">click here</a>.</p>
-    </aside>
+        <p><a href="https://www.pexels.com/license/">License</a></p>
+    </div>
 </footer>
 </body>

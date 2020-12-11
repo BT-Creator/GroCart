@@ -11,10 +11,7 @@
   border: black 2px solid;
   border-radius: 10px;
   transition: transform 250ms ease-in-out;
-  color: #3edced;
-}
-.button:visited {
-  color: #1d666e;
+  color: black;
 }
 .button:hover {
   transform: scale(1.1);
@@ -141,16 +138,6 @@ a {
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.profile aside {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-.profile aside h2 {
-  margin-bottom: 1em;
-  font-size: 1.2em;
-  font-weight: bold;
-}
 
 .profile-card {
   display: flex;
@@ -164,6 +151,20 @@ a {
   margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
+}
+
+aside {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+aside h2 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+aside a {
+  font-family: "Quicksand", sans-serif;
 }
 
 /*# sourceMappingURL=profile.css.map */
