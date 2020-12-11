@@ -62,3 +62,11 @@ function getCompletedOrders($user_id): Collection
         ->orderByDesc('orders.id')
         ->get();
 }
+
+function getOrderStatus($user_id): Collection
+{
+    return DB::table('orders') -> select('orders.id', 'orders.status')
+        -> where('orders.status', '!=', 'completed')
+        -> where('orders.status', '!=', 'draft')
+        -> where('orders.user_id', '=', $user_id) -> get();
+}

@@ -88,16 +88,7 @@ class ConsumerController extends Controller
         $completed_orders = formatByOrders(getCompletedOrders($id));
         $ongoing_orders = formatByOrders(getOngoingOrders($id));
         $item_amount = 0;
-        $status_data = DB::table('orders') -> select('orders.id', 'orders.status')
-            -> where('orders.status', '!=', 'completed')
-            -> where('orders.status', '!=', 'draft')
-            -> where('orders.user_id', '=', $id) -> get();
-        $status = [];
-        foreach ($status_data as $order){
-            $id = collect($order) -> get('id');
-            $order_status = collect($order) -> get('status');
-            $status[$id] = str_replace('_', ' ', $order_status);
-        }
+        $status = $this->getOrderStatus($id);
         foreach ($completed_orders as $order){
             $item_amount += count($order);
         }
@@ -120,5 +111,23 @@ class ConsumerController extends Controller
     {
         $order = collect(getOrderDetails($user_id, $order_id)[0]);
         return view('consumer.order', ['details' => $order]);
+    }
+
+    function openHistory(int $user_id){
+        $completed_orders = formatByOrders(getCompletedOrders($user_id));
+        $ongoing_orders = formatByOrders(getOngoingOrders($user_id));
+        $status = $this->getOrderStatus($user_id);
+        return view('consumer.history', ['completed_orders' => $completed_orders, 'ongoing_orders' => $ongoing_orders, 'status_data' => $status]);
+    }
+
+    private function getOrderStatus($user_id){
+        $status = [];
+        $status_data = getOrderStatus($user_id);
+        foreach ($status_data as $order){
+            $id = collect($order) -> get('id');
+            $order_status = collect($order) -> get('status');
+            $status[$id] = str_replace('_', ' ', $order_status);
+        }
+        return $status;
     }
 }

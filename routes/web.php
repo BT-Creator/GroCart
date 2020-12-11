@@ -32,6 +32,8 @@ Route::group(["prefix" => "consumer"], function (){
     /*Order*/
     Route::get('/{id}/order/{order}/pay', [ConsumerController::class, 'makeOrder']) -> middleware('auth') -> name('make_order');
     Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> middleware('auth') -> name('open_order');
+    /*History*/
+    Route::get('/{id}/history', [ConsumerController::class, 'openHistory']) -> middleware('auth') -> name('open_history');
 });
 
 /* AUTH */
