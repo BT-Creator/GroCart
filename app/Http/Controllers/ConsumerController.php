@@ -34,7 +34,10 @@ class ConsumerController extends Controller
     }
 
     function deleteList(int $user_id, $list_id){
-        dd($user_id, $list_id);
+        DB::table('items') -> where("order_id", "=", $list_id) -> delete();
+        DB::table('orders') -> where("user_id", "=", $user_id)
+                -> where("id", "=", $list_id) -> delete();
+        return Redirect::route('consumer_lists', [$user_id]);
     }
 
     function updateExistingList(Request $request, $id, $list)
