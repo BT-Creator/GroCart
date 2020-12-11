@@ -112,7 +112,11 @@ a:hover {
   color: #4cb54c;
 }
 
-p, label, button, #list-order {
+mark {
+  background-color: white;
+}
+
+p, label, button, #list-order, mark, details {
   font-family: "Quicksand", sans-serif;
   font-size: 1rem;
 }

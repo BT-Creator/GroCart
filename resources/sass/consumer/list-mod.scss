@@ -2,12 +2,6 @@
 @use '../themes/consumer';
 @use '../modules/style';
 
-h3, h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 0.5em;
-}
-
 .list-top-bar {
     display: flex;
     justify-content: space-around;
@@ -36,6 +30,11 @@ h3, h2 {
         color: map-get(typography.$colors, 'accent');
     }
 
+    h3, h2 {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.5em;
+    }
 }
 
 .list-main {
@@ -86,6 +85,11 @@ h3, h2 {
             flex-flow: column wrap;
             justify-content: space-around;
         }
+    }
+    h3, h2 {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.5em;
     }
 }
 

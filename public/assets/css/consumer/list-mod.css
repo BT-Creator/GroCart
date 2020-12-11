@@ -109,12 +109,6 @@ a {
   width: max-content;
 }
 
-h3, h2 {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
-}
-
 .list-top-bar {
   display: flex;
   justify-content: space-around;
@@ -140,6 +134,11 @@ h3, h2 {
   transform: scaleX(1);
   transform-origin: bottom left;
   color: #4cb54c;
+}
+.list-top-bar h3, .list-top-bar h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
 }
 
 .list-main {
@@ -189,6 +188,11 @@ h3, h2 {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
+}
+.list-bottom-bar h3, .list-bottom-bar h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
 }
 
 .new-item-form {

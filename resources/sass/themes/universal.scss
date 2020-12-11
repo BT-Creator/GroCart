@@ -27,7 +27,11 @@ a {
     }
 }
 
-p, label, button, #list-order {
+mark{
+    background-color: white;
+}
+
+p, label, button, #list-order, mark, details {
     font-family: typography.$quicksand;
     font-size: 1rem;
 }

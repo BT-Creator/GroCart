@@ -57,7 +57,7 @@
                                     @isset($details, $items)
                                         @foreach($items[$details['id']] as $item)
                                             <section class="list-item" draggable="true">
-                                                <h1>{{str_replace('_', ' ', $item['name'])}}</h1>
+                                                <h2>{{str_replace('_', ' ', $item['name'])}}</h2>
                                                 @isset($item['brand'])
                                                     <p><span
                                                             class="list-property">Brand:</span>{{str_replace('_', ' ', $item['brand'])}}
