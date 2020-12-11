@@ -51,4 +51,5 @@ function validateItems(Request $request): array
     foreach ($item_attributes as $attribute) {
         $rules[$attribute] = "json";
     }
-    return $r
+    return $request->validate($rules);
+}
