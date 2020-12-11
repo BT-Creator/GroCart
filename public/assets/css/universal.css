@@ -1,0 +1,240 @@
+input, textarea, select, .profile-order {
+  border-radius: 10px;
+  border: solid #4cb54c 2px;
+}
+
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
+.button {
+  height: min-content;
+  padding: 0.5vmax;
+  background-color: white;
+  border: black 2px solid;
+  border-radius: 10px;
+  transition: transform 250ms ease-in-out;
+  color: #3edced;
+}
+.button:visited {
+  color: #1d666e;
+}
+.button:hover {
+  transform: scale(1.1);
+  color: #4cb54c;
+}
+.button:active {
+  transform: scale(0.9);
+}
+
+.list-item {
+  width: max-content;
+  border: #4cb54c solid 2px;
+  border-radius: 10px;
+  padding: 1vw;
+  background-color: white;
+  margin: 1em;
+  cursor: move;
+}
+.list-item h2 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.list-item p {
+  margin-bottom: 5px;
+}
+.list-item span {
+  text-decoration: underline;
+}
+
+.name {
+  padding: 0.5vw;
+  margin-left: 1rem;
+}
+
+.name:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
+
+.profile-order {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  margin-bottom: 1em;
+  align-content: center;
+  width: max-content;
+  background-color: #ededed;
+  height: max-content;
+}
+.profile-order div {
+  margin-left: 3em;
+}
+.profile-order span {
+  font-size: 3em;
+}
+
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* ROOT ELEMENTS */
+html {
+  background-color: white;
+}
+
+main {
+  margin-left: 3vmax;
+  margin-right: 3vmax;
+}
+main a {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* GLOBAL RULES */
+a {
+  text-decoration: none;
+  color: #3edced;
+  font-size: 1rem;
+}
+a:visited {
+  color: #1d666e;
+}
+a:hover {
+  color: #4cb54c;
+}
+
+p, label, button, #list-order {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+}
+
+input, textarea {
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+h1, h2, h3, legend, h4 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+span {
+  margin-right: 1vmax;
+  height: 1vmax;
+  width: 1vmax;
+}
+
+select {
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+/* HEADER */
+header {
+  font-family: "Ubuntu", sans-serif;
+  background-color: #ededed;
+  border-radius: 0 0 2rem 2rem;
+  border-bottom: #4cb54c 2px solid;
+  border-right: #4cb54c 2px solid;
+  border-left: #4cb54c 2px solid;
+  padding-bottom: 1vmax;
+  padding-top: 1vmax;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-bottom: 1vw;
+}
+header img {
+  margin-left: 1rem;
+  width: 7rem;
+  height: 7rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-top: 2vmax;
+  padding-right: 2vw;
+  width: content-box;
+}
+header nav .button {
+  display: inline;
+  margin-left: 1vmax;
+}
+header form button {
+  text-decoration: none;
+  color: #3edced;
+}
+header form button:hover {
+  color: #4cb54c;
+}
+header form button:visited {
+  color: #1d666e;
+}
+
+/* FOOTER */
+footer {
+  font-family: "Quicksand", sans-serif;
+  background-color: #ededed;
+  border-radius: 2rem 2rem 0 0;
+  border-top: #4cb54c 2px solid;
+  border-right: #4cb54c 2px solid;
+  border-left: #4cb54c 2px solid;
+  padding: 1vmin;
+  margin-top: 2vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+footer img {
+  height: 3vw;
+  min-height: 2rem;
+  width: 3vw;
+  min-width: 2rem;
+}
+footer aside {
+  font-size: 1.75vmin;
+  min-font-size: 4rem;
+  text-align: end;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+
+/* FIGURES */
+figure figcaption {
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-weight: bold;
+  text-align: center;
+  color: #43a043;
+  font-size: 2vmin;
+  min-font-size: 3rem;
+}
+
+.placeholder h1 {
+  font-size: 3vw;
+  text-align: center;
+}
+.placeholder span {
+  padding-right: 4vw;
+  color: #4cb54c;
+}
+
+/*# sourceMappingURL=universal.css.map */

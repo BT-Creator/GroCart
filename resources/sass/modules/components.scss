@@ -1,0 +1,105 @@
+@use 'style';
+@use 'typography';
+
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
+
+.button{
+    height: min-content;
+    padding: 0.5vmax;
+    background-color: map-get(typography.$colors, 'button-bg');
+    border: black 2px solid;
+    border-radius: 10px;
+    transition: transform 250ms ease-in-out;
+    color: map-get(typography.$colors, 'hyperlink');
+    &:visited {
+        color: map-get(typography.$colors, 'hyperlink-used')
+    }
+    &:hover {
+        transform: scale(1.10);
+        color: map-get(typography.$colors, 'accent');
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
+}
+
+.list-item {
+    width: max-content;
+    border: map-get(typography.$colors, 'accent') solid 2px;
+    border-radius: 10px;
+    padding: 1vw;
+    background-color: map-get(typography.$colors, 'bg');
+    margin: 1em;
+    cursor: move;
+
+    h2 {
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    span {
+        text-decoration: underline;
+    }
+}
+
+.name{
+    padding: 0.5vw;
+    margin-left: 1rem;
+}
+
+.name:hover
+{
+    animation: swingHorizontal 1s ease;
+    animation-iteration-count: 1;
+}
+
+.profile-order {
+    @extend %border-accent;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em;
+    margin-bottom: 1em;
+    align-content: center;
+    width: max-content;
+    background-color: map-get(typography.$colors, 'bg-offset');
+    height: max-content;
+    div {
+        margin-left: 3em;
+    }
+    span {
+        font-size: 3em;
+    }
+}
+
+@keyframes swingHorizontal
+{
+    15%
+    {
+        transform: translateX(5px);
+    }
+    30%
+    {
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        transform: translateX(3px);
+    }
+    65%
+    {
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        transform: translateX(2px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}

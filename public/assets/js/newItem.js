@@ -39,12 +39,12 @@ function addItem(g) {
         newItems.innerHTML += generateItem(input.item(0),
             input.item(1),
             input.item(2),
-            document.querySelector("#new-item-form select").selectedOptions.item(0),
-            document.querySelector("#new-item-form textarea"))
+            document.querySelector(".new-item-form select").selectedOptions.item(0),
+            document.querySelector(".new-item-form textarea"))
         makeItemsDraggable(".list-item")
         closeDiv()
     } catch (ex){
-        document.querySelector("#new-item-form mark").innerHTML = "A name is needed!"
+        document.querySelector(".new-item-form mark").innerHTML = "A name is needed!"
     }
 }
 

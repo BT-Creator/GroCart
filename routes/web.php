@@ -20,23 +20,23 @@ Route::get('/501', function () {return view('placeholder');}) -> name("501_route
 
 Route::group(["prefix" => "consumer"], function (){
     /* Index */
-    Route::get('/{id}/list', [ConsumerController::class, 'index']) -> name('consumer_lists');
+    Route::get('/{id}/list', [ConsumerController::class, 'index']) -> middleware('auth') -> name('consumer_lists');
     /* List */
-    Route::get('/{id}/list/{list}', [ConsumerController::class, 'openExistingList']) -> name('open_list');
-    Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> name('create_list');
-    Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> name('update_list');
-    Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> name('add_list');
+    Route::get('/{id}/list/{list}', [ConsumerController::class, 'openExistingList']) -> middleware('auth') -> name('open_list');
+    Route::get('/{id}/newList', [ConsumerController::class, 'openNewList']) -> middleware('auth') -> name('create_list');
+    Route::post('/{id}/list/{list}', [ConsumerController::class, 'updateExistingList']) -> middleware('auth') -> name('update_list');
+    Route::post('/{id}/newList', [ConsumerController::class, 'addList']) -> middleware('auth') -> name('add_list');
+    Route::get('/{id}/list/{list}/delete', [ConsumerController::class, 'deleteList']) -> middleware('auth') -> name('delete_list');
     /* Profile */
-    Route::get('/{id}/profile', [ConsumerController::class, 'openProfile']) -> name('consumer_profile');
+    Route::get('/{id}/profile', [ConsumerController::class, 'openProfile']) -> middleware('auth') -> name('consumer_profile');
     /*Order*/
-    Route::get('/{id}/order/{order}/pay', [ConsumerController::class, 'makeOrder']) -> name('make_order');
-    Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> name('open_order');
+    Route::get('/{id}/order/{order}/pay', [ConsumerController::class, 'makeOrder']) -> middleware('auth') -> name('make_order');
+    Route::get('/{id}/order/{order}', [ConsumerController::class, 'openOrder']) -> middleware('auth') -> name('open_order');
+    /*History*/
+    Route::get('/{id}/history', [ConsumerController::class, 'openHistory']) -> middleware('auth') -> name('open_history');
 });
 
-
-
-
-/* AUTH (NOT IMPLEMENTED) */
+/* AUTH */
 Route::get('/user/register', function () {return view('auth.register');}) -> name('consumer_register');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

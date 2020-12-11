@@ -1,0 +1,178 @@
+.grocery-list-options a, .profile-order {
+  border-radius: 10px;
+  border: solid #4cb54c 2px;
+}
+
+.grocery-lists {
+  border-radius: 10px;
+  border: 2px black solid;
+}
+
+/* Transition effects taken from https://emilkowalski.github.io/css-effects-snippets/ */
+.button {
+  height: min-content;
+  padding: 0.5vmax;
+  background-color: white;
+  border: black 2px solid;
+  border-radius: 10px;
+  transition: transform 250ms ease-in-out;
+  color: #3edced;
+}
+.button:visited {
+  color: #1d666e;
+}
+.button:hover {
+  transform: scale(1.1);
+  color: #4cb54c;
+}
+.button:active {
+  transform: scale(0.9);
+}
+
+.list-item {
+  width: max-content;
+  border: #4cb54c solid 2px;
+  border-radius: 10px;
+  padding: 1vw;
+  background-color: white;
+  margin: 1em;
+  cursor: move;
+}
+.list-item h2 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.list-item p {
+  margin-bottom: 5px;
+}
+.list-item span {
+  text-decoration: underline;
+}
+
+.name {
+  padding: 0.5vw;
+  margin-left: 1rem;
+}
+
+.name:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
+
+.profile-order {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  margin-bottom: 1em;
+  align-content: center;
+  width: max-content;
+  background-color: #ededed;
+  height: max-content;
+}
+.profile-order div {
+  margin-left: 3em;
+}
+.profile-order span {
+  font-size: 3em;
+}
+
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+form div {
+  border: none;
+  padding: 0;
+  background-color: initial;
+}
+
+p {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+a {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+.grocery-list-container {
+  border: none;
+  padding: 0;
+  background-color: initial;
+  display: grid;
+  grid-template-areas: ". ." ". ." ". .";
+}
+
+.grocery-list-options {
+  border: none;
+  padding: 0;
+  background-color: initial;
+  display: flex;
+  justify-content: space-around;
+}
+.grocery-list-options a {
+  padding: 1vmax;
+  margin: 1em;
+}
+.grocery-list-options span {
+  color: black;
+}
+
+.grocery-lists {
+  background-color: #ededed;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  height: max-content;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+.grocery-lists h1 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.empty-lists {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.empty-lists h1 {
+  margin-bottom: 1em;
+  width: max-content;
+}
+
+span[class^=fas] {
+  text-decoration: none;
+}
+
+span[class="fas fa-arrow-right"] {
+  margin-right: 0;
+  margin-left: 1vmax;
+}
+
+.list-overview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=lists.css.map */

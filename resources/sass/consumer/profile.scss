@@ -1,0 +1,69 @@
+@use '../modules/typography';
+@use '../themes/consumer';
+@use '../modules/style';
+@use '../modules/components';
+
+.profile {
+    article {
+        &:nth-of-type(1) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin-bottom: 2em;
+            margin-top: 2em;
+        }
+        &:nth-of-type(2) {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        section {
+            h2 {
+                margin-bottom: 2em;
+                font-weight: bold;
+                span {
+                    font-weight: normal;
+                    margin-left: 0.5em;
+                }
+                time {
+                    font-weight: normal;
+                    margin-left: 0.5em;
+                }
+            }
+        }
+        .graph {
+            margin-bottom: 2em;
+            font-weight: bold;
+        }
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    aside {
+        h2 {
+            margin-bottom: 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+}
+
+.profile-card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    img {
+        display: block;
+        height: 5vmax;
+        width: 5vmax;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

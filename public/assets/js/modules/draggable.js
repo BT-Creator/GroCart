@@ -5,7 +5,6 @@ export function drag(e) {
     dragElement = this
     e.dataTransfer.effectAllowed = 'move'
     e.dataTransfer.setData('text/html', this.innerHTML)
-    console.log(dragElement)
 }
 
 export function drop(f) {

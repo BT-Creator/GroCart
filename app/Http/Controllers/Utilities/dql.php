@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-function getOrdersAndItems(int $userId)
+function getOrdersAndItems(int $userId): Collection
 {
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
@@ -13,7 +14,7 @@ function getOrdersAndItems(int $userId)
         ->get();
 }
 
-function getItemsFromList(int $userId, int $listId)
+function getItemsFromList(int $userId, int $listId): Collection
 {
     return DB::table('orders')
         ->join('items', 'orders.id', '=', 'items.order_id')
@@ -23,7 +24,7 @@ function getItemsFromList(int $userId, int $listId)
         ->get();
 }
 
-function getOrderDetails(int $userId, int $listId)
+function getOrderDetails(int $userId, int $listId): Collection
 {
     return DB::table('orders')
         ->join('deliveries', 'orders.delivery_id', '=', 'deliveries.id')
@@ -37,4 +38,35 @@ function getOrderDetails(int $userId, int $listId)
         ->where('orders.user_id', '=', $userId)
         ->where('orders.id', '=', $listId)
         ->get();
+}
+
+function getOngoingOrders($user_id): Collection
+{
+    return DB::table('orders')
+        ->join('items', 'orders.id', '=', 'items.order_id')
+        ->select('orders.id', 'items.*')
+        ->where('orders.user_id', '=', $user_id)
+        ->where('orders.status', '!=', 'completed')
+        ->where('orders.status', '!=', 'draft')
+        ->orderByDesc('orders.id', 'orders.status')
+        ->get();
+}
+
+function getCompletedOrders($user_id): Collection
+{
+    return DB::table('orders')
+        ->join('items', 'orders.id', '=', 'items.order_id')
+        ->select('orders.id', 'items.*')
+        ->where('orders.user_id', '=', $user_id)
+        ->where('orders.status', '=', 'completed')
+        ->orderByDesc('orders.id')
+        ->get();
+}
+
+function getOrderStatus($user_id): Collection
+{
+    return DB::table('orders') -> select('orders.id', 'orders.status')
+        -> where('orders.status', '!=', 'completed')
+        -> where('orders.status', '!=', 'draft')
+        -> where('orders.user_id', '=', $user_id) -> get();
 }

@@ -1,0 +1,20 @@
+@use '../modules/typography';
+@use '../modules/components';
+
+form {
+    div {
+        border: none;
+        padding: 0;
+        background-color: initial;
+    }
+}
+
+p {
+    margin-bottom: 1em;
+    width: max-content;
+}
+
+a {
+    margin-bottom: 1em;
+    width: max-content;
+}

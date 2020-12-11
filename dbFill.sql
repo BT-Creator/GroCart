@@ -1,6 +1,6 @@
 create database if not exists grocart;
 
-/*Before importing the database, do not forget to run migrating if the Authentication module is implemented.*/
+/*Before importing the database, do not forget to run migrations if the Authentication module is implemented.*/
 use grocart;
 
 set foreign_key_checks = 0;
@@ -49,7 +49,7 @@ create table if not exists orders
     status         enum ('draft', 'ordered', 'assigned_to_driver', 'picking', 'delivering', 'completed') not null,
     delivery_id    int                                                                                   not null,
     store_id       int                                                                                   not null,
-    user_id        int                                                                                   not null
+    user_id        bigint                                                                                not null
 );
 
 ALTER TABLE items
