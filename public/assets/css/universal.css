@@ -91,6 +91,7 @@ main a {
 a {
   text-decoration: none;
   color: #3edced;
+  font-size: 1rem;
 }
 a:visited {
   color: #1d666e;
@@ -101,15 +102,10 @@ a:hover {
 
 p, label, button, #list-order {
   font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
 }
 
-input {
-  font-family: "Quicksand", sans-serif;
-  text-decoration: none;
-  padding: 0.5em;
-}
-
-textarea {
+input, textarea {
   font-family: "Quicksand", sans-serif;
   text-decoration: none;
   padding: 0.5em;

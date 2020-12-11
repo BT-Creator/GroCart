@@ -19,6 +19,7 @@ main {
 a {
     text-decoration: none;
     color: map-get(typography.$colors, 'hyperlink');
+    font-size: 1rem;
 
     &:visited {
         color: map-get(typography.$colors, 'hyperlink-used')
@@ -31,16 +32,10 @@ a {
 
 p, label, button, #list-order {
     font-family: typography.$quicksand;
+    font-size: 1rem;
 }
 
-input {
-    font-family: typography.$quicksand;
-    @extend %border-accent;
-    text-decoration: none;
-    padding: 0.5em;
-}
-
-textarea {
+input, textarea {
     font-family: typography.$quicksand;
     @extend %border-accent;
     text-decoration: none;
