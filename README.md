@@ -76,8 +76,9 @@ Special care has been taken in order to make the website as accessible as possib
 |---|---|---|---|
 |`/` (Index Page)| ![Lighthouse results](resources/markdown/lh-index.png)|No remarks|Valid|
 |`/consumers/{id}/lists` (Lists page)| ![Lighthouse results](resources/markdown/lh-list.png)|No remarks*|Valid|
-|`/consumer/{id}/consumer/history` (History page) | ![Lighthouse results](resources/markdown/lh-history.png)|No remarks*|Valid|
-|`/cosumer/{id}/consumer/profile` (Profile page) | ![Lighthouse results](resources/markdown/lh-profile.png)|No remarks*|Valid| 
+|`/consumer/{id}/history` (History page) | ![Lighthouse results](resources/markdown/lh-history.png)|No remarks*|Valid|
+|`/cosumer/{id}/profile` (Profile page) | ![Lighthouse results](resources/markdown/lh-profile.png)|No remarks*|Valid|
+|`/consumer/{id}/list/{list}` (List Edit page) | ![Lighthouse results](resources/markdown/lh-edit.png)|2 moderate remarks*|Valid|
 
  <span>*</span>*AXE will sometimes indicate that it thinks it sees a potential issue, but that it's unable to verify this. These issues are accounted for.*
 # Used libraries, services & snippets

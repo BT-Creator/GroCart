@@ -109,6 +109,12 @@ a {
   width: max-content;
 }
 
+h3, h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
 .list-top-bar {
   display: flex;
   justify-content: space-around;
@@ -144,11 +150,6 @@ a {
   margin-bottom: 2em;
 }
 .list-main legend {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
-}
-.list-main h1 {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0.5em;

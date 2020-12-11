@@ -57,7 +57,7 @@
                                     @isset($details, $items)
                                         @foreach($items[$details['id']] as $item)
                                             <section class="list-item" draggable="true">
-                                                <h2>{{str_replace('_', ' ', $item['name'])}}</h2>
+                                                <h1>{{str_replace('_', ' ', $item['name'])}}</h1>
                                                 @isset($item['brand'])
                                                     <p><span
                                                             class="list-property">Brand:</span>{{str_replace('_', ' ', $item['brand'])}}
@@ -87,7 +87,7 @@
                         </div>
                         <aside class="list-bottom-bar" aria-label="list-bottom-bar">
                             <section>
-                                <h3><span class="fas fa-store"></span>Store Address:</h3>
+                                <h2><span class="fas fa-store"></span>Store Address:</h2>
                                 <label for="store_street">
                                     Street:
                                     @isset($details['store_street'])
@@ -147,7 +147,7 @@
                                 </label>
                             </section>
                             <section>
-                                <h3><span class="fas fa-home"></span>Delivery address:</h3>
+                                <h2><span class="fas fa-home"></span>Delivery address:</h2>
                                 <label for="delivery_street">
                                     Street:
                                     @isset($details['delivery_street'])
@@ -212,7 +212,7 @@
                                 </label>
                             </section>
                             <section>
-                                <h3><span class="fas fa-sticky-note"></span>Delivery Notes</h3>
+                                <h2><span class="fas fa-sticky-note"></span>Delivery Notes</h2>
                                 <label for="delivery_notes">
                                     @isset($details['delivery_notes'])
                                         <textarea name="delivery_notes" id="delivery_notes"
@@ -224,7 +224,7 @@
                                 </label>
                             </section>
                             <section>
-                                <h3><span class="fas fa-notes-medical"></span>Medical Notes</h3>
+                                <h2><span class="fas fa-notes-medical"></span>Medical Notes</h2>
                                 <label for="medical_notes">
                                     @isset($details['medical_notes'])
                                         <textarea name="medical_notes" id="medical_notes"
@@ -236,7 +236,7 @@
                                 </label>
                             </section>
                             <section>
-                                <h3>List options</h3>
+                                <h2>List options</h2>
                                 <label for="list_save">
                                     <button type="submit" id="list_save" class="button"><span
                                             class="fas fa-save"></span>Save List
@@ -255,7 +255,7 @@
     <form class="new-item-form">
         <mark></mark>
         <div>
-            <h3>Add a new item</h3>
+            <h2>Add a new item</h2>
             <a class="fas fa-times-circle"></a>
         </div>
 
