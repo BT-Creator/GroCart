@@ -150,14 +150,12 @@ a {
   margin-bottom: 1em;
 }
 
-.empty-lists {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-}
 .empty-lists h1 {
   margin-bottom: 1em;
   width: max-content;
+}
+.empty-lists p {
+  margin-bottom: 2em;
 }
 
 span[class^=fas] {

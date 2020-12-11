@@ -99,6 +99,7 @@ html {
 main {
   margin-left: 3vmax;
   margin-right: 3vmax;
+  min-height: 33vw;
 }
 main a {
   font-family: "Ubuntu", sans-serif;
