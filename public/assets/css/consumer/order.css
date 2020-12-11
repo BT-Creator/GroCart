@@ -1,3 +1,8 @@
+.profile-order {
+  border-radius: 10px;
+  border: solid #4cb54c 2px;
+}
+
 .order-info {
   border-radius: 10px;
   border: 2px black solid;
@@ -52,6 +57,23 @@
 .name:hover {
   animation: swingHorizontal 1s ease;
   animation-iteration-count: 1;
+}
+
+.profile-order {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  margin-bottom: 1em;
+  align-content: center;
+  width: max-content;
+  background-color: #ededed;
+  height: max-content;
+}
+.profile-order div {
+  margin-left: 3em;
+}
+.profile-order span {
+  font-size: 3em;
 }
 
 @keyframes swingHorizontal {
