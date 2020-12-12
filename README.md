@@ -8,30 +8,42 @@ This repo contains the consumer side of the application. If a link links to the 
 
 ## Setup instruction
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
-1. Clone this project to your machine
-2. Fill the `.env` file with the needed database credentials. When in development, these were the credentials
-    ```
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=grocart
-    DB_USERNAME=grocartUser
-    DB_PASSWORD=gr0Ware_House
-    ```
-   With the `grocartUser` having all right except `GRANT OPTION` on the database grocart.
-3. The authentication of the application is based on Laravel's [Jetstream](https://jetstream.laravel.com/1.x/introduction.html), so the database can be constructed in 2 ways:
-    - If you chose to use `dbFill.sql`, you'll need to run the migrations before importing the data. 
-        1. Make a database with a name of your choosing and make a user with the needed rights.
-        2. Fill the `.env` file in with the relevant data.
-        3. In the root folder, run `php artisan migrate` in order to prepare the database for autentication.
-        4. Before importing the data, load the website and make a user, but **do not go to the homepage of the user**.
-        5. After this, execute `dbFill.sql` in your DB IDE of choice.
-        6. Proceed to the homepage, where you should see the following:
-        ![Successful data import](resources/markdown/data-import-user.png)
-           If this is the case, then congrats, the data has been imported correctly.
-            - **!!!** If you don't see any data, but the website doesn't give any data, it could be that the auto-increment is based on previous data that lived in the database. This isn't that bad, but if you want to fix this, make sure you use a clean database. **!!!**
+1. Clone this project to your machine.
+2. Make sure that the name of the root directory matches your symlink from `var/www/webtech`.
+3. Use `composer install` to install the dependencies.
+4. A `.env` file is included in the repo. Because of this, you can use `php artisan key:gen` to generate the application's key.
+5. The permissions of `storage` & `bootstrap/cache` won't be correct when importing this project. You'll need to set the persions so that your user & `www-data` can access the files.
+6. Run the following commands:
+    - `php artisan cache:clear`
+    - `php artisan view:clear`
+    - `php artisan config:clear`
+7. The authentication of the application is based on Laravel's [Jetstream](https://jetstream.laravel.com/1.x/introduction.html), so the database needs to be constructed with `dbFill.sql`: 
+    1. Execute the `dbFill.sql`. This will create a database `grocart` with the tables needed for the application.
+    2. For the database make a user with the following rights that connects through `localhost`. You can also use an existing user, but either way, you'll need to grant privileges to the user:
+    - `SELECT`
+    - `INSERT`
+    - `UPDATE`
+    - `DELETE`
+    - `EXECUTE`
+    - `SHOW VIEW` 
+    3. Fill the `.env` file in with the relevant data. Below you'll find an example, but you'll need to fill this in with your own credentials:
+        ```
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=grocart
+        DB_USERNAME=grocartUser
+        DB_PASSWORD=gr0Ware_House
+        ```
+    4. In the root folder, run `php artisan migrate` in order to prepare the database for autentication.
     
-4. In `public/assets/js/config` you'll find a singular file called `config.js`. In this file, please change the base URL to the URL you've configured, followed by `/api`
+        **!!!** *If this fails, this means that your user doesn't have access to the DB or forgot to edit the `.env` file.* **!!!**
+    5. Load the website and make a new user *(You'll find it on the login page of consumer)*
+    6. Proceed to the homepage, where you should see the following:
+    ![Successful data import](resources/markdown/data-import-user.png)
+        If this is the case, then congrats, the data has been imported correctly.
+    
+8. In `public/assets/js/config` you'll find a singular file called `config.js`. In this file, please change the base URL to the URL you've configured, followed by `/api`
     
     *For illustration purposes, if your server URL is `https://webtech.local` you'll need to change the link in `public/assets/js/config` to `htpps://webtech.local/api`*
 # File Structure
