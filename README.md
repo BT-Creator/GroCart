@@ -48,17 +48,28 @@ Assuming you have a working Laravel server, and you know how to clone Laravel pr
     *For illustration purposes, if your server URL is `https://webtech.local` you'll need to change the link in `public/assets/js/config` to `htpps://webtech.local/api`*
 # File Structure
 ## Project specific
-### `app/Http/Controllers/Utilities`
-#### format.php
-`format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array, in order to make sure that code readability can be maintained.
-#### dml.php
+### `app/Http/Controllers`
+#### ConsumerController
+The `ConsumerController` contains all logic & code that is used in the consumer section of the website.
+#### ConsumerApiController
+Contains all code relating to the API of the application. Below you find the call(s) available
+
+|Call|Action|
+|---|---|
+|`consumer/{id}/order`|Retrieves all orders of a user and their contents|
+
+#### Utilities
+##### format.php
+`format.php` is a separate PHP file that contains code in order to format data output from the DB to multiple array. This was done in order to maintain code.
+##### dml.php
 `dml.php` contains code that will retrieve data from a database. None of the queries here can manipulate the database in any way.
-#### dql.php
+##### dql.php
 `dql.php` contains code that manipulates the database in any way *(`insert`, `update`, etc...)*.
-#### validation.php
+##### validation.php
 `validation.php` contains code that is related to check if incoming data is valid. This is where the rules for validation can be found.
 ### `app/Models`
 This directory contains models that can be used in conjunction with Laravel Eloquent system. My personal preference when interacting with the DB is using the DB facade, because you have more control when forming a query.
+
 ### `public/assets`
 Public contains all CSS, JS and images that can be served to the end-user.
 #### CSS
@@ -67,11 +78,14 @@ All CSS has be complied using SASS. For more info about the SASS files, go tho t
 The JS files have been modularized in order to take advantage of the import & export functionality. The modules can be found in the directory `modules`
 ##### config
 This directory contains a single file for configuration purposes. In order to make sure that the Data visualization works, you'll need to change the base URL to the URL you have configured. This has been mentioned in [the setup guide](#setup-instruction).
+#### media
+This directory contains media that aren't images used for styling, such as logo's, etc...
+
 ### `resources`
 #### markdown
-Contains the images used in this markdown file
+Contains the images used in this markdown file.
 #### sass
-The directory SASS is where all SCSS files live. These were auto-compiled to `public/assets/css` using SASS's `watch` function
+The directory SASS is where all SCSS files live. These were auto-compiled to `public/assets/css` using SASS's `watch` function.
 ##### consumer
 The consumer directory contains all files that have been complied to be used for the consumer-side of the web app.
 ##### modules
