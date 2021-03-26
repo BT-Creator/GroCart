@@ -5,6 +5,7 @@ Welcome to the **Grocart** Repository, powered by **[Laravel](https://laravel.co
 Grocart is a remote shopping service that allows you to keep track of the groceries you need and order them with ease, thanks to our list system.
 ## Before we dive in...
 This repo contains the consumer side of the application. If a link links to the *Under Construction* page, this means that the page was out-of-scope for this project.
+If you wish to see how this project could've been futher developped, you can take a look at the [wireframes](https://xd.adobe.com/view/3ad62ce4-964f-412c-bdc1-2025a698c111-6f85/).
 
 ## Setup instructions
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
