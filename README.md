@@ -10,15 +10,14 @@ If you wish to see how this project could've been futher developped, you can tak
 ## Setup instructions
 Assuming you have a working Laravel server, and you know how to clone Laravel projects to that machine:
 1. Clone this project to your machine that is hosting Laravel.
-2. Make sure that the name of the root directory matches your symlink from `var/www/<directory_name>`.
-3. Use `composer install` to install the dependencies.
-4. A `.env` file is included in the repo. Because of this, you can use `php artisan key:gen` to generate the application's key.
-5. The permissions of `storage` & `bootstrap/cache` won't be correct when importing this project. You'll need to set the permissions so that your user & `www-data` can access the files.
-6. Run the following commands:
+2. Use `composer install` to install the dependencies.
+3. A `.env` file is included in the repo. Because of this, you can use `php artisan key:gen` to generate the application's key.
+4. The permissions of `storage` & `bootstrap/cache` won't be correct when importing this project. You'll need to set the permissions so that your user & `www-data` can access the files.
+5. Run the following commands:
     - `php artisan cache:clear`
     - `php artisan view:clear`
     - `php artisan config:clear`
-7. The authentication of the application is based on Laravel's [Jetstream](https://jetstream.laravel.com/1.x/introduction.html), so the database needs to be constructed with `dbFill.sql`: 
+6. The authentication of the application is based on Laravel's [Jetstream](https://jetstream.laravel.com/1.x/introduction.html), so the database needs to be constructed with `dbFill.sql`: 
     1. Execute the `dbFill.sql` in the MySQL database of your VM. This will create a database `grocart` with the tables needed for the application.
     2. For the database, make a user with the following rights or all rights that connects through `localhost`. You can also use an existing user, but either way, you'll need to grant all privileges to the user to the database `grocart`.
     3. Fill the `.env` file in with the relevant data. Below you'll find an example, but you'll need to fill this in with your own credentials that you used in step 2:
